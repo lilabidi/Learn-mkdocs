@@ -79,8 +79,30 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
 
 ## Installation
 
+!!! done "Vérification"
+    Vérifier votre installation avec
+
+    === "python / pip"
+        ```bash
+        $ python --version
+        Python 3.8.5
+        $ pip --version
+        pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+        ```
+
+    === "python3 / pip3"
+        ```bash
+        $ python3 --version
+        Python 3.8.5
+        $ pip3 --version
+        pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+        ```
+
+    Si une erreur survient, contacter l'administrateur de la machine.
+
 !!! tip "Material for MkDocs"
     Dans un terminal
+
     ```bash
     pip install mkdocs-material
     ```
