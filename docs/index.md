@@ -101,7 +101,7 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
     ```
     `.` désignant le répertoire courant.
 
-!!! info "Vérification"
+!!! done "Vérification"
     Vous devriez avoir eu le message suivant
     <pre>
     INFO    -  Creating project directory: expérience
@@ -174,4 +174,18 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
     Avec pour résultat.
 
     ![résultat modif1](./images/modif1.png)
+
+    À chaque fois qu'un fichier sera modifié et enregistré, le site sera mis à jour dans le navigateur.
+
+    **Faîtes vos premières expériences !**
+
+
+!!! info "Le site n'est pas encore construit physiquement"
+    - Il est possible de construire physiquement le site avec
+    ```bash
+    mkdocs build
+    ```
+    C'est utile si avez une solution pour l'héberger ...
+
+    Pour nous ce sera inutile.
 
