@@ -41,8 +41,14 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
             sudo dpkg --configure -a
             sudo apt install python3-pip
             ```
-            Redémarrer, pour que le `PATH` inclut bien votre chemin de binaires.
-        
+            Redémarrer, pour que le `PATH` inclut bien votre chemin de binaires, c'est probablement déjà le cas...
+
+            !!! info "Gestionnaire de paquets Python"
+                [pip](https://fr.wikipedia.org/wiki/Pip_(gestionnaire_de_paquets)) est le gestionnaire de paquets Python, suivant votre machine la commande est `pip` ou `pip3`.
+
+                Dans la suite on la désignera par `pip`, si c'est `pip3` ; adapter.
+
+
         !!! example "Mises à jour"
             Dans un terminal entrer
             ``` bash
@@ -72,11 +78,6 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
             ```
 
 ## Installation
-
-!!! info "Gestionnaire de paquets Python"
-    [pip](https://fr.wikipedia.org/wiki/Pip_(gestionnaire_de_paquets)) est le gestionnaire de paquets Python, suivant votre machine la commande est `pip` ou `pip3`.
-
-    Dans la suite on la désignera par `pip`, si c'est `pip3` ; adapter.
 
 !!! tip "Material for MkDocs"
     Dans un terminal
