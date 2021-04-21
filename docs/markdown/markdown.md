@@ -10,8 +10,8 @@
 !!! tip "Utilisation répandue"
     On peut utiliser la syntaxe Markdown dans de nombreuses situations de travail collaboratif.
 
-    - Dans des forums, comme Discourse, GitLab, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
-    - Dans des logiciels, comme CodiMD.
+    - Dans des forums, comme Discourse, **GitLab**, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
+    - Dans des logiciels, comme CodiMD, ou **Jupyter**.
 
 !!! warning "Défauts"
     Soyons honnête, il y a un défaut majeur, Markdown n'est pas unifié.
@@ -21,7 +21,31 @@
 
     Nous utiliserons ici la partie commune à toute les versions, avec le style le plus commun possible. Dans la partie « avancée » nous travaillerons avec certaines facilités de MkDocs.
 
+
+!!! example "D'autres tutoriels"
+    Suivant votre goût pour l'anglais et votre temps :
+
+    - https://www.markdowntutorial.com/ _in english by GitHub_
+    - [Syntaxe assez complète](https://michelf.ca/projets/php-markdown/syntaxe/)
+    - [another, in english, by GitHub](http://agea.github.io/tutorial.md/)
+    - [Un résumé assez succinct](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_fr.md)
+    - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
+
+    Il ne faut que **5 minutes pour avoir les bases** suffisantes.
+
+    On reprend ci-dessous l'essentiel.
+
 ## Construire une note
+
+### Résumé
+
+|Objectif|Markdown|Rendu|
+|:-----|:------|:----|
+|Créer un lien|`[texte cliquable](mon_lien.fr)`|[texte cliquable](mon_lien.fr)|
+|Emphase faible|`Un _mot_ discret` | Un _mot_ discret |
+|Emphase forte|`Un **mot** visible` | Un **mot** visible |
+|Du code en ligne|``Une boucle `for` `` |Une boucle `for`|
+
 
 ### Architecture
 
@@ -94,13 +118,15 @@
         <big><strong>Mon super titre</strong></big>
 
         Mon premier paragraphe.
-        
+
 === "Incorrect"
     !!! note "Entrée"
+
         ```markdown
         #Mon super titre
         Mon premier paragraphe.
         ```
+
     !!! fail "Rendu"
         \#Mon super titre Mon premier paragraphe.
 
@@ -215,9 +241,7 @@
 
 ### Liens
 
-
 url et image
-
 
 ### Emphase
 
@@ -229,23 +253,88 @@ url et image
 !!! abstract "Définitions"
     - L'emphase faible sert à faire ressortir discrètement du texte. Elle est **souvent** en _italique_, mais on peut changer cela dans une feuille de style en cascade (CSS).
     - De même, l'emphase forte est souvent en gras, mais on pourrait décider dans la feuille CSS de modifier ce style en couleur rouge et souligné en noir. Et puis changer un autre jour ; l'ensemble du document soumis à la feuille CSS est modifié.
-    - En HTML, ces balises sont 
-    
+    - En HTML, ces balises sont
+
         - `<em>` pour l'emphase faible
         - `<strong>` pour l'emphase forte
     - Il existe aussi en HTML des balises pour forcer l'italique ou le gras, elles sont souvent déconseillées.
     - En Markdown, il n'y en a pas. Cependant, on peut souvent inclure des balises HTML au milieu du Markdown. Ce sera dans la partie avancée...
 
 !!! tip "Astérisque et tiret-bas"
-    blabla
+    === "L'emphase faible"
+        !!! note "Entrée"
+
+            ```markdown
+            _blabla_
+            ```
+
+        !!! done "Rendu"
+            _blabla_
+
+        ??? info "HTML"
+            ```html
+            <em>blabla</em>
+            ```
+
+    === "L'emphase forte"
+        !!! note "Entrée"
+            ```markdown
+            **blabla**
+            ```
+
+        !!! done "Rendu"
+            **blabla**
+
+        ??? info "HTML"
+            ```html
+            <strong>blabla</strong>
+            ```
+
+    === "Des mélanges"
+        !!! note "Entrée"
+            ```markdown
+            **blabla**
+            ```
+        !!! done "Rendu"
+            **blabla**
+
+        ??? info "HTML"
+            ```html
+            <em>blabla</em>
+            ```
 
 ### Citations
 
-`>`
+!!! tip "Avec un chevron"
+    Suivant l'ancien modèle sur les mails en mode texte, quand on répond à un message, le texte est décalé et chaque ligne est précédée d'un chevron `>`.
+
+    === "Exemple simple"
+        !!! note "Entrée"
+            ```markdown
+            > **Cookie** :
+            >
+            > - Anciennement petit gâteau sucré, qu'on acceptait avec plaisir.
+            > - Aujourd'hui : petit fichier informatique drôlement salé, qu'il faut refuser avec véhémence.
+
+            De Luc Fayard, _Dictionnaire impertinent des branchés_
+            ```
+            
+        !!! done "Rendu"
+            > **Cookie** :
+            >
+            > - Anciennement petit gâteau sucré, qu'on acceptait avec plaisir.
+            > - Aujourd'hui : petit fichier informatique drôlement salé, qu'il faut refuser avec véhémence.
+
+            De Luc Fayard, _Dictionnaire impertinent des branchés_
+
+    === "Citations imbriquées"
+        blabla à suivre...
 
 ### Bloc de code
 
 Par décalage.
+
+Par nommage.
 
 ### Code en ligne
 
@@ -254,6 +343,3 @@ Avec `` ` ``
 ### Ligne horizontale
 
 Avec `---`
-
-
-
