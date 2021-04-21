@@ -13,6 +13,14 @@
     - Dans des forums, comme Discourse, GitLab, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
     - Dans des logiciels, comme CodiMD.
 
+!!! warning "Défauts"
+    Soyons honnête, il y a un défaut majeur, Markdown n'est pas unifié.
+
+    - Il existe plusieurs variantes légèrement différentes de Markdown.
+    - Pour chaque variante, il peut exister des moteurs de rendus légèrement différents.
+
+    Nous utiliserons ici la partie commune à toute les versions, avec le style le plus commun possible. Dans la partie « avancée » nous travaillerons avec certaines facilités de MkDocs.
+
 ## Construire une note
 
 ### Architecture
@@ -22,7 +30,9 @@
 
     Le titre d'une partie (ou en-têtes) est précédé d'un ou plusieurs croisillons : `#`
 
-    On saute une ligne après.
+    On ajoute une espace après le dernier croisillon.
+
+    On saute une ligne avant et après l'en-tête.
 
     ??? example "Example"
 
@@ -73,6 +83,29 @@
         Avec `---`
         ```
 
+=== "Correct"
+    !!! note "Entrée"
+        ```markdown
+        # Mon super titre
+
+        Mon premier paragraphe.
+        ```
+    !!! done "Rendu"
+        <big><strong>Mon super titre</strong></big>
+
+        Mon premier paragraphe.
+        
+=== "Incorrect"
+    !!! note "Entrée"
+        ```markdown
+        #Mon super titre
+        Mon premier paragraphe.
+        ```
+    !!! fail "Rendu"
+        \#Mon super titre Mon premier paragraphe.
+
+    Ce rendu dépend du moteur...
+
 ### Paragraphes
 
 !!! tip "Le saut de ligne"
@@ -85,7 +118,7 @@
             ```markdown
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             ```
-        !!! done "Résultat"
+        !!! done "Rendu"
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
 
     === "Incorrect"
@@ -95,25 +128,116 @@
             ```
         
         Le texte devient du code en bloc, avec une police à chasse fixe.
-        !!! warning "Résultat"
+        !!! warning "Rendu"
             <pre>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
 
 ### Listes
 
-Avec `-`, ou `1.`
+!!! tip "Une ligne vide puis..."
+    Une liste, comme un nouveau paragraphe, doit être précédée d'une ligne vide.
 
-Imbriquées...
+    Ensuite, on place chaque item sur une ligne en commençant par `-`
+
+    On peut faire des listes numérotées en commençant par `1.`
+    
+    On place aussi une espace juste avant son item.
+
+!!! example "Exemples"
+    === "Liste à puce"
+        !!! note "Entrée"
+            ```markdown
+            Markdown est **très** utilisé sur de _nombreux_ forums
+
+            - Discourse
+            - GitLab
+            - Reddit
+            - Qt
+            - Stack Overflow
+            - Stack Exchange
+            - ...
+            ```
+
+        !!! done "Rendu"
+            Markdown est **très** utilisé sur de _nombreux_ forums
+
+            - Discourse
+            - GitLab
+            - Reddit
+            - Qt
+            - Stack Overflow
+            - Stack Exchange
+            - ...
+
+        Pour information, la traduction pour le navigateur.
+        ??? info "Code HTML"
+            ```html
+            <p>Markdown est <strong>très</strong> utilisé sur de <em>nombreux</em> forums
+            <ul>
+                <li>Discourse</li>
+                <li>GitLab</li>
+                <li>Reddit</li>
+                <li>Qt</li>
+                <li>Stack Overflow</li>
+                <li>Stack Exchange</li>
+                <li>...</li>
+            </ul>
+            </p>
+            ```
+        
+        On remarquera un peu de mise de style (l'emphase) ; nous y reviendrons.
+
+        On remarque aussi une meilleure lisibilité du Markdown sur le HTML.
+
+    === "Liste numérotée"
+        !!! note "Entrée"
+            ```markdown
+            Pour une liste numérotée, la numérotation est automatique !
+            
+            1. Mon premier exemple
+            3. Le troisième, mais le deuxième a été effacé
+            3. Un oubli entre le troisième et quatrième
+            3. Encore un oubli...
+            4. C'était le quatrième au départ.
+            1. Juste un de plus qui sera numéroté correctement.
+            ```
+        
+        !!! done "Rendu"
+            Pour une liste numérotée, la numérotation est automatique !
+            
+            1. Mon premier exemple
+            3. Le troisième, mais le deuxième a été effacé
+            3. Un oubli entre le troisième et quatrième
+            3. Encore un oubli...
+            4. C'était le quatrième au départ.
+            1. Juste un de plus qui sera numéroté correctement.
 
 ### Liens
+
 
 url et image
 
 
 ### Emphase
 
-`_` et `*`
+!!! info "Pas trop gras svp !"
+    Commençons par indiquer que certains documents abusent des effets de style et la lisibilité en est réduite.
+
+    L'emphase sert à faire ressortir une partie plus importante que le reste. Ce ne peut être qu'une petite partie.
+
+!!! abstract "Définitions"
+    - L'emphase faible sert à faire ressortir discrètement du texte. Elle est **souvent** en _italique_, mais on peut changer cela dans une feuille de style en cascade (CSS).
+    - De même, l'emphase forte est souvent en gras, mais on pourrait décider dans la feuille CSS de modifier ce style en couleur rouge et souligné en noir. Et puis changer un autre jour ; l'ensemble du document soumis à la feuille CSS est modifié.
+    - En HTML, ces balises sont 
+    
+        - `<em>` pour l'emphase faible
+        - `<strong>` pour l'emphase forte
+    - Il existe aussi en HTML des balises pour forcer l'italique ou le gras, elles sont souvent déconseillées.
+    - En Markdown, il n'y en a pas. Cependant, on peut souvent inclure des balises HTML au milieu du Markdown. Ce sera dans la partie avancée...
+
+!!! tip "Astérisque et tiret-bas"
+    blabla
 
 ### Citations
 
