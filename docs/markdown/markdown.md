@@ -25,10 +25,11 @@
 !!! example "D'autres tutoriels"
     Suivant votre goût pour l'anglais et votre temps :
 
-    - https://www.markdowntutorial.com/ _in english by GitHub_
-    - [Syntaxe assez complète](https://michelf.ca/projets/php-markdown/syntaxe/)
-    - [another, in english, by GitHub](http://agea.github.io/tutorial.md/)
-    - [Un résumé assez succinct](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_fr.md)
+    - https://www.markdownguide.org/ 
+    - https://www.markdowntutorial.com/
+    - https://michelf.ca/projets/php-markdown/syntaxe/
+    - http://agea.github.io/tutorial.md/
+    - https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_fr.md
     - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
 
     Il ne faut que **5 minutes pour avoir les bases** suffisantes.
@@ -45,7 +46,6 @@
 |Emphase faible|`Un _mot_ discret` | Un _mot_ discret |
 |Emphase forte|`Un **mot** visible` | Un **mot** visible |
 |Du code en ligne|``Une boucle `for` `` |Une boucle `for`|
-
 
 ### Architecture
 
@@ -154,6 +154,7 @@
             ```
         
         Le texte devient du code en bloc, avec une police à chasse fixe.
+
         !!! warning "Rendu"
             <pre>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
@@ -211,7 +212,7 @@
             </ul>
             </p>
             ```
-        
+
         On remarquera un peu de mise de style (l'emphase) ; nous y reviendrons.
 
         On remarque aussi une meilleure lisibilité du Markdown sur le HTML.
@@ -262,45 +263,52 @@ url et image
 
 !!! tip "Astérisque et tiret-bas"
     === "L'emphase faible"
+        Le tiret-bas est recommandé sur l'astérisque.
+
         !!! note "Entrée"
 
             ```markdown
-            _blabla_
+            Du _texte en italique_ entouré de la balise tiret bas *ou* une étoile.
             ```
 
         !!! done "Rendu"
-            _blabla_
+            Du _texte en italique_ entouré de la balise tiret bas *ou* une étoile.
 
         ??? info "HTML"
             ```html
-            <em>blabla</em>
+            Du <em>texte en italique</em> entouré de la balise tiret bas <em>ou</em> une étoile.
             ```
 
     === "L'emphase forte"
+        L'astérisque est recommandé sur le tiret-bas.
+
         !!! note "Entrée"
             ```markdown
-            **blabla**
+            Du **texte en gras** entouré de la balise double étoile, __ou__ double tiret bas.
             ```
 
         !!! done "Rendu"
-            **blabla**
+            Du **texte en gras** entouré de la balise double étoile, __ou__ double tiret bas.
+
 
         ??? info "HTML"
             ```html
-            <strong>blabla</strong>
+            Du <strong>texte en gras</strong> entouré de la balise double étoile, <strong>ou</strong> double tiret bas.
             ```
 
     === "Des mélanges"
         !!! note "Entrée"
             ```markdown
-            **blabla**
+            **_Un_** exemple _avec_ tous *les* cas *__possibles__*, **fort1** ou __fort2__.
             ```
         !!! done "Rendu"
-            **blabla**
+            **_Un_** exemple _avec_ tous *les* cas *__possibles__*, **fort1** ou __fort2__.
+
 
         ??? info "HTML"
             ```html
-            <em>blabla</em>
+            <strong>
+            <strong><em>Un</em></strong> exemple <em>avec</em> tous <em>les</em> cas <em><strong>possibles</strong></em>, <strong>fort1</strong> ou <strong>fort2</strong>.
             ```
 
 ### Citations
@@ -329,12 +337,6 @@ url et image
 
     === "Citations imbriquées"
         blabla à suivre...
-
-### Bloc de code
-
-Par décalage.
-
-Par nommage.
 
 ### Code en ligne
 
