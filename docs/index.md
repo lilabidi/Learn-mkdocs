@@ -124,17 +124,28 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
     ```bash
     mkdocs serve
     ```
-    Vous aurez une sortie qui ressemble à 
-    <pre>INFO    -  Building documentation... 
-    INFO    -  Cleaning site directory 
-    INFO    -  Documentation built in 0.06 seconds 
-    <font color="#4E9A06">[I 210421 15:43:52 server:335]</font> Serving on http://127.0.0.1:8000
-    INFO    -  Serving on http://127.0.0.1:8000
-    <font color="#4E9A06">[I 210421 15:43:52 handlers:62]</font> Start watching changes
-    INFO    -  Start watching changes
-    <font color="#4E9A06">[I 210421 15:43:53 handlers:135]</font> Browser Connected: http://127.0.0.1:8000/
-    INFO    -  Browser Connected: http://127.0.0.1:8000/
-    </pre>
+    !!! done "Victoire ?"
+        Vous aurez une sortie qui ressemble à 
+        <pre>INFO    -  Building documentation... 
+        INFO    -  Cleaning site directory 
+        INFO    -  Documentation built in 0.06 seconds 
+        <font color="#4E9A06">[I 210421 15:43:52 server:335]</font> Serving on http://127.0.0.1:8000
+        INFO    -  Serving on http://127.0.0.1:8000
+        <font color="#4E9A06">[I 210421 15:43:52 handlers:62]</font> Start watching changes
+        INFO    -  Start watching changes
+        <font color="#4E9A06">[I 210421 15:43:53 handlers:135]</font> Browser Connected: http://127.0.0.1:8000/
+        INFO    -  Browser Connected: http://127.0.0.1:8000/
+        </pre>
+
+    !!! bug "Échec ?"
+        Si vous avez une sortie qui ressemble à
+        <pre>
+        INFO    -  Building documentation... 
+
+        Config file '...expérience/docs/mkdocs.yml' does not exist.
+        </pre>
+        C'est que vous avez lancé la commande dans le mauvais répertoire.
+
 
 !!! tip "Visionnage en direct"
     Ouvrir votre navigateur Web à l'adresse indiquée.
