@@ -11,7 +11,7 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
 
     Par **PC**, on entend un ordinateur avec un système d'exploitation Windows, Mac ou Linux.
 
-    Pour **Linux**, on prendra l'exemple de [Linux Mint](https://linuxmint.com/) ; si vous avez une autre distribution, vous devriez savoir adapter ce qui suit sans difficulté.
+    Pour **Linux**, on prendra l'exemple d'une distribution basée sur les paquets debian, sinon vous devriez savoir adapter ce qui suit sans difficulté.
 
 !!! tip "Machine raisonnablement à jour"
     === "Android"
@@ -27,9 +27,9 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
             2. À partir de F-Droid, installer [Termux](https://termux.com/)
             4. Dans Termux, entrer
             ```bash
-            pkg update
-            pkg upgrade
-            pkg install python
+            apt update
+            apt upgrade
+            apt install python
             pip install --upgrade pip
             ```
     === "Linux"
