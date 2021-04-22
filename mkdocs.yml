@@ -2,7 +2,8 @@ site_name: "Débuter avec MkDocs"
 
 nav:
   - "Installation": index.md
-  - "Markdown": markdown/markdown.md
+  - "Markdown pour Jupyter": markdown-jupyter.md
+  - "Markdown pour MkDocs": markdown-mkdocs.md
 
 theme:
   name: material

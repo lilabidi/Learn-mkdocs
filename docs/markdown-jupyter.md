@@ -1,4 +1,4 @@
-# Les bases du Markdown
+# Markdown pour Jupyter
 
 ## Vocabulaire et objectifs
 
@@ -7,11 +7,13 @@
 
     On peut aussi, à partir d'un fichier Markdown, produire un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc). Nous ne nous en servirons pas ici.
 
+    Il ne faut que **5 minutes pour avoir les bases** suffisantes.
+
 !!! tip "Utilisation répandue"
     On peut utiliser la syntaxe Markdown dans de nombreuses situations de travail collaboratif.
 
     - Dans des forums, comme Discourse, **GitLab**, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
-    - Dans des logiciels, comme CodiMD, ou **Jupyter**.
+    - Dans des logiciels, comme CodiMD, **Jupyter**, ou **MkDocs** parmi d'autres.
 
 !!! warning "Défauts"
     Soyons honnête, il y a un défaut majeur, Markdown n'est pas unifié.
@@ -19,26 +21,23 @@
     - Il existe plusieurs variantes légèrement différentes de Markdown.
     - Pour chaque variante, il peut exister des moteurs de rendus légèrement différents.
 
-    Nous utiliserons ici la partie commune à toute les versions, avec le style le plus commun possible. Dans la partie « avancée » nous travaillerons avec certaines facilités de MkDocs.
+    Nous utiliserons ici la partie commune à toute les versions, avec le style le plus commun possible, ce sera en particulier utile pour travaille avec **Jupyter**.
+    
+    Dans la partie suivante nous travaillerons avec certaines facilités offertes par **MkDocs**.
 
 
 !!! example "D'autres tutoriels"
-    Suivant votre goût pour l'anglais et votre temps :
+    === "En anglais"
+        - [Markdown Guide](https://www.markdownguide.org/) ; assez complet.
+        - [Markdown Tutorial](https://www.markdowntutorial.com/) ; avec exercices, (multilingue, mais ...)
+        - [Tutorial.md](http://agea.github.io/tutorial.md/) ; interactif, mérite une traduction !
 
-    - https://www.markdownguide.org/ 
-    - https://www.markdowntutorial.com/
-    - https://michelf.ca/projets/php-markdown/syntaxe/
-    - http://agea.github.io/tutorial.md/
-    - https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_fr.md
-    - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
-
-    Il ne faut que **5 minutes pour avoir les bases** suffisantes.
-
-    On reprend ci-dessous l'essentiel.
+    === "En français"
+        - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
 
 ## Construire une note
 
-### Résumé
+### Quelques exemples
 
 |Objectif|Markdown|Rendu|
 |:-----|:------|:----|
@@ -58,9 +57,34 @@
 
     On saute une ligne avant et après l'en-tête.
 
-    ??? example "Example"
+    === "Correct"
+        !!! note "Entrée"
+            ```markdown
+            # Mon super titre
 
-        Pour cette page, la structure a commencé ainsi
+            Mon premier paragraphe.
+            ```
+        !!! done "Rendu"
+            <big><strong>Mon super titre</strong></big>
+
+            Mon premier paragraphe.
+
+    === "Incorrect"
+        !!! note "Entrée"
+
+            ```markdown
+            #Mon super titre
+            Mon premier paragraphe.
+            ```
+
+        !!! fail "Rendu"
+            \#Mon super titre Mon premier paragraphe.
+
+        Ce rendu dépend du moteur...
+
+    ??? example "Example concret"
+
+        Pour cette page, le brouillon de structure a commencé ainsi
         ```markdown
         # Les bases du Markdown
 
@@ -107,31 +131,6 @@
         Avec `---`
         ```
 
-=== "Correct"
-    !!! note "Entrée"
-        ```markdown
-        # Mon super titre
-
-        Mon premier paragraphe.
-        ```
-    !!! done "Rendu"
-        <big><strong>Mon super titre</strong></big>
-
-        Mon premier paragraphe.
-
-=== "Incorrect"
-    !!! note "Entrée"
-
-        ```markdown
-        #Mon super titre
-        Mon premier paragraphe.
-        ```
-
-    !!! fail "Rendu"
-        \#Mon super titre Mon premier paragraphe.
-
-    Ce rendu dépend du moteur...
-
 ### Paragraphes
 
 !!! tip "Le saut de ligne"
@@ -160,6 +159,27 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
 
+### Ligne horizontale
+
+!!! tip "Séparer deux paragraphes"
+    On utilise `---` entre les deux paragraphes, avec des lignes vides.
+
+    !!! note "Entrée"
+        ```markdown
+        Paragraphe 1...
+
+        ---
+
+        Paragraphe 2...
+        ```
+
+    !!! done "Rendu"
+        Paragraphe 1...
+
+        ---
+
+        Paragraphe 2...
+
 ### Listes
 
 !!! tip "Une ligne vide puis..."
@@ -171,8 +191,8 @@
     
     On place aussi une espace juste avant son item.
 
-!!! example "Exemples"
-    === "Liste à puce"
+
+    !!! abstract "Liste à puce"
         !!! note "Entrée"
             ```markdown
             Markdown est **très** utilisé sur de _nombreux_ forums
@@ -200,24 +220,23 @@
         Pour information, la traduction pour le navigateur.
         ??? info "Code HTML"
             ```html
-            <p>Markdown est <strong>très</strong> utilisé sur de <em>nombreux</em> forums
+            <p>Markdown est <strong>très</strong> utilisé sur de <em>nombreux</em> forums</p>
             <ul>
-                <li>Discourse</li>
-                <li>GitLab</li>
-                <li>Reddit</li>
-                <li>Qt</li>
-                <li>Stack Overflow</li>
-                <li>Stack Exchange</li>
-                <li>...</li>
+            <li>Discourse</li>
+            <li>GitLab</li>
+            <li>Reddit</li>
+            <li>Qt</li>
+            <li>Stack Overflow</li>
+            <li>Stack Exchange</li>
+            <li>...</li>
             </ul>
-            </p>
             ```
 
         On remarquera un peu de mise de style (l'emphase) ; nous y reviendrons.
 
         On remarque aussi une meilleure lisibilité du Markdown sur le HTML.
 
-    === "Liste numérotée"
+    !!! example "Liste numérotée"
         !!! note "Entrée"
             ```markdown
             Pour une liste numérotée, la numérotation est automatique !
@@ -239,6 +258,22 @@
             3. Encore un oubli...
             4. C'était le quatrième au départ.
             1. Juste un de plus qui sera numéroté correctement.
+
+        Pour information, la traduction pour le navigateur.
+        ??? info "Code HTML"
+            ```html
+            <p>Pour une liste numérotée, la numérotation est automatique !</p>
+            <ol>
+            <li>Mon premier exemple</li>
+            <li>Le troisième, mais le deuxième a été effacé</li>
+            <li>Un oubli entre le troisième et quatrième</li>
+            <li>Encore un oubli...</li>
+            <li>C&#39;était le quatrième au départ.</li>
+            <li>Juste un de plus qui sera numéroté correctement.</li>
+            </ol>
+            ```
+        
+        On remarque que l'on n'a pas à se soucier de la cohérence de la numérotation dans le source, on peut donc ajouter, ou enlever des items sans revoir la numérotation.
 
 ### Liens
 
@@ -342,6 +377,3 @@ url et image
 
 Avec `` ` ``
 
-### Ligne horizontale
-
-Avec `---`
