@@ -534,7 +534,7 @@
 
 !!! tip "Avec l'accent grave"
     Avec un clavier azerty, ++altgr+8++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
-    
+
     On utilise la syntaxe : ``Du texte avec un `identifiant` de code``.
 
     === "Correct"
@@ -592,4 +592,3 @@
             Elle renvoie un booléen avec le mot clé `#!py3 return`
 
         Ceci n'est possible qu'avec MkDocs, on peut donc avoir la coloration syntaxique en ligne avec des langages variés. Nous y reviendrons plus tard.
-    
