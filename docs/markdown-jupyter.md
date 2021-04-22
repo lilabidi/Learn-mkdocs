@@ -277,7 +277,41 @@
 
 ### Liens
 
-url et image
+!!! tip "Créer un lien avec une URL"
+    Une [URL](https://fr.wikipedia.org/wiki/Uniform_Resource_Locator) permet d'identifier une ressource et le protocole associé.
+
+    La syntaxe est `[<objet>](<url>)`.
+    
+    - `<objet>` pourra être du texte ou une image, ou autre.
+    - `<url>` pourra être une adresse web, ou mail, ou autre protocole.
+    - Une adresse web peut pointer vers un document HTML, une image, un son...
+
+    === "Adresse web"
+        !!! note "Entrée"
+            ```markdown
+            Voici [un lien](https://startpage.com/) vers un moteur de recherche.
+            ```
+        
+        !!! done "Rendu"
+            Voici [un lien](https://startpage.com/) vers un moteur de recherche.
+    
+    === "Adresse mail"
+        !!! note "Entrée"
+            ```markdown
+            Pour [écrire](mailto:john.doe@mail.com) à quelqu'un.
+            ```
+        
+        !!! done "Rendu"
+            Pour [écrire](mailto:john.doe@mail.com) à quelqu'un.
+    
+    === "Numéro de téléphone"
+        !!! note "Entrée"
+            ```markdown
+            Pour [contacter rapidement](tel:+33 1 234 567 890) ce numéro.
+            ```
+        
+        !!! done "Rendu"
+            Pour [contacter rapidement](tel:+33 1 234 567 890) ce numéro.
 
 ### Emphase
 
