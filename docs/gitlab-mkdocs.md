@@ -284,3 +284,11 @@ site/
 On peut alors utiliser VSCodium comme dans l'animation tout en haut pour faire des `commit` et `push`.
 
 Avec Android, il faut le faire dans le terminal ; nous le verrons plus tard...
+
+## Et le résultat ?
+
+Dans votre projet GitLab, il y a un menu
+
+- :gear: `Paramètres`, puis `Pages`
+- là se trouve l'adresse de votre site créé automatiquement.
+
