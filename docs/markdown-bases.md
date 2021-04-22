@@ -358,6 +358,8 @@ Auteur : Franck CHAMBON
     
     :warning: Le rendu de la numérotation des listes imbriquées dépend du moteur. Ne pas lui faire confiance.
 
+    De même, on peut imbriquer des paragraphes, des blocs de code, en les indentant en plus également de la même manière.
+
 ### Liens
 
 !!! tip "Créer un lien avec une URL"

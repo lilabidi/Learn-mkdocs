@@ -4,6 +4,10 @@ nav:
   - "Installation": index.md
   - "Bases de Markdown": markdown-bases.md
   - "Markdown pour MkDocs": markdown-mkdocs.md
+  - "Élaboration du site": setup-mkdocs.md
+  - "Hébergement du site": gitlab-mkdocs.md
+  - "Recettes simples": recettes_1.md
+  - "Recettes élaborées": recettes_2.md
 
 theme:
   name: material
