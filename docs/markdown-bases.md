@@ -851,6 +851,8 @@ Auteur : Franck CHAMBON
     '|n|0|1|2|3|4|5|6|7|\n|-|-|-|-|-|-|-|-|-|\n|u_n|0|1|1|2|3|5|8|13|\n'
     ```
 
+[Résoudre en ligne](https://console.basthon.fr/?script=eJx9UdtqAjEQfV_YfxjigwprcHe1imAfWvraH1Ap6e5YYmOyzaW1kI_pq9_hjzVpqhSEzgRCZs6cc5K0uAXLngUy97Rn-rVVH3IguLG4gLgNYXQLxupFnkEIwV8kGljCapMKbKecDefUoKzrULap1QNKKZy-oFH7TpyOFnVqaLROSyBrSehO8agXh4d5FpMQkmc9eDigbniDsXR_IYh0HdOWa2gRBEu6MC-gc9wAHk7HxkWcwCDbIo3jjxhmDOxVy7c89BqEN9fnAj6BAcrAZIxyJjI2aC0mUnoxE-1YNBbKPGPGoLbXT7YaF1D-rKqAuoBpEU2V9WYIyyWs08VD9L30Y1_6ytd-4qf-xs_8WvrRVYaie0rYhJ76uS_rUO__cVT942hSRQP1LFk4C1_EfgUmlY-gM2-nubQDcqfZuyLhR74B39mmdg){.md-button}
+
 ??? faq "Indice 1"
     Pour construire la ligne 2, on pourrait faire
 
