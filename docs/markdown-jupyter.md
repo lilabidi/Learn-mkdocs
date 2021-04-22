@@ -318,7 +318,7 @@
 !!! info "Pas trop gras svp !"
     Commençons par indiquer que certains documents abusent des effets de style et la lisibilité en est réduite.
 
-    L'emphase sert à faire ressortir une partie plus importante que le reste. Ce ne peut être qu'une petite partie.
+    L'emphase sert à faire ressortir une partie plus importante que le reste. Ce ne peut être qu'_une_ petite partie.
 
 !!! abstract "Définitions"
     - L'emphase faible sert à faire ressortir discrètement du texte. Elle est **souvent** en _italique_, mais on peut changer cela dans une feuille de style en cascade (CSS).
