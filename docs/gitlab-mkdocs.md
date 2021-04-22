@@ -38,7 +38,7 @@
 
     2. On modifie le site.
 
-        ![vidéo en gif]()
+        ![vidéo en gif](vidéo.gif)
 
     3. Si on réactualise la page du projet sur GitLab, le témoin passe à ~ travail en cours
 
