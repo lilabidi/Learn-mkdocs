@@ -40,9 +40,21 @@
 
         ![vidéo en gif](vidéo.gif)
 
-    3. Si on réactualise la page du projet sur GitLab, le témoin passe à ~ travail en cours
+    3. Si on réactualise la page du projet sur GitLab, le témoin passe à `pipeline: en cours`
 
-        ![juste après le push]()
+        ![juste après le push](après-push.png)
+
+    4. Après quelques secondes, (ou minutes) 
+        - Si un problème survient (mauvaise configuration),
+            - vous recevez un mail sur l'échec, le cercle contient une croix rouge.
+            - Vous recevrez un mail pour chaque nouveau `push` jusqu'au succès inclus.
+        - Si le cercle passe au vert, le site est déployé silencieusement, et on continue le travail.
+    
+    5. L'animation montrait
+        - une modification d'un code source (celui-ci même).
+        - Un `commit` grâce à l'outil graphique de VSCodium (en haut à gauche).
+        - Un `push`, toujours avec VSCodium.
+        - Cela peut aussi se faire avec d'autres éditeurs...
 
 !!! faq "Comment ça fonctionne ?"
     Pour modifier le source, c'est en local. Vous modifiez un fichier Markdown, une image ou tout autre document. Les autres sections de ce tutoriel servent à ça. La vérification va souvent de paire avec `mkdocs serve`.
@@ -52,3 +64,6 @@
         - Lorsqu'on souhaite synchroniser son travail avec le dépôt distant, on fait un `push`. L'ensemble des modifications est envoyée avec les étapes de transitions évoquées par les `commit`.
     
     Techniquement, on pourrait revoir l'historique du dépôt `commit` par `commit`. Dans le cadre d'un travail collaboratif, chaque `commit` est signé de son auteur. C'est un moment du `push` que l'authentification est vérifiée. La méthode la plus efficace est de passer `SSH`.
+
+!!! abstract "Authentification SSH"
+    Montrons comment faire...
