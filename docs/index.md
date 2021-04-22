@@ -1,5 +1,7 @@
 # Débuter avec MkDocs
 
+Auteur : Franck CHAMBON
+
 Présentation des premiers pas pour construire un site web statique avec [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/).
 
 À l'instar de cette page, il y a quelques éléments dynamiques et la construction est assez élémentaire pour être proposée aux élèves en SNT, ou bien en NSI pour la documentation de projet.

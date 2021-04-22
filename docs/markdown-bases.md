@@ -1,4 +1,6 @@
-# Markdown pour Jupyter
+# Bases de Markdown
+
+Auteur : Franck CHAMBON
 
 ## Vocabulaire et objectifs
 
@@ -328,12 +330,40 @@
         
         On remarque que l'on n'a pas à se soucier de la cohérence de la numérotation dans le source, on peut donc ajouter, ou enlever des items sans revoir la numérotation.
 
+!!! warning "Technique avancée"
+    On peut imbriquer les listes numérotées ou non.
+
+    On indente la liste imbriquée qu'il est inutile de séparer avec des lignes vides. Contrairement à la première liste.
+
+    !!! note "Entrée"
+
+        ```markdown
+        1. un
+        1. deux
+            - machin
+            - chose
+                31. Pour commencer à 31
+                1984. Ce ne sera pas 1984 !
+        1. trois
+        ```
+
+    !!! done "Rendu"
+        1. un
+        1. deux
+            - machin
+            - chose
+                31. Pour commencer à 31
+                1984. Ce ne sera pas 1984 !
+        1. trois
+    
+    :warning: Le rendu de la numérotation des listes imbriquées dépend du moteur. Ne pas lui faire confiance.
+
 ### Liens
 
 !!! tip "Créer un lien avec une URL"
     Une [URL](https://fr.wikipedia.org/wiki/Uniform_Resource_Locator) permet d'identifier une ressource et le protocole associé.
 
-    La syntaxe est `[<objet>](<url>)`.
+    La syntaxe est `[<objet>](<url>)`
     
     - `<objet>` pourra être du texte ou une image, ou autre.
     - `<url>` pourra être une adresse web, ou mail, ou autre protocole.
@@ -370,6 +400,38 @@
             Pour [contacter rapidement](tel:+33 1 234 567 890) ce numéro.
         
         Le lien ne fonctionnera que si la page est lue avec un navigateur qui a accès au protocole. Concrètement, sur un smartphone !
+
+    !!! warning "Technique avancée"
+        On peut ajouter une info bulle au lien.
+
+        La syntaxe est `[<objet>](<url> "<message>")`
+
+        !!! note "Entrée"
+
+            ```markdown
+            Un autre moteur de recherche est [DuckDuckGo](https://duckduckgo.com/ "Votre confidentialité, simplifiée").
+            ```
+        
+        !!! done "Rendu"
+            Un autre moteur de recherche est [DuckDuckGo](https://duckduckgo.com/ "Votre confidentialité, simplifiée").
+
+    !!! done "Technique simplifiée"
+        Si on souhaite simplement activer l'url, sans changer le nom, ni mettre d'info-bulle.
+
+        La syntaxe est `< url >`
+
+        Le protocole est automatiquement déduit.
+
+        !!! note "Entrée"
+
+            ```markdown
+            - Mon site web <https://mon_joli_site.fr>
+            - Mon mail <prénom.nom@chez.moi>
+            ```
+
+        !!! done "Rendu"
+            - Mon site web <https://mon_joli_site.fr>
+            - Mon mail <prénom.nom@chez.moi>
 
 ### Emphase
 
@@ -530,6 +592,42 @@
             > Alors, je pense que...  
             > Merci et bonne journée  
 
+### Code en bloc
+
+!!! tip "En indentant le bloc, 4 espaces"
+    La méthode simple pour qu'un extrait ne soit pas formaté est de décaler le bloc de 4 espaces ou plus. On saute également une ligne avant et après, comme pour un paragraphe.
+
+    === "Correct"
+        !!! note "Entrée"
+
+            ```markdown
+            Voici un code Python
+
+                n = 47**2 + 31**2
+            ```
+
+        !!! done "Rendu"
+            Voici un code Python
+
+                n = 47**2 + 31**2
+
+    === "Incorrect"
+        !!! note "Entrée"
+
+            ```markdown
+            Voici un code Python
+
+            n = 47**2 + 31**2
+            ```
+
+        !!! done "Rendu"
+            Voici un code Python
+
+            n = 47**2 + 31**2
+
+!!! info "Et la coloration syntaxique ?"
+    Nous verrons cela dans la partie suivante.
+
 ### Code en ligne
 
 !!! tip "Avec l'accent grave"
@@ -573,7 +671,7 @@
 
             Elle renvoie un booléen avec le mot clé **return**
     
-    === "Le futur"
+    === "Le futur avec MkDocs"
         !!! note "Entrée"
 
             ```markdown
@@ -585,10 +683,139 @@
             ```
 
         !!! done "Rendu"
-            La définition de la fonction `#!py3 est_premier` commence avec le mot clé `#!py3 def`
+            La définition de la fonction `#!python est_premier` commence avec le mot clé `#!python def`
 
-            Elle prend en paramètre un entier `#!py3 n`
+            Elle prend en paramètre un entier `#!python n`
 
-            Elle renvoie un booléen avec le mot clé `#!py3 return`
+            Elle renvoie un booléen avec le mot clé `#!python return`
 
-        Ceci n'est possible qu'avec MkDocs, on peut donc avoir la coloration syntaxique en ligne avec des langages variés. Nous y reviendrons plus tard.
+        Ceci n'est possible qu'avec MkDocs, et des extensions, on peut donc avoir la coloration syntaxique en ligne avec des langages variés. **Nous y reviendrons plus tard.**
+
+    !!! warning "Technique avancée"
+        !!! note "Entrée"
+
+            ```markdown
+            Afficher **du code** avec accent grave : `` un entier `n` ``
+            ```
+
+        !!! done "Rendu"
+            Afficher **du code** avec accent grave : `` un entier `n` ``
+
+### Images
+
+!!! tip "Un lien précédé de `!`"
+    La syntaxe est avec ou sans l'info-bulle
+
+    - `![<texte alternatif>](<url> "<info-bulle>")`
+    - `![<texte alternatif>](<url>)`
+
+    !!! note "Entrée"
+
+        ```markdown
+        Le logo du langage Markdown
+        
+        ![M, flèche vers le bas](https://fr.wikipedia.org/wiki/Markdown#/media/Fichier:Markdown-mark.svg "sur Wikipédia")
+        ```
+    
+    !!! done "Rendu"
+        Le logo du langage Markdown
+        
+        ![M, flèche vers le bas](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+
+!!! info "Texte alternatif"
+    Une bonne pratique est de renseigner un texte alternatif, il est utilisé par les robots.
+
+    - Certains robots lisent à voix haute le contenu pour des humains, les images sont remplacées par le texte alternatif lu. Utile pour les mal-voyants.
+    - Certains robots font de l'indexation de site, un texte alternatif aide au référencement.
+    - Si la cible n'est plus disponible, cela arrive, le texte alternatif remplace l'image.
+
+!!! warning "absolu ou relatif"
+    Il faut faire attention bien écrire son url.
+
+    - Si c'est en local, vérifier le chemin d'accès.
+    - Si c'est sur le web, bien préfixer avec le protocole `http`
+
+### Tableaux
+
+!!! tip "Avec le tube"
+    La touche [barre verticale](https://fr.wikipedia.org/wiki/Barre_verticale) (ou tube) s'obtient avec ++altgr+6++.
+
+    On construit un tableau suivant le modèle suivant.
+
+    !!! note "Entrée"
+
+        ```markdown
+        | Objectif | Markdown | Rendu |
+        |----------|----------|-------|
+        | Créer un lien    | `[texte cliquable](mon_lien.fr)` | [texte cliquable](mon_lien.fr) |
+        | Emphase faible   | `Un _mot_ discret`    | Un _mot_ discret   |
+        | Emphase forte    | `Un **mot** visible`  | Un **mot** visible |
+        | Du code en ligne | ``Une boucle `for` `` | Une boucle `for`   |
+        ```
+    
+    !!! done "Rendu"
+        | Objectif | Markdown | Rendu |
+        |----------|----------|-------|
+        | Créer un lien    | `[texte cliquable](mon_lien.fr)` | [texte cliquable](mon_lien.fr) |
+        | Emphase faible   | `Un _mot_ discret`    | Un _mot_ discret   |
+        | Emphase forte    | `Un **mot** visible`  | Un **mot** visible |
+        | Du code en ligne | ``Une boucle `for` `` | Une boucle `for`   |
+
+    ??? bug "HTML"
+        Un code équivalent est bien plus délicat à écrire à la main...
+
+        ```html
+        <table>
+        <thead>
+        <tr>
+        <th>Objectif</th>
+        <th>Markdown</th>
+        <th>Rendu</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Créer un lien</td>
+        <td><code>[texte cliquable](mon_lien.fr)</code></td>
+        <td><a href="mon_lien.fr">texte cliquable</a></td>
+        </tr>
+        <tr>
+        <td>Emphase faible</td>
+        <td><code>Un _mot_ discret</code></td>
+        <td>Un <em>mot</em> discret</td>
+        </tr>
+        <tr>
+        <td>Emphase forte</td>
+        <td><code>Un **mot** visible</code></td>
+        <td>Un <strong>mot</strong> visible</td>
+        </tr>
+        <tr>
+        <td>Du code en ligne</td>
+        <td><code>Une boucle `for` </code></td>
+        <td>Une boucle <code>for</code></td>
+        </tr>
+        </tbody>
+        </table>
+        ```
+
+    !!! info "Quelques informations"
+        - Il n'est pas nécessaire que les tubes soient bien alignés.
+        - On peut inclure du Markdown dans les cellules.
+        - La seconde ligne propose des options pour chaque colonne.
+            - `|:---|` pour un alignement à gauche
+            - `|---:|` pour un alignement à droite
+            - `|:--:|` pour une colonne centrée
+
+## Exercices
+
+### Facile 1
+
+...
+
+### (NSI) Tableau donné par Python
+
+Donner une fonction Python qui renvoie un texte en Markdown : le tableau de valeur pour une suite donnée en paramètre avec une liste.
+
+### Autre
+
+...
