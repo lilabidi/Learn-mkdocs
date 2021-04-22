@@ -159,6 +159,45 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
 
+### Sauter une ligne
+
+!!! tip "Sans changer de paragraphe"
+    On ajoute deux espaces à la fin d'une ligne.
+
+    === "Correct"
+        !!! note "Entrée"
+            ```markdown
+            ligne1  
+            ligne2
+            ```
+        !!! done "Rendu"
+            ligne1  
+            ligne2
+
+    === "Incorrect"
+        !!! note "Entrée"
+            ```markdown
+            ligne1
+            ligne2
+            ```
+        !!! done "Rendu"
+            ligne1
+            ligne2
+    
+    !!! info "Vérifier"
+        En sélectionnant le texte, vous verrez deux espaces à la fin de `ligne 1` dans l'entrée correcte.
+
+        Sans les deux espaces, le saut de ligne est considéré comme une unique espace entre les deux lignes, donc une seule ligne pour le navigateur.
+
+        C'est pratique d'avoir son code sans longue ligne, elles sont donc recollées ensuite. C'est une bonne pratique.
+
+        On n'utilise que rarement des sauts de ligne sans changer de paragraphes, vous ne devriez pas en faire, sauf raison motivée. On laisse au navigateur le soin de couper les lignes en fonction de l'affichage disponible : écran large, moyen ou restreint sur téléphone.
+
+!!! warning "Éditeur"
+    - Certains éditeurs de texte suppriment les espaces de fin de ligne ; votre document serait modifié !
+    - **Conseil** : il est possible, avec son éditeur, d'afficher discrètement les espaces ; c'est une bonne pratique.
+
+
 ### Ligne horizontale
 
 !!! tip "Séparer deux paragraphes"
@@ -312,6 +351,8 @@
         
         !!! done "Rendu"
             Pour [contacter rapidement](tel:+33 1 234 567 890) ce numéro.
+        
+        Le lien ne fonctionnera que si la page est lue avec un navigateur qui a accès au protocole. Concrètement, sur un smartphone !
 
 ### Emphase
 
@@ -345,7 +386,7 @@
 
         ??? info "HTML"
             ```html
-            Du <em>texte en italique</em> entouré de la balise tiret bas <em>ou</em> une étoile.
+            <p>Du <em>texte en italique</em> entouré de la balise tiret bas <em>ou</em> une étoile.</p>
             ```
 
     === "L'emphase forte"
@@ -362,7 +403,7 @@
 
         ??? info "HTML"
             ```html
-            Du <strong>texte en gras</strong> entouré de la balise double étoile, <strong>ou</strong> double tiret bas.
+            <p>Du <strong>texte en gras</strong> entouré de la balise double étoile, <strong>ou</strong> double tiret bas.</p>
             ```
 
     === "Des mélanges"
@@ -376,9 +417,19 @@
 
         ??? info "HTML"
             ```html
-            <strong>
-            <strong><em>Un</em></strong> exemple <em>avec</em> tous <em>les</em> cas <em><strong>possibles</strong></em>, <strong>fort1</strong> ou <strong>fort2</strong>.
+            <p><strong><em>Un</em></strong> exemple <em>avec</em> tous <em>les</em> cas <em><strong>possibles</strong></em>, <strong>fort1</strong> ou <strong>fort2</strong>.</p>
             ```
+
+!!! warning "Recommandation"
+    !!! note "Entrée"
+        ```markdown
+        - Pour l'emphase faible, _un_ tiret-bas.
+        - Pour l'emphase forte, **deux** astérisques.
+        ```
+
+    !!! done "Rendu"
+        - Pour l'emphase faible, _un_ tiret-bas.
+        - Pour l'emphase forte, **deux** astérisques.
 
 ### Citations
 
@@ -405,9 +456,57 @@
             De Luc Fayard, _Dictionnaire impertinent des branchés_
 
     === "Citations imbriquées"
-        blabla à suivre...
+        Voici un example de mail qu'on peut recevoir, témoin d'un échange. Quand un mail est long, on peut avoir envie de répondre dans la partie associée et non tout d'un bloc au départ.
+        
+        L'un dit « Salut ; À+», l'autre dit « Bonjour ; Merci ».
+
+        !!! note "Entrée"
+            ```markdown
+            Salut, c'est bon pour dimanche, pour le reste je réponds dans le corps du mail.
+            À+
+            > Bonjour,  
+            > un long blabla...  
+            > avec une question pour dimanche.  
+            > Et une autre question_1.  
+
+            Réponse à question_1.  
+
+            > Sinon blabla, et question_2.  
+
+            Réponse à question_2.  
+
+            > > Salut,  
+            > > Tu fais quoi dimanche ?  
+            > > À+  
+            
+            > Alors, je pense que...  
+            > Merci et bonne journée  
+            ```
+            
+        !!! done "Rendu"
+            Salut, c'est bon pour dimanche, pour le reste je réponds dans le corps du mail.
+            À+
+            > Bonjour,  
+            > un long blabla...  
+            > avec une question pour dimanche.  
+            > Et une autre question_1.  
+
+            Réponse à question_1.  
+
+            > Sinon blabla, et question_2.  
+
+            Réponse à question_2.  
+
+            > > Salut,  
+            > > Tu fais quoi dimanche ?  
+            > > À+  
+
+            > Alors, je pense que...  
+            > Merci et bonne journée  
+        
 
 ### Code en ligne
 
-Avec `` ` ``
+!!! tip "Avec le _backtick_"
+    Avec `` ` ``
 
