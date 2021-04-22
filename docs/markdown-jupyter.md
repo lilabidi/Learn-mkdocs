@@ -25,7 +25,6 @@
     
     Dans la partie suivante nous travaillerons avec certaines facilités offertes par **MkDocs**.
 
-
 !!! example "D'autres tutoriels"
     === "En anglais"
         - [Markdown Guide](https://www.markdownguide.org/) ; assez complet.
@@ -59,10 +58,12 @@
 
     === "Correct"
         !!! note "Entrée"
+
             ```markdown
             # Mon super titre
 
             Mon premier paragraphe.
+
             ```
         !!! done "Rendu"
             <big><strong>Mon super titre</strong></big>
@@ -85,6 +86,7 @@
     ??? example "Example concret"
 
         Pour cette page, le brouillon de structure a commencé ainsi
+
         ```markdown
         # Les bases du Markdown
 
@@ -140,14 +142,17 @@
 
     === "Correct"
         !!! note "Entrée"
+
             ```markdown
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             ```
+
         !!! done "Rendu"
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
 
     === "Incorrect"
         !!! note "Entrée"
+
             ```markdown
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             ```
@@ -155,6 +160,7 @@
         Le texte devient du code en bloc, avec une police à chasse fixe.
 
         !!! warning "Rendu"
+
             <pre>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
@@ -166,20 +172,24 @@
 
     === "Correct"
         !!! note "Entrée"
+
             ```markdown
             ligne1  
             ligne2
             ```
+
         !!! done "Rendu"
             ligne1  
             ligne2
 
     === "Incorrect"
         !!! note "Entrée"
+
             ```markdown
             ligne1
             ligne2
             ```
+
         !!! done "Rendu"
             ligne1
             ligne2
@@ -197,13 +207,13 @@
     - Certains éditeurs de texte suppriment les espaces de fin de ligne ; votre document serait modifié !
     - **Conseil** : il est possible, avec son éditeur, d'afficher discrètement les espaces ; c'est une bonne pratique.
 
-
 ### Ligne horizontale
 
 !!! tip "Séparer deux paragraphes"
     On utilise `---` entre les deux paragraphes, avec des lignes vides.
 
     !!! note "Entrée"
+
         ```markdown
         Paragraphe 1...
 
@@ -233,6 +243,7 @@
 
     !!! abstract "Liste à puce"
         !!! note "Entrée"
+
             ```markdown
             Markdown est **très** utilisé sur de _nombreux_ forums
 
@@ -258,6 +269,7 @@
 
         Pour information, la traduction pour le navigateur.
         ??? info "Code HTML"
+
             ```html
             <p>Markdown est <strong>très</strong> utilisé sur de <em>nombreux</em> forums</p>
             <ul>
@@ -277,6 +289,7 @@
 
     !!! example "Liste numérotée"
         !!! note "Entrée"
+
             ```markdown
             Pour une liste numérotée, la numérotation est automatique !
             
@@ -300,6 +313,7 @@
 
         Pour information, la traduction pour le navigateur.
         ??? info "Code HTML"
+
             ```html
             <p>Pour une liste numérotée, la numérotation est automatique !</p>
             <ol>
@@ -327,6 +341,7 @@
 
     === "Adresse web"
         !!! note "Entrée"
+
             ```markdown
             Voici [un lien](https://startpage.com/) vers un moteur de recherche.
             ```
@@ -336,6 +351,7 @@
     
     === "Adresse mail"
         !!! note "Entrée"
+
             ```markdown
             Pour [écrire](mailto:john.doe@mail.com) à quelqu'un.
             ```
@@ -345,6 +361,7 @@
     
     === "Numéro de téléphone"
         !!! note "Entrée"
+
             ```markdown
             Pour [contacter rapidement](tel:+33 1 234 567 890) ce numéro.
             ```
@@ -385,6 +402,7 @@
             Du _texte en italique_ entouré de la balise tiret bas *ou* une étoile.
 
         ??? info "HTML"
+
             ```html
             <p>Du <em>texte en italique</em> entouré de la balise tiret bas <em>ou</em> une étoile.</p>
             ```
@@ -393,6 +411,7 @@
         L'astérisque est recommandé sur le tiret-bas.
 
         !!! note "Entrée"
+
             ```markdown
             Du **texte en gras** entouré de la balise double étoile, __ou__ double tiret bas.
             ```
@@ -402,26 +421,31 @@
 
 
         ??? info "HTML"
+
             ```html
             <p>Du <strong>texte en gras</strong> entouré de la balise double étoile, <strong>ou</strong> double tiret bas.</p>
             ```
 
     === "Des mélanges"
         !!! note "Entrée"
+
             ```markdown
             **_Un_** exemple _avec_ tous *les* cas *__possibles__*, **fort1** ou __fort2__.
             ```
+
         !!! done "Rendu"
             **_Un_** exemple _avec_ tous *les* cas *__possibles__*, **fort1** ou __fort2__.
 
 
         ??? info "HTML"
+
             ```html
             <p><strong><em>Un</em></strong> exemple <em>avec</em> tous <em>les</em> cas <em><strong>possibles</strong></em>, <strong>fort1</strong> ou <strong>fort2</strong>.</p>
             ```
 
 !!! warning "Recommandation"
     !!! note "Entrée"
+
         ```markdown
         - Pour l'emphase faible, _un_ tiret-bas.
         - Pour l'emphase forte, **deux** astérisques.
@@ -438,6 +462,7 @@
 
     === "Exemple simple"
         !!! note "Entrée"
+
             ```markdown
             > **Cookie** :
             >
@@ -461,6 +486,7 @@
         L'un dit « Salut ; À+», l'autre dit « Bonjour ; Merci ».
 
         !!! note "Entrée"
+
             ```markdown
             Salut, c'est bon pour dimanche, pour le reste je réponds dans le corps du mail.
             À+
@@ -503,10 +529,67 @@
 
             > Alors, je pense que...  
             > Merci et bonne journée  
-        
 
 ### Code en ligne
 
-!!! tip "Avec le _backtick_"
-    Avec `` ` ``
+!!! tip "Avec l'accent grave"
+    Avec un clavier azerty, ++altgr+8++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
+    
+    On utilise la syntaxe : ``Du texte avec un `identifiant` de code``.
 
+    === "Correct"
+        !!! note "Entrée"
+
+            ```markdown
+            La définition de la fonction `est_premier` commence avec le mot clé `def`
+
+            Elle prend en paramètre un entier `n`
+
+            Elle renvoie un booléen avec le mot clé `return`
+            ```
+
+        !!! done "Rendu"
+            La définition de la fonction `est_premier` commence avec le mot clé `def`
+
+            Elle prend en paramètre un entier `n`
+
+            Elle renvoie un booléen avec le mot clé `return`
+    
+    === "Incorrect"
+        !!! note "Entrée"
+
+            ```markdown
+            La définition de la fonction _est_premier_ commence avec le mot clé **def**
+
+            Elle prend en paramètre un entier _n_
+
+            Elle renvoie un booléen avec le mot clé **return**
+            ```
+
+        !!! done "Rendu"
+            La définition de la fonction _est_premier_ commence avec le mot clé **def**
+
+            Elle prend en paramètre un entier _n_
+
+            Elle renvoie un booléen avec le mot clé **return**
+    
+    === "Le futur"
+        !!! note "Entrée"
+
+            ```markdown
+            La définition de la fonction `#!py3 est_premier` commence avec le mot clé `#!py3 def`
+
+            Elle prend en paramètre un entier `#!py3 n`
+
+            Elle renvoie un booléen avec le mot clé `#!py3 return`
+            ```
+
+        !!! done "Rendu"
+            La définition de la fonction `#!py3 est_premier` commence avec le mot clé `#!py3 def`
+
+            Elle prend en paramètre un entier `#!py3 n`
+
+            Elle renvoie un booléen avec le mot clé `#!py3 return`
+
+        Ceci n'est possible qu'avec MkDocs, on peut donc avoir la coloration syntaxique en ligne avec des langages variés. Nous y reviendrons plus tard.
+    
