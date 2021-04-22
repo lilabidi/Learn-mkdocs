@@ -812,10 +812,97 @@ Auteur : Franck CHAMBON
 
 ...
 
-### (NSI) Tableau donné par Python
-
-Donner une fonction Python qui renvoie un texte en Markdown : le tableau de valeur pour une suite donnée en paramètre avec une liste.
-
 ### Autre
 
 ...
+
+### (NSI) Tableau donné par Python
+
+!!! tip "Liste Python vers Markdown"
+    Donner une fonction Python qui renvoie un texte en Markdown : le tableau de valeur pour une suite donnée en paramètre avec une liste.
+
+    ```py3
+    def tableau_markdown(liste: list) -> str:
+        lignes = []
+        ajout = lignes.append
+        # ... à compléter
+        return "\n".join(lignes)
+    ```
+
+!!! example "Exemple"
+    Pour la liste $[0, 1, 1, 2, 3, 5, 8, 13]$, on souhaite le rendu
+
+    |n|0|1|2|3|4|5|6|7|
+    |-|-|-|-|-|-|-|-|-|
+    |u_n|0|1|1|2|3|5|8|13|
+
+    _Un_ code Markdown valable est
+
+    ```markdown
+    |n|0|1|2|3|4|5|6|7|
+    |-|-|-|-|-|-|-|-|-|
+    |u_n|0|1|1|2|3|5|8|13|
+    ```
+
+    Ainsi on aimerait avoir
+
+    ```py3
+    >>> tableau_markdown([0, 1, 1, 2, 3, 5, 8, 13])
+    '|n|0|1|2|3|4|5|6|7|\n|-|-|-|-|-|-|-|-|-|\n|u_n|0|1|1|2|3|5|8|13|\n'
+    ```
+
+??? faq "Indice 1"
+    Pour construire la ligne 2, on pourrait faire
+
+    ```python
+    q = len(liste)
+    ligne_2 = '|-'*(q+1) + '|'
+    ajout(ligne_2)
+    ```
+
+??? faq "Indice 2"
+    Pour construire la ligne 1, on pourrait faire
+
+    ```python
+    q = len(liste)
+    ligne_1 = ['|n|'] # le début de la ligne 1
+    for i in range(q):
+        ligne_1.append(f'{i}|') # chaque morceau
+    ajout("".join(ligne_1))
+    ```
+
+??? faq "Indice 3"
+    La ligne 3 est très proche de la ligne 1.
+
+??? faq "Indice 4"
+    Vide.
+
+??? done "Solution"
+
+    ```py3
+    def tableau_markdown(liste: list) -> str:
+        lignes = []
+        ajout = lignes.append
+
+        # ligne 1
+        q = len(liste)
+        ligne_1 = ['|n|'] # le début de la ligne 1
+        for i in range(q):
+            ligne_1.append(f'{i}|') # chaque morceau
+        ajout("".join(ligne_1))
+
+        # ligne 2
+        ligne_2 = '|-'*(q+1) + '|'
+        ajout(ligne_2)
+
+        # ligne 3
+        ligne_3 = ['|u_n|'] # le début de la ligne 3
+        for i in range(q):
+            ligne_3.append(f'{liste[i]}|') # chaque morceau
+        ajout("".join(ligne_3))
+        
+        # ligne 4 vide !
+        ajout('')
+
+        return "\n".join(lignes)
+    ```
