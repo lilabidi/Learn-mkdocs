@@ -335,7 +335,15 @@ site/
 
 On peut alors utiliser VSCodium comme dans l'animation en haut de cette page pour faire des `commit` et `push`.
 
-!!! tip "`git fetch` ?"
+!!! tip "`git add` et `git commit`"
+    Un commit n'est pas seulement un commentaire, il accompagne un choix de fichiers modifiés.
+
+    - En général, on ajoute au `commit` l'ensemble des fichiers modifiés. Dans ce cas, on coche le gros signe ++plus++.
+    - On peut aussi choisir un ensemble non vide de fichiers, en cochant les ++plus++ associés aux fichier souhaités. Ou en les choisissant tous, puis ôtant certains.
+    - Il est possible d'exclure le suivi de certains fichiers ou dossier. Le fichier `.gitignore` sert à ça. Par exemple, il n'est pas pertinent de suivre le dossier `site/` ni les dossiers `__pycache__`, entre autres documents non source.
+
+
+!!! faq "`git fetch` ?"
     VSCodium vous propose de faire des `git fetch` régulièrement.
 
     Si vous travailler seul, depuis un seul poste, c'est inutile.
