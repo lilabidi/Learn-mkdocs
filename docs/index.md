@@ -4,8 +4,9 @@ Auteur : Franck CHAMBON
 
 !!! tip "Objectifs"
     1. Introduction à Markdown pour son utilisation
-        - avec Jupyter, pour créer des carnets,
-        - avec MkDocs, pour participer ou créer de la documentation comme celle-ci.
+        - avec [Jupyter](https://jupyter.org/), pour créer des carnets,
+        - avec [CodiMD](https://apps.education.fr/), pour du travail collaboratif,
+        - avec [MkDocs](https://www.mkdocs.org/), pour participer ou créer de la documentation comme celle-ci.
     2. Présentation des premiers pas pour héberger un site web statique avec [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/), sur [GitLab](https://gitlab.com/) en particulier.
 
     À l'instar de cette page, il y a quelques éléments dynamiques et la construction est assez élémentaire pour être proposée
@@ -112,6 +113,14 @@ Auteur : Franck CHAMBON
             ``` bash
             python -m pip install --upgrade pip
             ```
+
+!!! done "Et Jupyter ?"
+    On suppose que
+    
+    - vous avez déjà [Jupyter](https://jupyter.org/) installé, ou que
+    - vous utilisez [Capytale](https://capytale2.ac-paris.fr/web/c-auth/list) avec des carnets [Basthon](https://basthon.fr/), ou que
+    - vous utilisez [Try Jupyter](https://jupyter.org/try).
+
 
 ## Installation
 
@@ -245,13 +254,13 @@ Auteur : Franck CHAMBON
 
     **Faîtes vos premières expériences !**
 
-!!! info "Le site n'est pas encore construit physiquement"
-    Il est possible de construire physiquement le site avec
+!!! info "Votre site n'est pas encore construit physiquement"
+    Il est possible de construire physiquement (en local) votre site avec
 
     ```bash
     mkdocs build
     ```
 
-    C'est utile si avez une solution pour l'héberger ...
+    C'est utile si vous avez une solution pour l'héberger ...
 
-    Pour nous ce sera inutile.
+    Pour nous ce sera inutile, on déléguera le travail.

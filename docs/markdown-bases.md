@@ -15,15 +15,15 @@ Auteur : Franck CHAMBON
     On peut utiliser la syntaxe Markdown dans de nombreuses situations de travail collaboratif.
 
     - Dans des forums, comme Discourse, **GitLab**, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
-    - Dans des logiciels, comme CodiMD, **Jupyter**, ou **MkDocs** parmi d'autres.
+    - Dans des logiciels, comme **CodiMD**, **Jupyter**, ou **MkDocs** parmi d'autres.
 
-!!! warning "Défauts"
-    Soyons honnête, il y a un défaut majeur, Markdown n'est pas unifié.
+!!! warning "Défaut"
+    Soyons honnêtes, il y a un défaut, Markdown n'est pas unifié.
 
     - Il existe plusieurs variantes légèrement différentes de Markdown.
     - Pour chaque variante, il peut exister des moteurs de rendus légèrement différents.
 
-    Nous utiliserons ici la partie commune à toute les versions, avec le style le plus commun possible, ce sera en particulier utile pour travaille avec **Jupyter**.
+    Nous utiliserons ici la partie commune à toutes les versions, avec le style le plus commun possible, ce sera en particulier utile pour travailler avec **Jupyter**.
     
     Dans la partie suivante nous travaillerons avec certaines facilités offertes par **MkDocs**.
 
@@ -202,7 +202,7 @@ Auteur : Franck CHAMBON
         Sans les deux espaces, le saut de ligne est considéré comme une unique espace entre les deux lignes, donc une seule ligne pour le navigateur.
 
     !!! tip "Bonne pratique"
-        C'est pratique d'avoir son code sans longue ligne,
+        Il est pratique d'avoir son code sans longue ligne,
         on peut donc les couper **dans le source où on veut**.
         Elles sont donc recollées ensuite, dans un seul paragraphe.
         Ce paragraphe sera adapté à chaque écran, c'est au navigateur de choisir les sauts de ligne.

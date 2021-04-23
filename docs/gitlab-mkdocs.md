@@ -73,12 +73,12 @@
         - À chaque `push` le site sera automatiquement à jour en quelques instants.
 
 !!! abstract "Comment cela fonctionne-t-il ?"
-    Pour modifier le source, c'est en local. Vous modifiez un fichier Markdown, une image ou tout autre document. Les autres sections de ce tutoriel servent à ça. La vérification va souvent de paire avec `mkdocs serve`.
+    Pour modifier le source, c'est en local. Vous modifiez un fichier Markdown, une image ou tout autre document. Les autres sections de ce tutoriel servent à ça. La vérification va souvent de pair avec `mkdocs serve`.
 
     Dans une journée de travail, on fait plusieurs modifications.
 
     - À chaque étape importante on fait un `commit` qui décrit l'ensemble des modifications, un peu comme un journal de bord. On peut faire plusieurs `commit` sans faire de `push`. Un `commit` s'accompagne toujours d'un commentaire.
-    - Lorsqu'on souhaite synchroniser son travail avec le dépôt distant, on fait un `push`. L'ensemble des modifications est envoyée avec les étapes de transitions évoquées par les `commit`.
+    - Lorsqu'on souhaite synchroniser son travail avec le dépôt distant, on fait un `push`. L'ensemble des modifications est envoyé avec les étapes de transitions évoquées par les `commit`.
     
     Techniquement, on pourrait revoir l'historique du dépôt `commit` par `commit`. Dans le cadre d'un travail collaboratif, chaque `commit` est signé de son auteur. C'est au moment du `push` que l'authentification est vérifiée, du local vers le dépôt. La méthode la plus efficace est d'utiliser le protocole `SSH`.
 
@@ -133,7 +133,7 @@ Si vous n'avez pas d'éditeur de texte minimaliste, c'est le moment.
 
 Pour la première utilisation de `git`, il faut lui renseigner votre identité.
 
-Vos `commit`seront signés avec.
+Vos `commit` seront signés avec.
 
 Dans un terminal
 
@@ -339,7 +339,7 @@ On peut alors utiliser VSCodium comme dans l'animation en haut de cette page pou
     Un commit n'est pas seulement un commentaire, il accompagne un choix de fichiers modifiés.
 
     - En général, on ajoute au `commit` l'ensemble des fichiers modifiés. Dans ce cas, on coche le gros signe ++plus++.
-    - On peut aussi choisir un ensemble non vide de fichiers, en cochant les ++plus++ associés aux fichier souhaités. Ou en les choisissant tous, puis ôtant certains.
+    - On peut aussi choisir un ensemble non vide de fichiers, en cochant les ++plus++ associés aux fichiers souhaités. Ou en les choisissant tous, puis ôtant certains.
     - Il est possible d'exclure le suivi de certains fichiers ou dossier. Le fichier `.gitignore` sert à ça. Par exemple, il n'est pas pertinent de suivre le dossier `site/` ni les dossiers `__pycache__`, entre autres documents non source.
 
 

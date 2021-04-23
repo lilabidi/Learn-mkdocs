@@ -1,4 +1,4 @@
-site_name: "Débuter avec MkDocs"
+site_name: "De Jupyter à MkDocs"
 
 nav:
   - "Installation de MkDocs": index.md
