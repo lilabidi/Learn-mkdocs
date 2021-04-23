@@ -1,6 +1,5 @@
 # Livre de recettes simples
 
-
 ## QCM à cocher, solution en regard
 
 > Par Franck CHAMBON
@@ -143,3 +142,27 @@
             - ✅ `points_vie`
             - ❌ `les_points_de_vie`
     ```
+
+## Coloration syntaxique des sections mathématiques
+
+> Par Franck CHAMBON
+
+!!! abstract "Colorer les maths"
+    On peut colorer Python en ligne avec `` `#!python for i in range(10): print(i)` ``
+
+    - Ce qui donne `#!python for i in range(10): print(i)`
+
+    On souhaite pouvoir faire `` `#!math $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` ``
+
+    - Mais le résultat `#!math $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` est non coloré...
+
+!!! done "Exemple"
+    On aimerait avoir `#!latex $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$`
+
+??? tip "Méthode"
+    On utilise le [lexer](https://fr.wikipedia.org/wiki/Analyse_lexicale) `latex` à la place de `math`.
+
+    Solution `` `#!latex $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` ``
+
+    De même pour les maths en mode équation.
+
