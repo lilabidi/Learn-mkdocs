@@ -1,12 +1,13 @@
 site_name: "Débuter avec MkDocs"
 
 nav:
-  - "Installation": index.md
+  - "Installation de MkDocs": index.md
   - "Bases de Markdown": markdown-bases.md
+  - "Écrire des maths": maths.md
   - "Markdown pour MkDocs": markdown-mkdocs.md
   - "Élaboration du site": setup-mkdocs.md
-  - "Hébergement du site": gitlab-mkdocs.md
   - "Recettes simples": recettes_1.md
+  - "Hébergement du site": gitlab-mkdocs.md
   - "Recettes élaborées": recettes_2.md
 
 theme:

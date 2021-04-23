@@ -7,7 +7,7 @@ Auteur : Franck CHAMBON
 !!! info "Markdown"
     [Markdown](https://fr.wikipedia.org/wiki/Markdown) est un langage de balisage léger qui est traduit en HTML, langage que le navigateur est capable de lire pour produire une page web.
 
-    On peut aussi, à partir d'un fichier Markdown, produire un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc). Nous ne nous en servirons pas ici.
+    On peut aussi, à partir d'un fichier Markdown `.md`, produire un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc). Nous ne nous en servirons pas ici.
 
     Il ne faut que **5 minutes pour avoir les bases** suffisantes.
 
@@ -140,7 +140,7 @@ Auteur : Franck CHAMBON
 !!! tip "Le saut de ligne"
     Pour séparer les paragraphes, il suffit de sauter une ligne.
 
-    Il ne faut pas indenter son paragraphe.
+    Il ne faut pas indenter son paragraphe dans le fichier source.
 
     === "Correct"
         !!! note "Entrée"
@@ -167,10 +167,10 @@ Auteur : Franck CHAMBON
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
 
-### Sauter une ligne
+### Aller à la ligne
 
 !!! tip "Sans changer de paragraphe"
-    On ajoute deux espaces à la fin d'une ligne.
+    Dans de **rares** cas, si on souhaite sauter de ligne, sans changer de paragraphe, on ajoute deux espaces à la fin d'une ligne.
 
     === "Correct"
         !!! note "Entrée"
@@ -196,14 +196,19 @@ Auteur : Franck CHAMBON
             ligne1
             ligne2
     
-    !!! info "Vérifier"
+    !!! info "Vérifier l'exemple"
         En sélectionnant le texte, vous verrez deux espaces à la fin de `ligne 1` dans l'entrée correcte.
 
         Sans les deux espaces, le saut de ligne est considéré comme une unique espace entre les deux lignes, donc une seule ligne pour le navigateur.
 
-        C'est pratique d'avoir son code sans longue ligne, elles sont donc recollées ensuite. C'est une bonne pratique.
+    !!! tip "Bonne pratique"
+        C'est pratique d'avoir son code sans longue ligne,
+        on peut donc les couper **dans le source où on veut**.
+        Elles sont donc recollées ensuite, dans un seul paragraphe.
+        Ce paragraphe sera adapté à chaque écran, c'est au navigateur de choisir les sauts de ligne.
+        C'est une bonne pratique.
 
-        On n'utilise que rarement des sauts de ligne sans changer de paragraphes, vous ne devriez pas en faire, sauf raison motivée. On laisse au navigateur le soin de couper les lignes en fonction de l'affichage disponible : écran large, moyen ou restreint sur téléphone.
+        On n'utilise que **rarement** des sauts de ligne forcés (avec les deux espaces en fin de ligne), sans changer de paragraphes, vous ne devriez pas en faire, sauf raison motivée. On laisse au navigateur le soin de couper les lignes en fonction de l'affichage disponible : écran large, moyen ou restreint sur téléphone.
 
 !!! warning "Éditeur"
     - Certains éditeurs de texte suppriment les espaces de fin de ligne ; votre document serait modifié !
@@ -247,8 +252,10 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            Markdown est **très** utilisé sur de _nombreux_ forums
+            Markdown est **très** utilisé dans de _nombreuses_ situations
 
+            - Jupyter
+            - MkDocs
             - Discourse
             - GitLab
             - Reddit
@@ -259,10 +266,10 @@ Auteur : Franck CHAMBON
             ```
 
         !!! done "Rendu"
-            Markdown est **très** utilisé sur de _nombreux_ forums
+            Markdown est **très** utilisé dans de _nombreuses_ situations
 
-            - Discourse
-            - GitLab
+            - Jupyter
+            - MkDocs
             - Reddit
             - Qt
             - Stack Overflow
@@ -273,8 +280,10 @@ Auteur : Franck CHAMBON
         ??? info "Code HTML"
 
             ```html
-            <p>Markdown est <strong>très</strong> utilisé sur de <em>nombreux</em> forums</p>
+            <p>Markdown est <strong>très</strong> utilisé dans de <em>nombreuses</em> situations</p>
             <ul>
+            <li>Jupyter</li>
+            <li>MkDocs</li>
             <li>Discourse</li>
             <li>GitLab</li>
             <li>Reddit</li>
@@ -445,16 +454,16 @@ Auteur : Franck CHAMBON
 !!! abstract "Définitions"
     - L'emphase faible sert à faire ressortir discrètement du texte. Elle est **souvent** en _italique_, mais on peut changer cela dans une feuille de style en cascade (CSS).
     - De même, l'emphase forte est souvent en gras, mais on pourrait décider dans la feuille CSS de modifier ce style en couleur rouge et souligné en noir. Et puis changer un autre jour ; l'ensemble du document soumis à la feuille CSS est modifié.
-    - En HTML, ces balises sont
 
+    ??? info "Balises HTML"
         - `<em>` pour l'emphase faible
         - `<strong>` pour l'emphase forte
-    - Il existe aussi en HTML des balises pour forcer l'italique ou le gras, elles sont souvent déconseillées.
-    - En Markdown, il n'y en a pas. Cependant, on peut souvent inclure des balises HTML au milieu du Markdown. Ce sera dans la partie avancée...
+        - il en existe d'autres.
+        - En Markdown, on peut aussi inclure quelques balises HTML au milieu du Markdown. Ce sera dans la partie avancée... Dans un premier temps, on recommande de ne pas en inclure.
 
 !!! tip "Astérisque et tiret-bas"
     === "L'emphase faible"
-        Le tiret-bas est recommandé sur l'astérisque.
+        Le tiret-bas est recommandé.
 
         !!! note "Entrée"
 
@@ -472,7 +481,7 @@ Auteur : Franck CHAMBON
             ```
 
     === "L'emphase forte"
-        L'astérisque est recommandé sur le tiret-bas.
+        L'astérisque est recommandé.
 
         !!! note "Entrée"
 
@@ -728,7 +737,7 @@ Auteur : Franck CHAMBON
     Une bonne pratique est de renseigner un texte alternatif, il est utilisé par les robots.
 
     - Certains robots lisent à voix haute le contenu pour des humains, les images sont remplacées par le texte alternatif lu. Utile pour les mal-voyants.
-    - Certains robots font de l'indexation de site, un texte alternatif aide au référencement.
+    - Certains robots font de l'indexation de site, un bon texte alternatif aide au référencement.
     - Si la cible n'est plus disponible, cela arrive, le texte alternatif remplace l'image.
 
 !!! warning "absolu ou relatif"
@@ -748,7 +757,7 @@ Auteur : Franck CHAMBON
 
         ```markdown
         | Objectif | Markdown | Rendu |
-        |----------|----------|-------|
+        |---------|-------------|---|
         | Créer un lien    | `[texte cliquable](mon_lien.fr)` | [texte cliquable](mon_lien.fr) |
         | Emphase faible   | `Un _mot_ discret`    | Un _mot_ discret   |
         | Emphase forte    | `Un **mot** visible`  | Un **mot** visible |
@@ -801,7 +810,7 @@ Auteur : Franck CHAMBON
         ```
 
     !!! info "Quelques informations"
-        - Il n'est pas nécessaire que les tubes soient bien alignés.
+        - Il n'est **pas nécessaire** que les tubes soient bien alignés.
         - On peut inclure du Markdown dans les cellules.
         - La seconde ligne propose des options pour chaque colonne.
             - `|:---|` pour un alignement à gauche
@@ -832,7 +841,7 @@ Auteur : Franck CHAMBON
     ```
 
 !!! example "Exemple"
-    Pour la liste $[0, 1, 1, 2, 3, 5, 8, 13]$, on souhaite le rendu
+    Pour la liste $[0, 1, 1, 2, 3, 5, 8, 13]$, on souhaite un premier rendu
 
     |n|0|1|2|3|4|5|6|7|
     |-|-|-|-|-|-|-|-|-|

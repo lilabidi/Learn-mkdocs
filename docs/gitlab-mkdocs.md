@@ -1,5 +1,7 @@
 # Hébergement du site
 
+:warning: page encore en brouillon. Merci de signaler toute aide complémentaire qui pourrait être apportée.
+
 ## Le choix de GitLab
 
 !!! info "Plusieurs solutions"
@@ -25,7 +27,7 @@
 
     - Sur GitLab, il y a une façon raisonnable de faire :
 
-        === "Méthode"
+        === "Méthode automatique"
             - Modifier un fichier source en Markdown.
             - Vérifier le résultat avec `mkdocs serve`.
             - Avec Git, faire un `commit`, puis un `push`.
@@ -38,7 +40,7 @@
 
     1. Modifier la source. **Obligatoire** : vous voulez modifier votre site, non ?
     2. Vérifier le résultat avec `mkdocs serve`. **Facultatif** : vous êtes certain de votre coup ?
-    3. Utiliser Git. **Obligatoire** (en vrai non, mais ce serait bien plus complexe). Vous souhaitez que votre modification reste en local, ou que le monde entier soit au courant ?
+    3. Utiliser Git. **Obligatoire** (en vrai non, mais ce serait bien plus complexe). Vous souhaitez que votre modification reste en local, ou que le document soit accessible sur le web ?
 
 !!! done "C'est facile !"
     Une fois tout configuré, l'objet de cette page, il suffit de faire comme cet exemple animé.
@@ -65,9 +67,10 @@
         - une modification d'un code source (celui-ci même).
         - Un `commit` grâce à l'outil graphique de VSCodium (en haut à gauche).
         - Un `push`, toujours avec VSCodium.
-        - Cela peut aussi se faire avec d'autres éditeurs...
+        - Cela peut aussi se faire avec d'autres éditeurs, ou en ligne de commande...
         - Il est totalement inutile d'aller voir sur GitLab le déroulé des opérations.
         - On peut continuer le travail de modification.
+        - À chaque `push` le site sera automatiquement à jour en quelques instants.
 
 !!! abstract "Comment cela fonctionne-t-il ?"
     Pour modifier le source, c'est en local. Vous modifiez un fichier Markdown, une image ou tout autre document. Les autres sections de ce tutoriel servent à ça. La vérification va souvent de paire avec `mkdocs serve`.
@@ -77,7 +80,7 @@
     - À chaque étape importante on fait un `commit` qui décrit l'ensemble des modifications, un peu comme un journal de bord. On peut faire plusieurs `commit` sans faire de `push`. Un `commit` s'accompagne toujours d'un commentaire.
     - Lorsqu'on souhaite synchroniser son travail avec le dépôt distant, on fait un `push`. L'ensemble des modifications est envoyée avec les étapes de transitions évoquées par les `commit`.
     
-    Techniquement, on pourrait revoir l'historique du dépôt `commit` par `commit`. Dans le cadre d'un travail collaboratif, chaque `commit` est signé de son auteur. C'est au moment du `push` que l'authentification est vérifiée. La méthode la plus efficace est de passer `SSH`.
+    Techniquement, on pourrait revoir l'historique du dépôt `commit` par `commit`. Dans le cadre d'un travail collaboratif, chaque `commit` est signé de son auteur. C'est au moment du `push` que l'authentification est vérifiée, du local vers le dépôt. La méthode la plus efficace est d'utiliser le protocole `SSH`.
 
 !!! faq "De quoi a-t-on besoin ?"
     - D'un compte sur [GitLab](https://gitlab.com/). On supposera que c'est déjà le cas.
@@ -101,14 +104,30 @@ Si vous n'avez pas d'éditeur de texte minimaliste, c'est le moment.
         Dans un terminal
 
         ```bash
-        $ sudo apt install micro
+        $ sudo apt install micro xclip
         ```
 
     === "Mac"
-        ???
+        Avec Homebrew
+
+        ```bash
+        $ brew install micro
+        ```
+
+        Consulter la [note](https://github.com/zyedidia/micro#macos-terminal) qui conseille d'utiliser un meilleur émulateur de terminal : [iTerm2](https://iterm2.com/)
 
     === "Windows"
-        ???
+        Avec les gestionnaires de paquet [Chocolatey](https://chocolatey.org/) ou [Scoop](https://github.com/lukesampson/scoop).
+
+        === "Chocolatey"
+            ```bash
+            $ choco install micro
+            ```
+
+        === "Scoop"
+            ```bash
+            $ scoop install micro
+            ```
 
 ## Configuration de git
 
@@ -127,6 +146,26 @@ $ git config --global user.email johndoe@example.com
 $ git config --global core.editor micro
 ```
 
+
+
+Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3%A0-la-premi%C3%A8re-utilisation-de-Git
+
+
+??? warning "Le cas de Windows"
+    Sous Windows, si vous souhaitez utiliser un éditeur de texte différent, vous devez spécifier le chemin complet vers son fichier exécutable. Ce chemin dépend de l’installation de votre éditeur de texte.
+
+    Dans le cas de Notepad++, un éditeur de texte populaire pour la programmation, vous souhaiterez peut-être utiliser la version 32-bit, car au moment d’écrire ces lignes, la version 64-bit ne supporte pas tous les plug-ins. Si vous êtes sur un Windows 32-bit, ou si vous avez un éditeur 64-bit sur un OS 64-bit, vous utiliserez une commande du type :
+
+    $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+
+
+
+
+
+
+
+
 ## Authentification SSH
 
 !!! tip "Choix du commentaire sur la clé"
@@ -137,15 +176,18 @@ $ git config --global core.editor micro
 
 === "Avec Android"
 
-    On choisit par exemple `Francky sur tablette` comme commentaire.
+    Avec par exemple `Francky sur tablette` comme commentaire.
 
-    Dans **Termux**, on lance les mises à jour et l'installation de `openssh`
+    !!! tip "Installation"
+        Dans **Termux**, on lance les mises à jour et l'installation de `openssh`
 
-    ```bash
-    $ apt update
-    $ apt upgrade
-    $ apt install openssh
-    ```
+        ```bash
+        $ apt update
+        $ apt upgrade
+        $ apt install openssh
+        ```
+
+    Passer à la création de la clé
 
     ```bash
     $ ssh-keygen -t ed25519 -C "Francky sur tablette"
@@ -166,21 +208,24 @@ $ git config --global core.editor micro
     Identity added: /data/data/com.termux/files/home/.ssh/id_ed25519 (Francky sur tablette)
     ```
 
-    Pour copier la clé publique
+    !!! tip "Copier la clé **publique**"
+        Penser à la complétion automatique avec la touche ++tab++
 
-    ```bash
-    $ cat ~/.ssh/id_ed25519.pub
-    ```
+        Ne pas oublier le `.pub` à la fin, `pub` comme public.
 
-    On peut alors laisser son doigt sur l'écran, et sélectionner de `ssh-ed...` jusqu'à la fin du commentaire de clé. On peut copier.
+        ```bash
+        $ cat ~/.ssh/id_ed25519.pub
+        ```
 
-    On se rend sur GitLab (connecté à son compte), dans "Profil", puis "Clefs SSH" : <https://gitlab.com/-/profile/keys>
+        On peut alors laisser son doigt sur l'écran, et sélectionner de `ssh-ed...` jusqu'à la fin du commentaire de clé. On peut copier.
 
-    On peut coller la clé publique à l'endroit idoine, on lui choisit un **Titre** qui sera public ; du même goût que le commentaire c'est bien.
+        On se rend sur GitLab (connecté à son compte), dans "Profil", puis "Clefs SSH" : <https://gitlab.com/-/profile/keys>
+
+        On peut coller la clé publique à l'endroit idoine, on lui choisit un **Titre** qui sera public ; du même goût que le commentaire c'est bien.
 
 === "Avec Linux"
 
-    On choisit par exemple `Francky sur ordi fixe` comme commentaire.
+    Avec par exemple `Francky sur ordi fixe` comme commentaire.
 
     Dans un **terminal**, dans cet exemple, le login sera `francky` 
 
@@ -203,19 +248,22 @@ $ git config --global core.editor micro
     Identity added: /data/data/com.termux/files/home/.ssh/id_ed25519 (Francky sur tablette)
     ```
 
-    Pour copier la clé publique
+    !!! tip "Copier la clé publique"
+        Penser à la complétion automatique avec la touche ++tab++
 
-    ```bash
-    $ micro ~/.ssh/id_ed25519.pub
-    ```
+        Ne pas oublier le `.pub` à la fin, `pub` comme public.
 
-    On peut alors tout sélectionner (au clavier ou à la souris) de `ssh-ed...` jusqu'à la fin du commentaire de clé.
-    
-    Avec `micro` les raccourcis clavier sont classiques : ++ctrl+a++ pour tout sélectionner et ++ctrl+c++ pour copier.
+        ```bash
+        $ micro ~/.ssh/id_ed25519.pub
+        ```
 
-    On se rend sur GitLab (connecté à son compte), dans "Profil", puis "Clefs SSH" : <https://gitlab.com/-/profile/keys>
+        On peut alors tout sélectionner (au clavier ou à la souris) de `ssh-ed...` jusqu'à la fin du commentaire de clé.
+        
+        Avec `micro` les raccourcis clavier sont classiques : ++ctrl+a++ pour tout sélectionner et ++ctrl+c++ pour copier.
 
-    On peut coller la clé publique à l'endroit idoine, on lui choisit un **Titre** qui sera public ; du même goût que le commentaire c'est bien.
+        On se rend sur GitLab (connecté à son compte), dans "Profil", puis "Clefs SSH" : <https://gitlab.com/-/profile/keys>
+
+        On peut coller la clé publique à l'endroit idoine, on lui choisit un **Titre** qui sera public ; du même goût que le commentaire c'est bien.
 
 === "Avec Mac"
 
@@ -238,8 +286,8 @@ $ git config --global core.editor micro
     - et un `README.md` minimaliste.
 3. Ensuite, lui donner une licence.
     - Vous pouvez choisir un modèle (_template_), et dans le menu déroulant, à la fin une licence populaire comme `GNU GPL V3.0`
-4. À la racine de votre projet, il y a un menu déroulant `Clone`. Copier la section `Clone with SSH`.
-5. Enfin ouvrir un terminal dans un dossier comme `/Documents`, vous pourrez compléter après `git clone` en collant votre sélection.
+4. À la racine de votre projet, il y a un menu déroulant `Clone`. **Copier** la section `Clone with SSH`.
+5. Enfin ouvrir un terminal dans un dossier comme `/Documents`, vous pourrez le **coller après** `git clone` en collant votre sélection.
 
     ```bash
     git clone git@gitlab.com:<votre super projet>
@@ -247,15 +295,19 @@ $ git config --global core.editor micro
 
 ## Création de son site
 
-Entrer dans le répertoire qui contient le `README.md`, et créer un nouveau site avec MkDocs.
+Entrer dans le dossier qui contient le `README.md`, et au choix
 
-Vous pourrez **ensuite** utiliser des fichiers que vous avez déjà préparés ailleurs en les copiant là.
+- Créer un nouveau site avec MkDocs dans ce dossier.
+
+- Déplacer un projet MkDocs que vous avez créé. Ne pas oublier les fichiers cachés.
+
+Le fichier `mkdocs.yml` devra se trouver dans le même dossier que votre `README.md`.
 
 ## Mise en place de l'intégration continue
 
 C'est là que la magie opère, nous allons ajouter un fichier pour automatiser l'intégration continue (CI).
 
-Dans le même répertoire que le fichier `mkdocs.yml`, ajouter un fichier `.gitlab-ci.yml` contenant
+Dans le même dossier que le fichier `mkdocs.yml`, ajouter un fichier `.gitlab-ci.yml` contenant
 
 ```yml
 image: python:latest
@@ -273,15 +325,25 @@ pages:
 
 ## Votre premier push
 
-Toujours dans le même répertoire que `mkdocs.yml`, créer un fichier `.gitignore` qui contient
+Toujours dans le même dossier que `mkdocs.yml`, créer un fichier `.gitignore` qui contient
 
 ```
 site/
 ```
 
-**Objectif** : nous n'avons pas besoin de créer notre site en local avec `mkdocs build`, et même si nous le créons, nous n'avons pas besoin de suivre l'historique de cette production. Seul l'historique des sources est pertinente.
+**Objectif** : nous n'avons pas besoin de créer notre site en local avec `mkdocs build`, et même si nous le créions, nous n'aurions pas besoin de suivre l'historique de cette production. Seul l'historique des sources est pertinente.
 
-On peut alors utiliser VSCodium comme dans l'animation tout en haut pour faire des `commit` et `push`.
+On peut alors utiliser VSCodium comme dans l'animation en haut de cette page pour faire des `commit` et `push`.
+
+!!! tip "`git fetch` ?"
+    VSCodium vous propose de faire des `git fetch` régulièrement.
+
+    Si vous travailler seul, depuis un seul poste, c'est inutile.
+
+    Si vous travaillez à plusieurs, ou depuis plusieurs postes, c'est utile. **Oui**.
+
+    `git fetch` permet de vérifier si le dépôt contient des mises à jour que vous n'auriez pas en local. Soit par ce qu'un collègue a travaillé, soit vous travaillez avec une autre machine qui n'a pas encore la dernière version de votre site.
+
 
 Avec Android, il faut le faire dans le terminal ; nous le verrons plus tard...
 
@@ -292,3 +354,9 @@ Dans votre projet GitLab, il y a un menu
 - :gear: `Paramètres`, puis `Pages`
 - là se trouve l'adresse de votre site créé automatiquement.
 
+## Cloner votre projet sur une autre machine
+
+Vous souhaitez travailler sur un autre machine, il faut au choix
+
+- Soit (plus simple) lui faire créer une nouvelle clé SSH et l'ajouter à GitLab ; même procédure que précédemment.
+- Soit copier votre clé sur votre machine, et la configurer.

@@ -2,9 +2,17 @@
 
 Auteur : Franck CHAMBON
 
-Présentation des premiers pas pour construire un site web statique avec [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/).
+!!! tip "Objectifs"
+    1. Introduction à Markdown pour son utilisation
+        - avec Jupyter, pour créer des carnets,
+        - avec MkDocs, pour participer ou créer de la documentation comme celle-ci.
+    2. Présentation des premiers pas pour héberger un site web statique avec [MkDocs for Material](https://squidfunk.github.io/mkdocs-material/), sur [GitLab](https://gitlab.com/) en particulier.
 
-À l'instar de cette page, il y a quelques éléments dynamiques et la construction est assez élémentaire pour être proposée aux élèves en SNT, ou bien en NSI pour la documentation de projet.
+    À l'instar de cette page, il y a quelques éléments dynamiques et la construction est assez élémentaire pour être proposée
+    
+    - aux élèves en SNT, pour le début
+    - aux élèves en NSI, pour la documentation de projet,
+    - aux collègues enseignants pour du travail collaboratif simplifié.
 
 ## Prérequis
 
@@ -36,22 +44,31 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
             ```
     === "Linux"
         ??? tip "Administration"
-            Dans un terminal entrer
+            ![Linux à jour](images/update_linux.png){align=right width=400}
+            Mettre à jour via une interface graphique, ou bien dans un terminal avec
             ``` bash
             sudo apt update
             sudo apt upgrade
             sudo dpkg --configure -a
-            sudo apt install python3-pip
             ```
-            Redémarrer, pour que le `PATH` inclut bien votre chemin de binaires, c'est probablement déjà le cas...
 
             !!! info "Gestionnaire de paquets Python"
                 [pip](https://fr.wikipedia.org/wiki/Pip_(gestionnaire_de_paquets)) est le gestionnaire de paquets Python, suivant votre machine la commande est `pip` ou `pip3`.
 
-                Dans la suite on la désignera par `pip`, si c'est `pip3` ; adapter.
+                Dans la suite on la désignera par `pip`,
+                
+                - Si c'est `pip3` ; adapter.
+
+            Vérifier (cf infra) la présente de `pip` ou `pip3`, et l'installer le cas échéant
+
+            !!! tip "Installation de `pip`"
+                ```
+                sudo apt install python3-pip
+                ```
+                **Redémarrer** alors, pour que le `PATH` inclut bien votre chemin de binaires, même si c'est probablement déjà le cas...
 
 
-        !!! example "Mises à jour"
+        !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
             ``` bash
             pip install --upgrade pip
@@ -59,21 +76,38 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
     
     === "Mac"
         ??? tip "Administration"
-            Aucune idée... toute aide bienvenue
+            <!-- Merci @sebhoa pour la capture -->
+            ![Mac à jour](images/update_mac.jpg){align=right width=400}
+            Mettre à jour le système via les `update` proposées.
         
-        !!! example "Mises à jour"
+
+            !!! info "Gestionnaire de paquets Python"
+                [pip](https://fr.wikipedia.org/wiki/Pip_(gestionnaire_de_paquets)) est le gestionnaire de paquets Python, suivant votre machine la commande est `pip` ou `pip3`.
+
+                Dans la suite on la désignera par `pip`,
+                
+                - Si c'est `pip3` ; adapter.
+
+            Vérifier (cf infra) la présente de `pip` ou `pip3`, et l'installer le cas échéant
+
+            !!! tip "Installation de `pip`"
+                ```
+                sudo apt install python3-pip
+                ```
+                **Redémarrer** alors, pour que le `PATH` inclut bien votre chemin de binaires, même si c'est probablement déjà le cas...
+
+
+        !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
             ``` bash
             pip install --upgrade pip
             ```
 
-            À confirmer ????
-
     === "Windows"
         ??? tip "Administration"
             Aucune idée... toute aide bienvenue
         
-        !!! example "Mises à jour"
+        !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
             ``` bash
             python -m pip install --upgrade pip
@@ -120,20 +154,15 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
 ## Créer un nouveau MkDocs
 
 !!! tip "Votre expérience"
-    Dans un terminal, remplacer `expérience` par un identifiant de votre choix. Sans espace, c'est mieux.
+    Créer un dossier que vous pouvez nommer `expérience`, par exemple.
 
-    ```bash
-    mkdocs new expérience
-    cd expérience
-    ```
-
-    Si vous étiez **déjà** dans un répertoire vide pour votre expérience
+    Ouvrir un terminal dans ce dossier **vide**.
 
     ```bash
     mkdocs new .
     ```
 
-    `.` désignant le répertoire courant.
+    `.` désigne le dossier courant.
 
 !!! done "Vérification"
     Vous devriez avoir eu le message correspondant suivant
@@ -154,7 +183,7 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
     À chaque modification d'un fichier, le site sera mis à jour.
 
 !!! tip "Construction à la volée"
-    Dans un terminal, entrer
+    Dans un terminal, toujours dans ce même dossier, entrer
 
     ```bash
     mkdocs serve
@@ -180,21 +209,19 @@ Présentation des premiers pas pour construire un site web statique avec [MkDocs
 
         Config file '...expérience/docs/mkdocs.yml' does not exist.
         </pre>
-        C'est que vous avez lancé la commande dans le mauvais répertoire.
+        C'est que vous avez lancé la commande dans le mauvais dossier.
 
 !!! tip "Visionnage en direct"
     Ouvrir votre navigateur Web à l'adresse indiquée.
 
-    Avec Linux, il suffit de faire un clic-droit sur l'adresse [http://127.0.0.1:8000/](http://127.0.0.1:8000/), puis `Ouvrir le lien`.
-    
-    Mettre ce lien dans les en marque-page ; vous y reviendrez souvent :wink:.
+    **Astuce** : Mettre ce lien [http://127.0.0.1:8000/](http://127.0.0.1:8000/) dans les marque-pages ; vous y reviendrez souvent :wink:.
 
-    Si vous avez un second écran, c'est le moment d'y placer le navigateur :sunglasses:
+    Si vous avez un second écran, c'est le moment d'y placer cet onglet du navigateur :sunglasses:
 
     ![premier affichage](./images/premier.png)
 
 !!! note "Modifions le site"
-    Les fichiers dans le répertoire ont pour l'instant cette architecture
+    Les fichiers dans le dossier ont pour l'instant cette architecture
 
     ```
     .
