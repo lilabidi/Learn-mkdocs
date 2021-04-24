@@ -158,6 +158,11 @@ Auteur : Franck CHAMBON
 ??? info "Claviers du futur"
     D'ici quelque<u>s</u> ~~temps~~ années les claviers respectant la nouvelle norme AFNOR donneront accès rapidement à ×, ÷, et seront plus commodes pour écrire certaines lettres comme É, È, Ç, ...
 
+    En attendant, avec Linux, il suffit
+    
+    - de taper sur ++altgr+";"++ pour avoir `×`
+    - de taper sur ++altgr+":"++ pour avoir `÷`
+
 !!! tip "Rappel cellule Python"
     Dans une cellule de code Python, c'est plus facile :
 
