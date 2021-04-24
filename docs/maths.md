@@ -523,7 +523,21 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
 !!! note "Exercice 6 : Théorème de Pythagore"
     !!! abstract "Un example classique"
-        ![exo pythagore](assets/pyth1.png)
+        $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC = 28$. Calculer $BC$.
+
+        Réponse :
+        
+        $ABC$ est un triangle rectangle en $A$, d'après le théorème de Pythagore, on a :
+        
+        $BC^2 = AB^2 + AC^2$
+
+        $BC^2 = 45^2 + 28^2$
+
+        $BC^2 = 2809$, avec $BC$ positif, donc
+
+        $BC = \sqrt{2809}$
+
+        $BC = 53$ ; la longueur de $BC$ est $53$.
 
     En vous inspirant du modèle ci-dessus, rédiger une solution au problème suivant :
 
@@ -533,7 +547,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     À vous de modifier, compléter (et réutiliser) le code suivant :
 
     ```latex
-    $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC=28$. Calculer $BC$.
+    $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC = 28$. Calculer $BC$.
 
     Réponse :
     
@@ -542,25 +556,27 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     $BC^2 = $
     ```
 
-
----
-
-À mettre au propre...
-
 ## Les indices `a_n`
 
-Mêmes principes que pour les exposants.
-> `$_{indice}$` donne $_{indice}$
+!!! tip "Le tiret-bas"
+    Markdown
+    : `#!latex $a_{n}$`
+    
+    Rendu
+    :  $a_{n}$
 
-**Attention** à un point particulier, `indice` est ici en mode mathématique.
-> Pour écrire `indice` comme du texte, on utilise la commande `\text{ }`
->
->`$_\text{indice}$` donne $_\text{indice}$
+!!! warning "Mode mathématique"
+    Écrire en indice de cette manière est pour le mode mathématique, entre `$`.
 
-Pas d'exercice ici.
+    L'intérieur des accolades est un contenu mathématique, pas du texte.
 
+    Pour écrire du texte en indice, à l'intérieur du mode mathématique, on utilise `\text`.
+    
+    Par exemple, pour le volume d'un cylindre $V_\text{cylindre}$, on écrit `#!latex $V_\text{cylindre}$`.
 
-## Écriture scripte, pour aires, volumes, cercles...
+    Nous verrons à la section suivante comment utiliser une écriture cursive pour un plus joli $\mathscr V_\text{cylindre}$
+
+## Écriture scripte, pour aires, volumes, cercles
 
 Pour démarquer certaines lettres, en mode **math**-ématique, on utilise l'écriture **scr**-ipte,
 > d'où la commande `$\mathscr{ }$`.
