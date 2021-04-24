@@ -185,7 +185,7 @@ Auteur : Franck CHAMBON
     3. Modifier l'affichage pour insérer de l'espace inter-milliers.
 
     ??? done "Solution"
-        1.  
+        1. Dans une console Python
         ```python
         >>> 3 * 3 * 13 * 6353 * 8969 * (1 + 1480 * 1001001)
         9876543210123456789
@@ -214,7 +214,7 @@ Auteur : Franck CHAMBON
 
         On utilise les espace inter-milliers pour les nombres à **5 chiffres ou plus**. Pour les nombres à 4 chiffres, c'est toléré.
 
-        ??? bug "Espace trop important ?"
+        ??? bug "Espace trop importante ?"
             Pour les puristes, l'espace est un peu trop important avec `~`...
 
             La bonne solution est d'employer `\,` à la place.
@@ -240,13 +240,19 @@ Auteur : Franck CHAMBON
     4. Pour les plus curieux à ce sujet, [un peu de lecture](https://fr.wikipedia.org/wiki/Fraction_continue#D%C3%A9veloppement_en_fraction_continue_du_nombre_%CF%80 "Article Wikipédia")
 
     ??? done "Solution"
-        1.  
+        1. Dans une console Python
         ```python
         >>> 
         3.1415929203539825
         ```
-        2. Markdown : `#!latex $3 + 1 \div (7 + 1 \div 16) \approx \pi$`  
-        Rendu : $3 + 1 \div (7 + 1 \div 16) \approx \pi$
+        2. Markdown
+        : ```latex
+        $3 + 1 \div (7 + 1 \div 16) \approx \pi$
+        ```
+
+            Rendu
+        : $3 + 1 \div (7 + 1 \div 16) \approx \pi$
+        
         3. On a les étapes
         
         $$A = 3 + 1 ÷ (7 + \frac{1}{16})$$
