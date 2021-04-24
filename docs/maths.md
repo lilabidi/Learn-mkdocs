@@ -319,7 +319,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
     Voilà donc la suite de notre programme. Pas d'exercices ici, mais plein ensuite !
 
-## Les fractions ; `$\dfrac{ }{ }$`
+## Les fractions `\dfrac`
 
 !!! abstract "Le prototype et quelques exemples"
     |Code|Résultat affiché|
@@ -377,104 +377,175 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
         \dfrac{355}{113} \approx \pi$
         ```
 
+??? danger "Pour aller plus loin"
+    - Si le contenu d'un paramètre entre accolades n'est qu'un seul caractère, les accolades ne sont pas nécessaires, on peut les remplacer par de l'espace.
+    - Si ce caractère est un chiffre, on peut même le coller à `\dfrac`, mais on ne le conseille pas, pour des raisons de lisibilité.
 
+    Exemples valides mais non conseillés :
 
-
-
-
-
-
-Remarques
-
-- Si le contenu d'un paramètre entre accolades n'est qu'un seul caractère, les accolades ne sont pas nécessaires.
-- Si ce caractère est un chiffre, on peut même le coller à `\dfrac`
-
-Exemples :
-
->|Code|Résultat|
->|----|--------:|
->|`$\dfrac12$` | $\dfrac12$ |
->|`$\dfrac1x$` | $\dfrac1x$ |
->|`$\dfrac1{x+y}$` | $\dfrac1{x+y}$ |
->|`$\dfrac{1+x}y$` | $\dfrac{1+x}y$ |
->|`$\dfrac ab$` | $\dfrac ab$ |
-
-
+    >|Code|Résultat|
+    >|----|--------:|
+    >|`$\dfrac12$` | $\dfrac12$ |
+    >|`$\dfrac1x$` | $\dfrac1x$ |
+    >|`$\dfrac1{x+y}$` | $\dfrac1{x+y}$ |
+    >|`$\dfrac{1+x}y$` | $\dfrac{1+x}y$ |
+    >|`$\dfrac ab$` | $\dfrac ab$ |
 
 ## Les parenthèses à la bonne taille
 
-Si on veut placer un bloc (une expression) entre parenthèses, et que l'expression est plus haute que la normale (avec des fractions par exemple), alors les parenthèses normales ne sont pas assez hautes.
+!!! abstract "Quel est le problème ?"
+    Si on veut placer un bloc (une expression) entre parenthèses, et que l'expression est plus haute que la normale (avec des fractions par exemple), alors les parenthèses normales ne sont pas assez hautes.
 
-Problème :
-> `$( \dfrac ab )$` donne $( \dfrac ab )$ ; qui est disgracieux.
+    === "Parenthèses trop petites"
+        Markdown
+        : `#!latex $( \dfrac{a}{b} )$`
 
-Solution :
-> `$\left( \dfrac ab \right)$` donne $\left( \dfrac ab \right)$ ; qui est correct
+        Rendu
+        : $( \dfrac{a}{b} )$
 
+!!! done "Solution"
+    - On utilisera `#!latex $\left($` pour la parenthèse gauche.
+    - On utilisera `#!latex $\right)$` pour la parenthèse droite.
 
-## Les puissances `$a^n$` pour $a^n$
+    === "Parenthèses adaptées"
+        Markdown
+        : `#!latex $\left( \dfrac{a}{b} \right)$`
+    
+        Rendu
+        : $\left( \dfrac{a}{b} \right)$
 
-> De manière générale `$^{exposant}$` donne $^{exposant}$
+??? danger "Pour aller plus loin"
+    - On utilisera `#!latex $\left[$` pour le crochet gauche.
+    - On utilisera `#!latex $\right]$` pour le crochet droit.
+    - On utilisera `#!latex $\left\{$` pour l'accolade gauche. :warning: Noter qu'elle a été échappée.
+    - On utilisera `#!latex $\right\}$` pour l'accolade droite. :warning: Noter qu'elle a été échappée.
 
-**Attention** à un point particulier, `exposant` est ici en mode mathématique.
-> Pour écrire `exposant` comme du texte, on utilise la commande `\text{ }`
->
->`$^\text{exposant}$` donne $^\text{exposant}$
+    === "Example avec crochet"
+        Markdown
+        : `#!latex $\left[ \dfrac{a}{b} \right]$`
+    
+        Rendu
+        : $\left[ \dfrac{a}{b} \right]$
 
+    === "Example avec accolade"
+        Markdown
+        : `#!latex $\left\{ \dfrac{a}{b} \right\}$`
+    
+        Rendu
+        : $\left\{ \dfrac{a}{b} \right\}$
 
-### Exercice 5 : règles et puissances
+    === "Example complexe"
+        Markdown
+        : `#!latex $\left[ \left(\dfrac{a}{b} + \dfrac{c}{d} \right) \times
+        \left\{  \dfrac {\dfrac{e}{f}} {\dfrac{g}{h}}   \right\}  \right]$`
+    
+        Rendu
+        : $\left[ \left(\dfrac{a}{b} + \dfrac{c}{d} \right) \times
+        \left\{  \dfrac {\dfrac{e}{f}} {\dfrac{g}{h}}   \right\}  \right]$
 
-Compléter la cellule Markdown ci-dessous, au sujet des formules sur les puissances.
+??? danger "Pour aller encore plus loin"
+    - On utilisera `#!latex $\right.$` pour finir à droite une sélection commencée par un délimiteur gauche.
+    - On utilisera `#!latex $\left.$` pour commencer à gauche, qui se finira par un délimiteur droit.
+    - On a le droit de commencer à **gauche** par une parenthèse (ou crochet ou accolade) qui **ouvre**.
+    - On a le droit de finir à **droite** par une parenthèse (ou crochet ou accolade) qui **ferme**.
 
-> ![formules puissances](assets/puiss1.png)
+    === "Example"
+        Markdown
+        : `#!latex $\left] \dfrac{a}{b} \right.$`
+    
+        Rendu
+        : $\left] \dfrac{a}{b} \right.$
 
+## Les puissances `a^n`
 
-Pour tous nombres $a$, $b$, $c$ non nuls, et tous entiers $n$, $m$, on a :
+!!! tip "L'accent circonflexe"
+    Markdown
+    : `#!latex $a^{n}$`
+    
+    Rendu
+    :  $a^{n}$
 
-$a^n \times a^m = $
+!!! warning "Mode mathématique"
+    Écrire en exposant de cette manière est pour le mode mathématique, entre `$`.
 
-$a^n \times b^n = $
+    L'intérieur des accolades est un contenu mathématique, pas du texte.
 
-$\dfrac{a^n}{a^m} = $
+    Pour écrire deuxième en abrégé, on écrit `2^e^` pour 2^e^, sans entrer dans le mode mathématique.
 
-$\dfrac{a^n}{b^n} = $
+!!! note "Exercice 5 : règles et puissances"
+    !!! abstract "Les règles"
+        Pour tous nombres $a$, $b$, $c$ non nuls, et tous entiers $n$, $m$, on a :
 
-$\left(a^n\right)^m = $
+        $a^n \times a^m = a^{n+m}$
 
-$a^{-n} = $
+        $a^n \times b^n = (a \times b)^n$
 
+        $\dfrac{a^n}{a^m} = a^{n-m}$
+
+        $\dfrac{a^n}{b^n} = \left(\dfrac{a}{b}\right)^n$
+
+        $\left( a^n \right)^m = a^{n \times m}$
+
+        $a^{-n} = \dfrac {1} {a^n}$
+
+    Copier et compléter le code Markdown ci-dessous, au sujet des règles sur les puissances.
+
+    ```latex
+    Pour tous nombres $a$, $b$, $c$ non nuls, et tous entiers $n$, $m$, on a :
+
+    $a^n \times a^m = $
+
+    $a^n \times b^n = $
+
+    $\dfrac{a^n}{a^m} = $
+
+    $\dfrac{a^n}{b^n} = $
+
+    $\left( a^n \right)^m = $
+
+    $a^{-n} = $
+    ```
 
 ## La Racine carrée
 
-En anglais _**sq**uare-**r**oo**t**_ ; `sqrt` est massivement utilisé.
+!!! faq "Pourquoi `sqrt` ?"
+    En anglais _**sq**uare-**r**oo**t**_ ; `sqrt` est très souvent utilisé.
 
-Exemple : `$\sqrt{radicande}$` donne $\sqrt{radicande}$
-
-
-### Exercice 6 : Théorème de Pythagore
-
-![exo pythagore](assets/pyth1.png)
-
-En vous inspirant du modèle ci-dessus, rédiger une solution au problème suivant :
-> $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
+!!! done "Méthode"
+    Markdown
+    : `#!latex $\sqrt{x}$`
+    
+    Rendu
+    : $\sqrt{x}$
 
 
-À vous de modifier, compléter (et réutiliser) le code suivant :
+!!! note "Exercice 6 : Théorème de Pythagore"
+    !!! abstract "Un example classique"
+        ![exo pythagore](assets/pyth1.png)
 
-> $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC=28$. Calculer $BC$.
->
-> **Réponse** :
->
-> $ABC$ est un triangle rectangle en $A$, d'après le théorème de Pythagore, on a :
->
-> $BC^2 = $
+    En vous inspirant du modèle ci-dessus, rédiger une solution au problème suivant :
+
+    > $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
 
 
+    À vous de modifier, compléter (et réutiliser) le code suivant :
 
-> **Remarque** : le principe d'utiliser, modifier, compléter du code est largement utilisé dans l'enseignement. Il faut cependant savoir que certains codes sont protégés par du droit d'auteur.
+    ```latex
+    $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC=28$. Calculer $BC$.
+
+    Réponse :
+    
+    $ABC$ est un triangle rectangle en $A$, d'après le théorème de Pythagore, on a :
+    
+    $BC^2 = $
+    ```
 
 
-## Les indices `$a_n$` pour $a_n$
+---
+
+À mettre au propre...
+
+## Les indices `a_n`
 
 Mêmes principes que pour les exposants.
 > `$_{indice}$` donne $_{indice}$
