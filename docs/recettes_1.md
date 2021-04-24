@@ -155,6 +155,7 @@
     On souhaite pouvoir faire `` `#!math $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` ``
 
     - Mais le résultat `#!math $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` est non coloré...
+    - De même en utilisant `` `#!mardown $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$` ``
 
 !!! done "Exemple"
     On aimerait avoir `#!latex $\mathrm{e}^{\mathrm{i}\pi} + 1 = 0$`

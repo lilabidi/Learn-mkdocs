@@ -9,15 +9,36 @@ Auteur : Franck CHAMBON
 
     C'est utile pour Jupyter, CodiMD et MkDocs entre autres...
 
+
 ![](assets/MathJax.png){align=right}
 
 
 !!! done "Un tour d'horizon"
-    $$\sum\limits_{k\in\mathbb N^*} \frac 1 {k^2} = \frac {\pi^2}6 \quad \text{: Problème de Bâle, résolu par Leonhard Euler.}$$
+    !!! example "Exemple"
+        === "Rendu"
+            En 1735, Leonhard Euler résout le **problème de Bâle** en établissant la formule suivante :
 
-    Commençons par un tour d'horizon des possibilités en [comparant les deux moteurs](https://www.intmath.com/cg5/katex-mathjax-comparison.php "KaTeX vs MathJax") de rendu les plus répandus.
+            $$\sum\limits_{k\in\mathbb N^*} \frac 1 {k^2} = \frac {\pi^2}6$$
+        
+            Cependant, il ne démontrera rigoureusement son résultat qu’en 1741.
+        === "Markdown"
+            ```markdown
+            En 1735, Leonhard Euler résout le **problème de Bâle** en établissant la formule suivante :
 
-    Nous allons voir comment écrire des maths, en commençant par les choses les plus simples. Chaque partie contient des exercices à réaliser.
+            $$\sum\limits_{k\in\mathbb N^*} \frac 1 {k^2} = \frac {\pi^2}6$$
+        
+            Cependant, il ne démontrera rigoureusement son résultat qu’en 1741.
+            ```
+
+    !!! tip "KaTeX vs MathJax"
+        Commençons par un tour d'horizon des possibilités en comparant les deux moteurs de rendu les plus répandus.
+        
+        [Lancer le tour d'horizon](https://www.intmath.com/cg5/katex-mathjax-comparison.php "KaTeX vs MathJax"){.md-button }
+
+!!! faq "Que retenir ?"
+    [KaTeX](https://katex.org/) permet un rendu performant et plus rapide que [MathJax](https://www.mathjax.org/). La syntaxe est la même, héritée de l'écriture des mathématiques avec [LaTeX](https://fr.wikipedia.org/wiki/LaTeX).
+
+    Si vous ne savez pas l'utiliser, nous allons voir comment écrire des maths, **en commençant par les choses les plus simples**. Chaque partie contient des exercices à réaliser.
 
 ## La balise math `$`
 
@@ -51,7 +72,7 @@ Auteur : Franck CHAMBON
         |:--------:|:-----:|
         | `#!latex $$x+y= y +  x$$` | $x+y= y +  x$ |
 
-        :warning: Remarquer que l'espace est correctement mis dans tous les cas.
+        :warning: Remarquer que l'espace est correctement mis dans le rendu dans tous les cas.
 
     !!! done "2. Des maths insérés dans du texte"
         === "Incorrect"
@@ -68,11 +89,11 @@ Auteur : Franck CHAMBON
             Rendu
             : La somme de $123$ et $123$ est égale à $123 +123$.
 
-        :warning: Remarquer les différences d'écriture 123 et $123$.
+        :warning: Remarquer les différences d'écriture 123 et $123$ dans le rendu incorrect.
 
 ??? info "Remarques"
     1. Avec le premier exemple, on voit que l'espacement dans le rendu est correct, indépendamment de la source. C'est bien ! Nous n'avons pas en nous en soucier, le moteur gère très bien !
-    2. Avec le second exemple, bien voir la différence d'écriture des deux premiers $123$ (en mode `Incorrect`). Dans un souci de cohérence :
+    2. Avec le second exemple, version incorrecte, bien voir la différence d'écriture des deux premiers $123$. Dans un souci de cohérence :
         + Il vaut mieux mettre tous les nombres avec lesquels ont fait du calcul entre balises maths. Même status, même écriture !
         + Pour des années ou des numéros de page (par exemple), on peut les écrire sans balises maths. Tant qu'on ne fait pas de calcul avec ensuite.
     3. Les espaces sont gérées finement de manière globale.
@@ -82,12 +103,12 @@ Auteur : Franck CHAMBON
 !!! note "Motivation"
     L'inspiration du HTML vient de TeX, inventé par [Donald Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth "Article Wikipedia").
 
-    Écrire un document en utilisant LaTeX est une nécessité pour beaucoup d'étudiants en thèse et nombre de professionnels. Ce n'est pas [un apprentissage rapide](https://fr.wikibooks.org/wiki/LaTeX), mais cela permet d'obtenir une très grande qualité. **Ce n'est pas l'objectif de ce cours !** Cela peut néanmoins constituer une introduction.
+    Écrire un document en utilisant LaTeX est une nécessité pour beaucoup d'étudiants en thèse et nombre de professionnels. Ce n'est pas [un apprentissage rapide](https://fr.wikibooks.org/wiki/LaTeX), mais cela permet d'obtenir une très grande qualité. **Ce n'est pas l'objectif de ce cours !** Cela peut néanmoins constituer une introduction. Une [suite de l'apprentissage](http://www.learnlatex.org/fr/) possible.
 
     Utiliser Markdown, avec quelques connaissances de la balise maths LaTeX, permet de créer facilement des documents scientifiques honorables. Avec Jupyter, on peut facilement alterner entre cellule de texte (_avec des maths_) et cellule de code (_souvent Python_). **C'est l'objectif ce cours.**
 
 !!! example "Exemples avec des espaces"
-    On notera l'utilisation de `~` pour obtenir une espace insécable en mode maths.
+    On notera l'utilisation de `~` pour obtenir une [espace insécable](https://fr.wikipedia.org/wiki/Espace_ins%C3%A9cable) en mode maths.
 
     |Markdown|Rendu|Commentaire|
     |---|---:|:---|
@@ -145,16 +166,17 @@ Auteur : Franck CHAMBON
 
 !!! example "Exemple d'opérations"
     Markdown
-    : `#!latex $[5 + 3\times8 - (1 + 35\div5)](18  -  5 \times 2)$`
-    
+    : `#!latex $[5 + 3\times 8 - (1 + 35 \div 5)](18  -  5 \times 2)$`
+
     Rendu
-    : $[5 + 3\times8 - (1 + 35\div5)](18  -  5 \times 2)$
+    : $[5 + 3\times 8 - (1 + 35 \div 5)](18  -  5 \times 2)$
 
-!!! faq "Exercice 1 : expression numérique"
-    ![un calcul](assets/exo1.png)
+!!! note "Exercice 1 : expression numérique"
+    !!! example "Un palindrome"
+        $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001)$
 
-    1. Calculer avec une cellule Python l'expression numérique précédente,
-    2. puis afficher cette expression avec son résultat dans une cellule Markdown.
+    1. Calculer avec une cellule Python l'expression numérique précédente, c'est un palindrome.
+    2. Afficher cette expression avec son résultat dans une cellule Markdown.
     3. Modifier l'affichage pour insérer de l'espace inter-milliers.
 
     ??? done "Solution"
@@ -164,34 +186,370 @@ Auteur : Franck CHAMBON
         9876543210123456789
         ```
         2. Markdown
-        : `#!latex $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001) = 9876543210123456789$`
+        : 
+        ```latex
+        $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001) =
+        9876543210123456789$
+        ```
 
             Rendu
-            : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001) = 9876543210123456789$
+        : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001) =
+        9876543210123456789$
         
         3. Markdown
-        : `#!latex $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1~001~001) = 9~876~543~210~123~456~789$`
+        : 
+        ```latex
+        $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1~001~001) =
+        9~876~543~210~123~456~789$
+        ```
 
             Rendu
-            : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1~001~001) = 9~876~543~210~123~456~789$
+        : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1~001~001) =
+        9~876~543~210~123~456~789$
 
+        On utilise les espace inter-milliers pour les nombres à **5 chiffres ou plus**. Pour les nombres à 4 chiffres, c'est toléré.
 
-
-        ??? bug "Espace trop important"
+        ??? bug "Espace trop important ?"
             Pour les puristes, l'espace est un peu trop important avec `~`...
 
             La bonne solution est d'employer `\,` à la place.
 
             Markdown
-            : `#!latex $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1\,001\,001) = 9\,876\,543\,210\,123\,456\,789$`
+            : 
+            ```latex
+            $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1\,001\,001) =
+            9\,876\,543\,210\,123\,456\,789$
+            ```
 
             Rendu
-            : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1\,001\,001) = 9\,876\,543\,210\,123\,456\,789$
+            : $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1\,001\,001) =
+            9\,876\,543\,210\,123\,456\,789$
 
-!!! faq "Exercice 2 : première approximation de $\pi$"
-    ![un calcul](assets/exo2.png)
+!!! note "Exercice 2 : une approximation de $\pi$"
+    !!! example "Milü"
+        $3 + 1 \div (7 + 1 \div 16)$
 
     1. Calculer avec une cellule Python l'expression numérique précédente.
     2. Compléter alors le code `#!latex $3 + ... \approx \pi$`
     3. (maths) Écrire le membre de gauche comme une seule fraction.
     4. Pour les plus curieux à ce sujet, [un peu de lecture](https://fr.wikipedia.org/wiki/Fraction_continue#D%C3%A9veloppement_en_fraction_continue_du_nombre_%CF%80 "Article Wikipédia")
+
+    ??? done "Solution"
+        1.  
+        ```python
+        >>> 
+        3.1415929203539825
+        ```
+        2. Markdown : `#!latex $3 + 1 \div (7 + 1 \div 16) \approx \pi$`  
+        Rendu : $3 + 1 \div (7 + 1 \div 16) \approx \pi$
+        3. On a les étapes
+        
+        $$A = 3 + 1 ÷ (7 + \frac{1}{16})$$
+
+        $$A = 3 + 1 ÷ (\frac{7×16}{16} + \frac{1}{16})$$
+
+        $$A = 3 + 1 ÷ \frac{112+1}{16}$$
+
+        $$A = \frac{3×113}{113} + 1 × \frac{16}{113}$$
+
+        $$A = \frac{339}{113} + 1 × \frac{16}{113}$$
+
+        $$A = \frac{339+16}{113}$$
+
+        $$A = \frac{355}{113}$$
+
+        [Milü](https://en.wikipedia.org/wiki/Mil%C3%BC), est le nom donné à une approximation de $\pi$ découverte par le mathématicien and astronome chinois, Zǔ Chōngzhī (祖沖之), né en 429.
+
+## Du calcul littéral
+
+On peut bien sûr utiliser des variables mathématiques, elles seront écrites en italique, avec une police un peu différente.
+
+!!! example "Exemple 1 : calcul littéral"
+    Un code et son rendu :
+
+    Markdown
+    : 
+    ```latex
+    Pour tous nombres $k$, $a$, $b$, on a : $k(a+b) = ka + kb$
+    ```
+
+    Rendu
+    : Pour tous nombres $k$, $a$, $b$, on a : $k(a+b) = ka + kb$
+
+    :warning: Dans le rendu, comparer les lettres `a` (dans «on a», et dans «$ka+kb$»).
+
+
+!!! example "Exemple 2 : bilan des besoins"
+    Un code et son rendu :
+
+    Markdown
+    : 
+    ```latex
+    Le volume d'un pavé droit de longueur $L$,  
+    de hauteur $H$ et de profondeur $P$ est $V = L \times H \times P$
+    ```
+    
+    Rendu
+    : Le volume d'un pavé droit de longueur $L$,
+     de hauteur $H$ et de profondeur $P$ est $V = L \times H \times P$
+
+    :warning: Noter qu'il faut une espace après `\times`, sinon la commande `\timesH` est cherchée et non trouvée.
+
+!!! tip "Remarques"
+    Si on souhaite mieux écrire une formule d'aire ou de volume, on devine la nécessité :
+
+    - de savoir écrire des fractions,
+    - de savoir écrire des parenthèses à la bonne taille,
+    - de savoir écrire des puissances,
+    - de savoir écrire en indice,
+    - de savoir faire une écriture scripte :
+      $\mathscr V$ pour volume, $\mathscr A$ pour aire, $\mathscr C$ pour cercle, ...
+    - de savoir écrire quelques lettres grecques, comme $\pi$ ou $\alpha$.
+
+    Voilà donc la suite de notre programme. Pas d'exercices ici, mais plein ensuite !
+
+## Les fractions ; `$\dfrac{ }{ }$`
+
+!!! abstract "Le prototype et quelques exemples"
+    |Code|Résultat affiché|
+    |----|---------------:|
+    |`#!latex $\dfrac{num}{den}$`     | $\dfrac{num}{den}$  |
+    |`#!latex $\dfrac{22}{7}$`        | $\dfrac{22}{7}$     |
+    |`#!latex $5 + \dfrac{x+7}{x-1}$` | $5+\dfrac{x+7}{x-1}$|
+
+!!! note "Exercice 3 : règles et fractions"
+    !!! example "Règles de calcul fractionnaire"
+        Pour $a$, $b$, $c$ et $d$ des nombres, avec $b$ et $d$ non nuls, on a :
+
+        $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a + c}{b}$
+
+        $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{a \times c}{b \times d}$
+
+        $a \div \dfrac{b}{d} = a \times \dfrac{d}{b}$
+
+    Copier et compléter, dans une cellule Markdown, les règles fondamentales sur les écritures fractionnaires :
+
+    ```latex
+    Pour $a$, $b$, $c$ et $d$ des nombres, avec $b$ et $d$ non nuls, on a :
+
+    $\dfrac{a}{b} + ...$
+
+    $\dfrac{a}{b} \times ...$
+
+    $a \div ...$
+    ```
+
+    ??? done "Solution"
+        ```latex
+        Pour $a$, $b$, $c$ et $d$ des nombres, avec $b$ et $d$ non nuls, on a :
+
+        $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a + c}{b}$
+
+        $\dfrac{a}{b} \times \dfrac{c}{d} = \dfrac{a \times c}{b \times d}$
+
+        $a \div \dfrac{b}{d} = a \times \dfrac{d}{b}$
+        ```
+
+!!! note "Exercice 4 : autre écriture de Milü"
+    Recréer l'expression ci-dessous dans une cellule Markdown.
+
+    $3 + \dfrac{1}{7 + \dfrac{1}{16}} = 
+    3 + \dfrac{1}{ \dfrac{7 \times 16 + 1}{16} } =
+    \dfrac{3 \times 113}{113} + \dfrac{16}{113} =
+    \dfrac{355}{113} \approx \pi$
+
+    !!! done "Solution"
+        ```latex
+        $3 + \dfrac{1}{7 + \dfrac{1}{16}} = 
+        3 + \dfrac{1}{ \dfrac{7 \times 16 + 1}{16} } =
+        \dfrac{3 \times 113}{113} + \dfrac{16}{113} =
+        \dfrac{355}{113} \approx \pi$
+        ```
+
+
+
+
+
+
+
+
+Remarques
+
+- Si le contenu d'un paramètre entre accolades n'est qu'un seul caractère, les accolades ne sont pas nécessaires.
+- Si ce caractère est un chiffre, on peut même le coller à `\dfrac`
+
+Exemples :
+
+>|Code|Résultat|
+>|----|--------:|
+>|`$\dfrac12$` | $\dfrac12$ |
+>|`$\dfrac1x$` | $\dfrac1x$ |
+>|`$\dfrac1{x+y}$` | $\dfrac1{x+y}$ |
+>|`$\dfrac{1+x}y$` | $\dfrac{1+x}y$ |
+>|`$\dfrac ab$` | $\dfrac ab$ |
+
+
+
+## Les parenthèses à la bonne taille
+
+Si on veut placer un bloc (une expression) entre parenthèses, et que l'expression est plus haute que la normale (avec des fractions par exemple), alors les parenthèses normales ne sont pas assez hautes.
+
+Problème :
+> `$( \dfrac ab )$` donne $( \dfrac ab )$ ; qui est disgracieux.
+
+Solution :
+> `$\left( \dfrac ab \right)$` donne $\left( \dfrac ab \right)$ ; qui est correct
+
+
+## Les puissances `$a^n$` pour $a^n$
+
+> De manière générale `$^{exposant}$` donne $^{exposant}$
+
+**Attention** à un point particulier, `exposant` est ici en mode mathématique.
+> Pour écrire `exposant` comme du texte, on utilise la commande `\text{ }`
+>
+>`$^\text{exposant}$` donne $^\text{exposant}$
+
+
+### Exercice 5 : règles et puissances
+
+Compléter la cellule Markdown ci-dessous, au sujet des formules sur les puissances.
+
+> ![formules puissances](assets/puiss1.png)
+
+
+Pour tous nombres $a$, $b$, $c$ non nuls, et tous entiers $n$, $m$, on a :
+
+$a^n \times a^m = $
+
+$a^n \times b^n = $
+
+$\dfrac{a^n}{a^m} = $
+
+$\dfrac{a^n}{b^n} = $
+
+$\left(a^n\right)^m = $
+
+$a^{-n} = $
+
+
+## La Racine carrée
+
+En anglais _**sq**uare-**r**oo**t**_ ; `sqrt` est massivement utilisé.
+
+Exemple : `$\sqrt{radicande}$` donne $\sqrt{radicande}$
+
+
+### Exercice 6 : Théorème de Pythagore
+
+![exo pythagore](assets/pyth1.png)
+
+En vous inspirant du modèle ci-dessus, rédiger une solution au problème suivant :
+> $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
+
+
+À vous de modifier, compléter (et réutiliser) le code suivant :
+
+> $ABC$ est un triangle rectangle en $A$, avec $AB = 45$, $AC=28$. Calculer $BC$.
+>
+> **Réponse** :
+>
+> $ABC$ est un triangle rectangle en $A$, d'après le théorème de Pythagore, on a :
+>
+> $BC^2 = $
+
+
+
+> **Remarque** : le principe d'utiliser, modifier, compléter du code est largement utilisé dans l'enseignement. Il faut cependant savoir que certains codes sont protégés par du droit d'auteur.
+
+
+## Les indices `$a_n$` pour $a_n$
+
+Mêmes principes que pour les exposants.
+> `$_{indice}$` donne $_{indice}$
+
+**Attention** à un point particulier, `indice` est ici en mode mathématique.
+> Pour écrire `indice` comme du texte, on utilise la commande `\text{ }`
+>
+>`$_\text{indice}$` donne $_\text{indice}$
+
+Pas d'exercice ici.
+
+
+## Écriture scripte, pour aires, volumes, cercles...
+
+Pour démarquer certaines lettres, en mode **math**-ématique, on utilise l'écriture **scr**-ipte,
+> d'où la commande `$\mathscr{ }$`.
+
+|Code|Affichage associé|
+|----|-----:|
+|`Le cercle $\mathscr C$`|Le cercle $\mathscr C$|
+|`Le volume $\mathscr V$`|Le volume $\mathscr V$|
+|`L'aire $\mathscr A_{RST}$`|L'aire $\mathscr A_{RST}$|
+|`L'aire $\mathscr A_\text{triangle}$`|L'aire $\mathscr A_\text{triangle}$|
+
+> Noter dans les deux derniers exemples, que `RST` est bien en mode math, alors que
+`\text{triangle}` produit du texte dans le mode math. C'est bien la bonne méthode.
+
+
+## [Écriture de lettres grecques](https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques#Lettres_grecques)
+
+Pour utiliser les lettres grecques, il suffit de taper leur nom en caractères latins précédé d'une contre-oblique. Par exemple :
+
+- `\alpha` donne $\alpha$;
+- `\chi` donne $\chi$ ;
+- `\omega`, `\Omega` donnent $\omega$, $\Omega$.
+
+Les lettres identiques aux lettres latines ne sont pas définies (le alpha capitale est identique au A, le khi capitale est identique au X). Certaines lettres ont des variantes :
+
+- `\epsilon` donne $\epsilon$ , `\varepsilon` donne $\varepsilon$ ;
+- `\theta` donne $\theta$, `\vartheta` donne $\vartheta$  ;
+- `\pi` donne $\pi$, `\varpi` donne $\varpi$ ;
+- `\rho` donne $\rho$, `\varrho` donne $\varrho$ ;
+- `\sigma` donne $\sigma$, `\varsigma` donne $\varsigma$ ;
+- `\phi` donne $\phi$, `\varphi` donne $\varphi$.
+
+
+### Exercice 7 (un peu long) : belles formules de géométrie
+
+Écrire de belles formules pour :
+
+- Le carré
+    * Le périmètre d'un carré de côté $a$.
+    * L'aire d'un carré de côté $a$.
+- Le rectangle
+    * Le périmètre d'un rectangle de côtés $a$ et $b$.
+    * L'aire d'un rectangle de côtés $a$ et $b$.
+- Le triangle
+    * Le périmètre d'un triangle de côtés $a$, $b$ et $c$.
+    * L'aire d'un triangle de côté $a$ et de hauteur associée $h$.
+- Le cercle
+    * La circonférence d'un cercle de rayon $r$.
+    * L'aire d'un cercle de rayon $r$.
+- Les volumes pour
+    + Un pavé droit de côtés $L$, $H$, $P$.
+    + Un prisme droit dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
+    + Une pyramide dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
+    + Une boule de rayon $r$.
+
+
+### Remarque technique sur les unités
+
+On devrait utiliser une [espace fine insécable](https://fr.wikipedia.org/wiki/Espace_ins%C3%A9cable) entre la partie numérique et l'unité.
+
+- Pour simplifier, on peut utiliser une espace-mot insécable à la place.
+- Pour écrire les unités, on pourra donc suivre les exemples :
+
+|Code|Affichage produit|
+|---|---:|
+|`$41~\text{km}$`|$41~\text{km}$|
+|`$35~\text{m}^2$`|$35~\text{m}^2$|
+
+
+## Pour aller plus loin
+
+- Avec ce qui a été vu précédemment, on peut écrire une large partie d'un cours de mathématique au collège.
+- Une partie de cette [section](https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques) est valable pour le mode mathématique en Markdown.
+La [suite](https://fr.wikibooks.org/wiki/LaTeX/Math%C3%A9matiques) pourra être utile.
+
+
