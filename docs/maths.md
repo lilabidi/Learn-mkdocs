@@ -2,7 +2,10 @@
 
 Auteur : Franck CHAMBON
 
-![](assets/Jupyter.png){align=right}
+![](assets/MathJax.png)
+![](assets/Jupyter.png)
+![](assets/katex.png){width=200}
+![](assets/material.png){width=200}
 
 !!! abstract "Objectif"
     Écrire des mathématiques dans du code Markdown.
@@ -10,7 +13,6 @@ Auteur : Franck CHAMBON
     C'est utile pour Jupyter, CodiMD et MkDocs entre autres...
 
 
-![](assets/MathJax.png){align=right}
 
 
 !!! done "Un tour d'horizon"
