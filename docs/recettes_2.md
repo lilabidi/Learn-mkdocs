@@ -35,3 +35,16 @@
         Tout fichier `.md` dans `docs/` qui n'est pas utilisé dans `nav` de `mkdocs.yml` provoque un warning de `mkdocs serve`. Raison pour laquelle on place `acronymes.md` (ou autre du même genre) en dehors :wink:
 
         Édit : Et pourquoi ne pas enlever l'extension `.md` si on tient à garder le fichier dons `docs/` ???
+
+## Créer ses propres admonitions
+
+En attendant, voir ce [lien](https://squidfunk.github.io/mkdocs-material/reference/admonitions/#custom-admonitions)
+
+
+## Relier un bouton à un code JavaScript maison
+
+Possible ???
+
+
+
+

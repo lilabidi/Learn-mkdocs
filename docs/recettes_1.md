@@ -281,3 +281,13 @@
             +Nétiquette
             ```
             :warning: Il manque la coloration syntaxique.
+
+## Image cliquable
+
+!!! info "Rappels"
+    - Un lien s'obtient avec `[<élément à cliquer>](<url>)`
+    - Une image s'obtient avec `![<texte alternatif>](<source_image>)`
+
+!!! done "Pour avoir une image cliquable"
+    `[![<texte alternatif>](<source_image>)](<url>)`
+
