@@ -1,4 +1,4 @@
-# Bases de Markdown
+# Markdown
 
 Auteur : Franck CHAMBON
 
@@ -36,16 +36,15 @@ Auteur : Franck CHAMBON
     === "En français"
         - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
 
-## Construire une note
+## Les bases de Markdown
 
-### Quelques exemples
-
-|Objectif|Markdown|Rendu|
-|:-----|:------|:----|
-|Créer un lien|`[texte cliquable](mon_lien.fr)`|[texte cliquable](mon_lien.fr)|
-|Emphase faible|`Un _mot_ discret` | Un _mot_ discret |
-|Emphase forte|`Un **mot** visible` | Un **mot** visible |
-|Du code en ligne|``Une boucle `for` `` |Une boucle `for`|
+!!! tip "Quelques exemples"
+    |Objectif|Markdown|Rendu|
+    |:-----|:------|:----|
+    |Créer un lien|`[texte cliquable](mon_lien.fr)`|[texte cliquable](mon_lien.fr)|
+    |Emphase faible|`Un _mot_ discret` | Un _mot_ discret |
+    |Emphase forte|`Un **mot** visible` | Un **mot** visible |
+    |Du code en ligne|``Une boucle `for` `` |Une boucle `for`|
 
 ### Architecture
 
@@ -637,7 +636,7 @@ Auteur : Franck CHAMBON
             n = 47**2 + 31**2
 
 !!! info "Et la coloration syntaxique ?"
-    Nous verrons cela dans la partie suivante.
+    Nous verrons cela dans la partie Markdown avancé.
 
 ### Code en ligne
 
@@ -919,3 +918,68 @@ Auteur : Franck CHAMBON
 
         return "\n".join(lignes)
     ```
+
+## Markdown avancé
+
+### Coloration syntaxique du code
+
+!!! example "Quelques exemples"
+    === "Markdown"
+        ````markdown
+        Voici quelques exemples de programmes
+
+        ```python
+        for i in range(10):
+            print("Salut à tous !")
+        ```
+
+        ```c
+        #include<stdio.h>
+        int main(){
+            int i;
+            for(i = 0; i < 10; i++){
+                printf("Salut à tous !\n");
+            }
+            return 0;
+        }
+        ```
+
+        ````
+    
+    === "Rendu"
+        Voici quelques exemples de programmes
+
+        ```python
+        for i in range(10):
+            print("Salut à tous !")
+        ```
+
+        ```c
+        #include<stdio.h>
+        int main(){
+            int i;
+            for(i = 0; i < 10; i++){
+                printf("Salut à tous !\n");
+            }
+            return 0;
+        }
+        ```
+
+!!! abstract "Méthode"
+    Il suffit d'écrire
+    
+    - avant le bloc ```` ```<nom_du_langage> ````
+    - après le bloc ```` ``` ````
+    
+    La [liste des langages supportés](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown) contient entre autres aussi :
+
+    - `bash`, et `console`
+    - `markdown`
+    - `latex` et `tex`
+    - `html` et `css`
+    - `ocaml`
+    - `sql`
+    - `yaml`
+
+
+

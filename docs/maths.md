@@ -572,84 +572,177 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
     Pour écrire du texte en indice, à l'intérieur du mode mathématique, on utilise `\text`.
     
-    Par exemple, pour le volume d'un cylindre $V_\text{cylindre}$, on écrit `#!latex $V_\text{cylindre}$`.
+    !!! example "Volume d'un cylindre"
+        Par exemple, pour $V_\text{cylindre}$, on écrit `#!latex $V_\text{cylindre}$`.
 
-    Nous verrons à la section suivante comment utiliser une écriture cursive pour un plus joli $\mathscr V_\text{cylindre}$
+        Nous verrons à la section suivante comment utiliser une écriture cursive pour un plus joli
+
+        $$\mathscr V_\text{cylindre}$$
 
 ## Écriture scripte, pour aires, volumes, cercles
 
-Pour démarquer certaines lettres, en mode **math**-ématique, on utilise l'écriture **scr**-ipte,
-> d'où la commande `$\mathscr{ }$`.
+!!! abstract "Certaines lettres à démarquer"
+    En mode **math**ématique, on utilise, entre autres, l'écriture **scr**ipte,
 
-|Code|Affichage associé|
-|----|-----:|
-|`Le cercle $\mathscr C$`|Le cercle $\mathscr C$|
-|`Le volume $\mathscr V$`|Le volume $\mathscr V$|
-|`L'aire $\mathscr A_{RST}$`|L'aire $\mathscr A_{RST}$|
-|`L'aire $\mathscr A_\text{triangle}$`|L'aire $\mathscr A_\text{triangle}$|
+    d'où la commande `#!latex $\mathscr{ }$`.
 
-> Noter dans les deux derniers exemples, que `RST` est bien en mode math, alors que
-`\text{triangle}` produit du texte dans le mode math. C'est bien la bonne méthode.
+    |Markdown|Rendu|
+    |--------|----:|
+    |`#!latex Le cercle $\mathscr C$`|Le cercle $\mathscr C$|
+    |`#!latex Le volume $\mathscr V$`|Le volume $\mathscr V$|
+    |`#!latex L'aire $\mathscr A_{RST}$`|L'aire $\mathscr A_{RST}$|
+    |`#!latex L'aire $\mathscr A_\text{triangle}$`|L'aire $\mathscr A_\text{triangle}$|
 
+    Noter dans les deux derniers exemples, que
+    
+    - `RST` est bien en mode math, alors que
+    - `\text{triangle}` produit du texte dans le mode math.
+    
+    C'est bien la bonne méthode.
 
 ## [Écriture de lettres grecques](https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques#Lettres_grecques)
 
-Pour utiliser les lettres grecques, il suffit de taper leur nom en caractères latins précédé d'une contre-oblique. Par exemple :
+!!! abstract "Par leur nom latin"
+    Pour utiliser les lettres grecques, il suffit de taper leur nom en caractères latins précédé d'une contre-oblique.
+    
+    Par exemple, **en mode mathématique** :
 
-- `\alpha` donne $\alpha$;
-- `\chi` donne $\chi$ ;
-- `\omega`, `\Omega` donnent $\omega$, $\Omega$.
+    |Markdown|Rendu|
+    |-------:|:----|
+    |`#!latex $\alpha$` | $\alpha$ |
+    |`#!latex $\chi$`   | $\chi$   |
+    |`#!latex $\omega$` | $\omega$ |
+    |`#!latex $\Omega$` | $\Omega$ |
 
-Les lettres identiques aux lettres latines ne sont pas définies (le alpha capitale est identique au A, le khi capitale est identique au X). Certaines lettres ont des variantes :
+    Les lettres identiques aux lettres latines ne sont pas définies :
+    
+    - le alpha capital est identique au $A$,
+    - le khi capitale est identique au $X$.
+    
+??? danger "Variantes de certaines lettres"
+    === "Classique"
+        |Markdown|Rendu|
+        |-------:|:----|
+        |`#!latex $\epsilon$` | $\epsilon$ |
+        |`#!latex $\theta$`   | $\theta$   |
+        |`#!latex $\pi$`      | $\pi$      |
+        |`#!latex $\rho$`     | $\rho$     |
+        |`#!latex $\sigma$`   | $\sigma$   |
+        |`#!latex $\phi$`     | $\phi$     |
 
-- `\epsilon` donne $\epsilon$ , `\varepsilon` donne $\varepsilon$ ;
-- `\theta` donne $\theta$, `\vartheta` donne $\vartheta$  ;
-- `\pi` donne $\pi$, `\varpi` donne $\varpi$ ;
-- `\rho` donne $\rho$, `\varrho` donne $\varrho$ ;
-- `\sigma` donne $\sigma$, `\varsigma` donne $\varsigma$ ;
-- `\phi` donne $\phi$, `\varphi` donne $\varphi$.
+    === "Variante"
+        |Markdown|Rendu|
+        |-------:|:----|
+        |`#!latex $\varepsilon$` | $\varepsilon$ |
+        |`#!latex $\vartheta$`   | $\vartheta$   |
+        |`#!latex $\varpi$`      | $\varpi$      |
+        |`#!latex $\varrho$`     | $\varrho$     |
+        |`#!latex $\varsigma$`   | $\varsigma$   |
+        |`#!latex $\varphi$`     | $\varphi$     |
 
+!!! note "Exercice 7 : belles formules de géométrie"
+    Écrire de belles formules pour :
 
-### Exercice 7 (un peu long) : belles formules de géométrie
+    - Le carré
+        * Le périmètre d'un carré de côté $a$.
+        * L'aire d'un carré de côté $a$.
+    - Le rectangle
+        * Le périmètre d'un rectangle de côtés $a$ et $b$.
+        * L'aire d'un rectangle de côtés $a$ et $b$.
+    - Le triangle
+        * Le périmètre d'un triangle de côtés $a$, $b$ et $c$.
+        * L'aire d'un triangle de côté $b$ et de hauteur associée $h$.
+    - Le cercle et le disque
+        * La circonférence d'un cercle de rayon $r$.
+        * L'aire d'un disque de rayon $r$.
+    - Les volumes pour
+        + Un pavé droit de côtés $L$, $H$, $P$.
+        + Un prisme droit dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
+        + Une pyramide dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
+        + Une boule de rayon $r$.
 
-Écrire de belles formules pour :
+    ??? done "Solution"
+        === "Rendu"
+            - Le carré
+                - Le périmètre d'un carré de côté $a$ est
+                  $p_\text{carré} = 4a$.
+                - L'aire d'un carré de côté $a$ est
+                  $\mathscr A_\text{carré} = a^2$.
+            - Le rectangle
+                - Le périmètre d'un rectangle de côtés $a$ et $b$ est
+                  $p_\text{rectangle} = 2(a+b)$.
+                - L'aire d'un rectangle de côtés $a$ et $b$ est
+                  $\mathscr A_\text{rectangle} = ab$.
+            - Le triangle
+                - Le périmètre d'un triangle de côtés $a$, $b$ et $c$ est
+                  $p_\text{triangle} = a+b+c$.
+                - L'aire d'un triangle de côté $b$ et de hauteur associée $h$ est
+                  $\mathscr A_\text{triangle} = \dfrac{bh}{2}$.
+            - Le cercle et le disque
+                - La circonférence d'un cercle de rayon $r$ est
+                  $p_\text{cercle} = 2\pi r$.
+                - L'aire d'un disque de rayon $r$ est
+                  $\mathscr A_\text{disque} = \pi r^2$.
+            - Les volumes pour
+                - Un pavé droit de côtés $L$, $H$, $P$ a pour volume
+                  $\mathscr V_{pavé} = L \times H \times P$.
+                - Un prisme droit dont la base a une aire $\mathscr A_\text{base}$,
+                  et une hauteur $h$ associée a pour volume
+                  $\mathscr V_{prisme} = \mathscr A_\text{base} \times h$.
+                - Une pyramide dont la base a une aire $\mathscr A_\text{base}$,
+                  et une hauteur $h$ associée a pour volume
+                  $\mathscr V_{pyramide} = \dfrac {1}{3} \mathscr A_\text{base} \times h$.
+                - Une boule de rayon $r$ a pour volume
+                  $\mathscr V_{boule} = \dfrac{4}{3} \pi r^3$.
 
-- Le carré
-    * Le périmètre d'un carré de côté $a$.
-    * L'aire d'un carré de côté $a$.
-- Le rectangle
-    * Le périmètre d'un rectangle de côtés $a$ et $b$.
-    * L'aire d'un rectangle de côtés $a$ et $b$.
-- Le triangle
-    * Le périmètre d'un triangle de côtés $a$, $b$ et $c$.
-    * L'aire d'un triangle de côté $a$ et de hauteur associée $h$.
-- Le cercle
-    * La circonférence d'un cercle de rayon $r$.
-    * L'aire d'un cercle de rayon $r$.
-- Les volumes pour
-    + Un pavé droit de côtés $L$, $H$, $P$.
-    + Un prisme droit dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
-    + Une pyramide dont la base a une aire $\mathscr A_\text{base}$, et une hauteur $h$ associée.
-    + Une boule de rayon $r$.
+        === "Markdown"
+            ```markdown
+            - Le carré
+                - Le périmètre d'un carré de côté $a$ est
+                  $p_\text{carré} = 4a$.
+                - L'aire d'un carré de côté $a$ est
+                  $\mathscr A_\text{carré} = a^2$.
+            - Le rectangle
+                - Le périmètre d'un rectangle de côtés $a$ et $b$ est
+                  $p_\text{rectangle} = 2(a+b)$.
+                - L'aire d'un rectangle de côtés $a$ et $b$ est
+                  $\mathscr A_\text{rectangle} = ab$.
+            - Le triangle
+                - Le périmètre d'un triangle de côtés $a$, $b$ et $c$ est
+                  $p_\text{triangle} = a+b+c$.
+                - L'aire d'un triangle de côté $b$ et de hauteur associée $h$ est
+                  $\mathscr A_\text{triangle} = \dfrac{bh}{2}$.
+            - Le cercle et le disque
+                - La circonférence d'un cercle de rayon $r$ est
+                  $p_\text{cercle} = 2\pi r$.
+                - L'aire d'un disque de rayon $r$ est
+                  $\mathscr A_\text{disque} = \pi r^2$.
+            - Les volumes pour
+                - Un pavé droit de côtés $L$, $H$, $P$ a pour volume
+                  $\mathscr V_{pavé} = L \times H \times P$.
+                - Un prisme droit dont la base a une aire $\mathscr A_\text{base}$,
+                  et une hauteur $h$ associée a pour volume
+                  $\mathscr V_{prisme} = \mathscr A_\text{base} \times h$.
+                - Une pyramide dont la base a une aire $\mathscr A_\text{base}$,
+                  et une hauteur $h$ associée a pour volume
+                  $\mathscr V_{pyramide} = \dfrac {1}{3} \mathscr A_\text{base} \times h$.
+                - Une boule de rayon $r$ a pour volume
+                  $\mathscr V_{boule} = \dfrac{4}{3} \pi r^3$.
+            ```
 
+??? danger "Remarque technique sur les unités"
+    On devrait utiliser une [espace **fine** insécable](https://fr.wikipedia.org/wiki/Espace_ins%C3%A9cable) entre la partie numérique et l'unité.
 
-### Remarque technique sur les unités
+    - Pour simplifier, on peut utiliser une espace-mot insécable à la place.
+    - Pour écrire les unités facilement, on pourra donc suivre les exemples :
 
-On devrait utiliser une [espace fine insécable](https://fr.wikipedia.org/wiki/Espace_ins%C3%A9cable) entre la partie numérique et l'unité.
-
-- Pour simplifier, on peut utiliser une espace-mot insécable à la place.
-- Pour écrire les unités, on pourra donc suivre les exemples :
-
-|Code|Affichage produit|
-|---|---:|
-|`$41~\text{km}$`|$41~\text{km}$|
-|`$35~\text{m}^2$`|$35~\text{m}^2$|
-
+    |Markdown|Rendu|
+    |--------|----:|
+    |`#!latex $41~\text{km}$` |$41~\text{km}$ |
+    |`#!latex $35~\text{m}^2$`|$35~\text{m}^2$|
 
 ## Pour aller plus loin
 
 - Avec ce qui a été vu précédemment, on peut écrire une large partie d'un cours de mathématique au collège.
 - Une partie de cette [section](https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques) est valable pour le mode mathématique en Markdown.
 La [suite](https://fr.wikibooks.org/wiki/LaTeX/Math%C3%A9matiques) pourra être utile.
-
-

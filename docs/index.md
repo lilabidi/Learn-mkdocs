@@ -37,20 +37,20 @@ Auteur : Franck CHAMBON
             1. Installer [F-Droid](https://www.f-droid.org/fr/).
             2. À partir de F-Droid, installer [Termux](https://termux.com/)
             4. Dans Termux, entrer
-            ```bash
-            apt update
-            apt upgrade
-            apt install python
-            pip install --upgrade pip
+            ```console
+            $ apt update
+            $ apt upgrade
+            $ apt install python
+            $ pip install --upgrade pip
             ```
     === "Linux"
         ??? tip "Administration"
             ![Linux à jour](images/update_linux.png){align=right width=400}
             Mettre à jour via une interface graphique, ou bien dans un terminal avec
-            ``` bash
-            sudo apt update
-            sudo apt upgrade
-            sudo dpkg --configure -a
+            ``` console
+            $ sudo apt update
+            $ sudo apt upgrade
+            $ sudo dpkg --configure -a
             ```
 
             !!! info "Gestionnaire de paquets Python"
@@ -63,16 +63,16 @@ Auteur : Franck CHAMBON
             Vérifier (cf infra) la présente de `pip` ou `pip3`, et l'installer le cas échéant
 
             !!! tip "Installation de `pip`"
-                ```
-                sudo apt install python3-pip
+                ```console
+                $ sudo apt install python3-pip
                 ```
                 **Redémarrer** alors, pour que le `PATH` inclut bien votre chemin de binaires, même si c'est probablement déjà le cas...
 
 
         !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
-            ``` bash
-            pip install --upgrade pip
+            ```console
+            $ pip install --upgrade pip
             ```
     
     === "Mac"
@@ -92,16 +92,16 @@ Auteur : Franck CHAMBON
             Vérifier (cf infra) la présente de `pip` ou `pip3`, et l'installer le cas échéant
 
             !!! tip "Installation de `pip`"
-                ```
-                sudo apt install python3-pip
+                ```console
+                $ sudo apt install python3-pip
                 ```
                 **Redémarrer** alors, pour que le `PATH` inclut bien votre chemin de binaires, même si c'est probablement déjà le cas...
 
 
         !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
-            ``` bash
-            pip install --upgrade pip
+            ``` console
+            $ pip install --upgrade pip
             ```
 
     === "Windows"
@@ -110,8 +110,8 @@ Auteur : Franck CHAMBON
         
         !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
-            ``` bash
-            python -m pip install --upgrade pip
+            ``` console
+            $ python -m pip install --upgrade pip
             ```
 
 !!! done "Et Jupyter ?"
@@ -128,7 +128,7 @@ Auteur : Franck CHAMBON
     Vérifier votre installation suivant votre machine avec
 
     === "python / pip"
-        ```bash
+        ```console
         $ python --version
         Python 3.8.5
         $ pip --version
@@ -136,7 +136,7 @@ Auteur : Franck CHAMBON
         ```
 
     === "python3 / pip3"
-        ```bash
+        ```console
         $ python3 --version
         Python 3.8.5
         $ pip3 --version
@@ -149,13 +149,13 @@ Auteur : Franck CHAMBON
     Dans un terminal, avec `pip` ou `pip3` selon votre machine.
 
     === "python / pip"
-        ```bash
-        pip install mkdocs-material
+        ```console
+        $ pip install mkdocs-material
         ```
 
     === "python3 / pip3"
-        ```bash
-        pip3 install mkdocs-material
+        ```console
+        $ pip3 install mkdocs-material
         ```
 
     Cela installe plusieurs paquets utiles automatiquement.
@@ -167,8 +167,8 @@ Auteur : Franck CHAMBON
 
     Ouvrir un terminal dans ce dossier **vide**.
 
-    ```bash
-    mkdocs new .
+    ```console
+    $ mkdocs new .
     ```
 
     `.` désigne le dossier courant.
@@ -194,8 +194,8 @@ Auteur : Franck CHAMBON
 !!! tip "Construction à la volée"
     Dans un terminal, toujours dans ce même dossier, entrer
 
-    ```bash
-    mkdocs serve
+    ```console
+    $ mkdocs serve
     ```
 
     !!! done "Victoire ?"
@@ -232,7 +232,7 @@ Auteur : Franck CHAMBON
 !!! note "Modifions le site"
     Les fichiers dans le dossier ont pour l'instant cette architecture
 
-    ```
+    ```console
     .
     ├─ docs/
     │  └─ index.md
@@ -257,8 +257,8 @@ Auteur : Franck CHAMBON
 !!! info "Votre site n'est pas encore construit physiquement"
     Il est possible de construire physiquement (en local) votre site avec
 
-    ```bash
-    mkdocs build
+    ```console
+    $ mkdocs build
     ```
 
     C'est utile si vous avez une solution pour l'héberger ...

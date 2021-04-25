@@ -96,21 +96,21 @@ Si vous n'avez pas d'éditeur de texte minimaliste, c'est le moment.
     === "Android"
         Dans un terminal
 
-        ```bash
+        ```console
         $ pkg install micro
         ```
 
     === "Linux"
         Dans un terminal
 
-        ```bash
+        ```console
         $ sudo apt install micro xclip
         ```
 
     === "Mac"
         Avec Homebrew
 
-        ```bash
+        ```console
         $ brew install micro
         ```
 
@@ -120,12 +120,12 @@ Si vous n'avez pas d'éditeur de texte minimaliste, c'est le moment.
         Avec les gestionnaires de paquet [Chocolatey](https://chocolatey.org/) ou [Scoop](https://github.com/lukesampson/scoop).
 
         === "Chocolatey"
-            ```bash
+            ```console
             $ choco install micro
             ```
 
         === "Scoop"
-            ```bash
+            ```console
             $ scoop install micro
             ```
 
@@ -140,7 +140,7 @@ Dans un terminal
 - Indiquer votre nom et email et
 - remplacer _éventuellement_ `micro` par votre éditeur préféré.
 
-```bash
+```console
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
 $ git config --global core.editor micro
@@ -181,7 +181,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
     !!! tip "Installation"
         Dans **Termux**, on lance les mises à jour et l'installation de `openssh`
 
-        ```bash
+        ```console
         $ apt update
         $ apt upgrade
         $ apt install openssh
@@ -189,7 +189,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
     Passer à la création de la clé
 
-    ```bash
+    ```console
     $ ssh-keygen -t ed25519 -C "Francky sur tablette"
     Generating public/private ed25519 key pair.
     Enter file in which to save the key (/data/data/com.termux/files/home/.ssh/id_ed25519): 
@@ -201,7 +201,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
     Ajouter la clé à l'agent SSH.
 
-    ```bash
+    ```console
     $ eval "$(ssh-agent -s)"
     Agent pid 22584
     $ ssh-add ~/.ssh/id_ed25519
@@ -213,7 +213,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
         Ne pas oublier le `.pub` à la fin, `pub` comme public.
 
-        ```bash
+        ```console
         $ cat ~/.ssh/id_ed25519.pub
         ```
 
@@ -229,7 +229,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
     Dans un **terminal**, dans cet exemple, le login sera `francky` 
 
-    ```bash
+    ```console
     $ ssh-keygen -t ed25519 -C "Francky sur ordi fixe"
     Generating public/private ed25519 key pair.
     Enter file in which to save the key (/home/francky/.ssh/id_ed25519): 
@@ -241,7 +241,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
     Ajouter la clé à l'agent SSH.
 
-    ```bash
+    ```console
     $ eval "$(ssh-agent -s)"
     Agent pid 59566
     $ ssh-add ~/.ssh/id_ed25519
@@ -253,7 +253,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 
         Ne pas oublier le `.pub` à la fin, `pub` comme public.
 
-        ```bash
+        ```console
         $ micro ~/.ssh/id_ed25519.pub
         ```
 
@@ -289,7 +289,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 4. À la racine de votre projet, il y a un menu déroulant `Clone`. **Copier** la section `Clone with SSH`.
 5. Enfin ouvrir un terminal dans un dossier comme `/Documents`, vous pourrez le **coller après** `git clone` en collant votre sélection.
 
-    ```bash
+    ```console
     git clone git@gitlab.com:<votre super projet>
     ```
 
