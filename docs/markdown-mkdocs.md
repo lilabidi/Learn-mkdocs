@@ -263,7 +263,149 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
         !!! done "Rendu"
             [Une console Basthon](https://console.basthon.fr/){ .md-button .md-button--primary }
 
+## Options sur les blocs de code
 
+- Numérotation des lignes
+- mise en lumière d'un choix de lignes
+- coloration de code en ligne
+
+À suivre
+
+
+## Affichage des touches
+!!! example "Exemple"
+        !!! note "Markdown"
+            ```markdown
+            ++ctrl+alt+del++
+            ```
+        !!! done "Rendu"
+            ++ctrl+alt+del++
+
+## Intégration de fichiers externes
+
+````markdown
+```python
+--8<--​ "docs/fichier.py"
+```
+````
+
+## Les palissades (*SuperFences*)
+
+!!! example "Exemple simple"
+    !!! note "Entrée"
+        ```` markdown
+        === "C"
+
+            ``` c
+            #include <stdio.h>
+
+            int main(void) {
+              printf("Hello world!\n");
+              return 0;
+            }
+            ```
+
+        === "C++"
+
+            ``` c++
+            #include <iostream>
+
+            int main(void) {
+              std::cout << "Hello world!" << std::endl;
+              return 0;
+            }
+            ```
+        ````
+    !!! done "Rendu"
+        === "C"
+
+            ``` c
+            #include <stdio.h>
+
+            int main(void) {
+              printf("Hello world!\n");
+              return 0;
+            }
+            ```
+
+        === "C++"
+
+            ``` c++
+            #include <iostream>
+
+            int main(void) {
+              std::cout << "Hello world!" << std::endl;
+              return 0;
+            }
+            ```
+
+??? danger "Exemple élaboré"
+    !!! note "Entrée"
+        ```` markdown
+        === "Liste non numérotée"
+
+            _Exemple_ :
+
+            ``` markdown
+            * Sed sagittis eleifend rutrum
+            * Donec vitae suscipit est
+            * Nulla tempor lobortis orci
+            ```
+
+            _Résultat_ :
+
+            * Sed sagittis eleifend rutrum
+            * Donec vitae suscipit est
+            * Nulla tempor lobortis orci
+
+        === "Liste numérotée"
+
+            _Exemple_ :
+
+            ``` markdown
+            1. Sed sagittis eleifend rutrum
+            2. Donec vitae suscipit est
+            3. Nulla tempor lobortis orci
+            ```
+
+            _Résultat_ :
+
+            1. Sed sagittis eleifend rutrum
+            2. Donec vitae suscipit est
+            3. Nulla tempor lobortis orci
+        ````
+    !!! done "Rendu"
+        === "Liste non numérotée"
+
+            _Exemple_ :
+
+            ``` markdown
+            * Sed sagittis eleifend rutrum
+            * Donec vitae suscipit est
+            * Nulla tempor lobortis orci
+            ```
+
+            _Résultat_ :
+
+            * Sed sagittis eleifend rutrum
+            * Donec vitae suscipit est
+            * Nulla tempor lobortis orci
+
+        === "Liste numérotée"
+
+            _Exemple_ :
+
+            ``` markdown
+            1. Sed sagittis eleifend rutrum
+            2. Donec vitae suscipit est
+            3. Nulla tempor lobortis orci
+            ```
+
+            _Résultat_ :
+
+            1. Sed sagittis eleifend rutrum
+            2. Donec vitae suscipit est
+            3. Nulla tempor lobortis orci
 
 
 ## Notes de bas de page
@@ -272,3 +414,8 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Lien sur les en-têtes
 
+## Icônes et émojis
+
+## Images
+
+## Meta tags

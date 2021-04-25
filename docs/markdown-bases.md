@@ -1151,6 +1151,70 @@ Auteur : Franck CHAMBON
 !!! warning "Pas valable avec tous les Markdown !"
     On en dispose avec CodiMD, Jupyter, mais aussi MkDocs avec l'extension `tilde`, et nous utiliserons.
 
+### Texte souligné
+
+!!! tip "On encadre d'un double `^`"
+    === "Correct"
+        !!! note "Entrée"
+            ```markdown
+            La Terre bleue ^^comme^^ une orange.
+            ```
+
+        !!! done "Rendu"
+            La Terre bleue ^^comme^^ une orange.
+
+    === "Incorrect"
+        !!! note "Entrée"
+            ```markdown
+            La Terre est bleue ^^ comme^^ une orange.
+
+            La Terre est bleue ^^comme ^^ une orange.
+            ```
+
+        !!! fail "Rendu"
+            La Terre est bleue ^^ comme^^ une orange.
+
+            La Terre est bleue ^^comme ^^ une orange.
+        
+        :warning: Le double `^` doit être collé au morceau à barrer.
+
+!!! warning "Pas valable avec tous les Markdown !"
+    On en dispose avec CodiMD, mais aussi MkDocs avec l'extension `caret`, et nous utiliserons.
+
+    Pour Jupyter, il faut utiliser la balise HTML `<u>`. :warning: Cependant le contenu ne pourra pas contenir de balise Markdown.
+
+### Texte surligné
+
+!!! tip "On encadre d'un double `=`"
+    === "Correct"
+        !!! note "Entrée"
+            ```markdown
+            La Terre bleue comme ==une orange==.
+            ```
+
+        !!! done "Rendu"
+            La Terre bleue comme ==une orange==.
+
+    === "Incorrect"
+        !!! note "Entrée"
+            ```markdown
+            La Terre est bleue comme == une orange==.
+
+            La Terre est bleue comme ==une orange ==.
+            ```
+
+        !!! fail "Rendu"
+            La Terre est bleue comme == une orange==.
+
+            La Terre est bleue comme ==une orange ==.
+        
+        :warning: Le double `=` doit être collé au morceau à barrer.
+
+!!! warning "Pas valable avec tous les Markdown !"
+    On en dispose avec CodiMD, mais aussi MkDocs.
+
+    Pour Jupyter, il faut utiliser la balise HTML `<mark>`. :warning: Cependant le contenu ne pourra pas contenir de balise Markdown.
+
 ### Case à cocher
 
 !!! tip "On préfixe par `- [ ]` ou `- [x]`"
