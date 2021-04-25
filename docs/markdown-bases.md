@@ -82,7 +82,7 @@ Auteur : Franck CHAMBON
         !!! fail "Rendu"
             \#Mon super titre Mon premier paragraphe.
 
-        Ce rendu dépend du moteur...
+        :warning: Ce rendu dépend du moteur...
 
     ??? example "Example concret"
 
@@ -158,13 +158,13 @@ Auteur : Franck CHAMBON
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             ```
         
-        Le texte devient du code en bloc, avec une police à chasse fixe.
-
-        !!! warning "Rendu"
+        !!! fail "Rendu"
 
             <pre>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
             </pre>
+
+        :warning: Le texte devient du code en bloc, avec une police à chasse fixe.
 
 ### Aller à la ligne
 
@@ -191,9 +191,11 @@ Auteur : Franck CHAMBON
             ligne2
             ```
 
-        !!! done "Rendu"
+        !!! fail "Rendu"
             ligne1
             ligne2
+
+        :warning: Échec uniquement si on voulait forcer un saut de ligne.
     
     !!! info "Vérifier l'exemple"
         En sélectionnant le texte, vous verrez deux espaces à la fin de `ligne 1` dans l'entrée correcte.
@@ -218,22 +220,39 @@ Auteur : Franck CHAMBON
 !!! tip "Séparer deux paragraphes"
     On utilise `---` entre les deux paragraphes, avec des lignes vides.
 
-    !!! note "Entrée"
+    === "Correct"
+        !!! note "Entrée"
 
-        ```markdown
-        Paragraphe 1...
+            ```markdown
+            Paragraphe 1...
 
-        ---
+            ---
 
-        Paragraphe 2...
-        ```
+            Paragraphe 2...
+            ```
 
-    !!! done "Rendu"
-        Paragraphe 1...
+        !!! done "Rendu"
+            Paragraphe 1...
 
-        ---
+            ---
 
-        Paragraphe 2...
+            Paragraphe 2...
+
+    === "Incorrect"
+        !!! note "Entrée"
+
+            ```markdown
+            Paragraphe 1...
+            ---
+            Paragraphe 2...
+            ```
+
+        !!! fail "Rendu"
+            <big>**Paragraphe 1...**</big>
+
+            Paragraphe 2...
+        
+        :warning: Il s'agit en fait d'une **méthode non recommandée** pour créer des en-têtes !
 
 ### Listes
 
@@ -367,6 +386,13 @@ Auteur : Franck CHAMBON
     :warning: Le rendu de la numérotation des listes imbriquées dépend du moteur. Ne pas lui faire confiance.
 
     De même, on peut imbriquer des paragraphes, des blocs de code, en les indentant en plus également de la même manière.
+
+!!! info "Autres puces, indentation"
+    Avec certains moteurs Markdown, il est possible d'utiliser les puces `*`, `-`, `+`.
+
+    Nous ne recommandons d'**utiliser que les puces `-`**.
+
+    Pour les listes imbriquées, nous recommandons une **indentation de 4 espaces**.
 
 ### Liens
 
@@ -630,13 +656,15 @@ Auteur : Franck CHAMBON
             n = 47**2 + 31**2
             ```
 
-        !!! done "Rendu"
+        !!! fail "Rendu"
             Voici un code Python
 
             n = 47**2 + 31**2
+        
+        :warning: Ici le moteur a interprété une partie avec de l'emphase forte.
 
 !!! info "Et la coloration syntaxique ?"
-    Nous verrons cela dans la partie Markdown avancé.
+    Nous verrons cela dans [une partie de Markdown avancé](#coloration-syntaxique-du-code).
 
 ### Code en ligne
 
@@ -649,7 +677,7 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            La définition de la fonction `est_premier` commence avec le mot clé `def`
+            La définition de la fonction `premier` commence avec le mot clé `def`
 
             Elle prend en paramètre un entier `n`
 
@@ -657,7 +685,7 @@ Auteur : Franck CHAMBON
             ```
 
         !!! done "Rendu"
-            La définition de la fonction `est_premier` commence avec le mot clé `def`
+            La définition de la fonction `premier` commence avec le mot clé `def`
 
             Elle prend en paramètre un entier `n`
 
@@ -667,25 +695,27 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            La définition de la fonction _est_premier_ commence avec le mot clé **def**
+            La définition de la fonction _premier_ commence avec le mot clé **def**
 
             Elle prend en paramètre un entier _n_
 
             Elle renvoie un booléen avec le mot clé **return**
             ```
 
-        !!! done "Rendu"
-            La définition de la fonction _est_premier_ commence avec le mot clé **def**
+        !!! fail "Rendu"
+            La définition de la fonction _premier_ commence avec le mot clé **def**
 
             Elle prend en paramètre un entier _n_
 
             Elle renvoie un booléen avec le mot clé **return**
+
+        :warning: Les effets de texte ne servent pas à désigner des bouts de code.
     
     === "Le futur avec MkDocs"
         !!! note "Entrée"
 
             ```markdown
-            La définition de la fonction `#!py3 est_premier` commence avec le mot clé `#!py3 def`
+            La définition de la fonction `#!py3 premier` commence avec le mot clé `#!py3 def`
 
             Elle prend en paramètre un entier `#!py3 n`
 
@@ -693,7 +723,7 @@ Auteur : Franck CHAMBON
             ```
 
         !!! done "Rendu"
-            La définition de la fonction `#!python est_premier` commence avec le mot clé `#!python def`
+            La définition de la fonction `#!python premier` commence avec le mot clé `#!python def`
 
             Elle prend en paramètre un entier `#!python n`
 
@@ -702,14 +732,29 @@ Auteur : Franck CHAMBON
         Ceci n'est possible qu'avec MkDocs, et des extensions, on peut donc avoir la coloration syntaxique en ligne avec des langages variés. **Nous y reviendrons plus tard.**
 
     !!! warning "Technique avancée"
-        !!! note "Entrée"
+        Si on souhaite écrire du code en ligne qui contient des `` ` ``,
+         il suffit d'encadrer le morceau avec plus de `` ` `` qu'il n'y en a consécutivement dans le morceau.
+        === "Exemple simple"
+            !!! note "Entrée"
+                ```markdown
+                Afficher **du code** avec accent grave : `` un entier `n` ``
+                ```
 
-            ```markdown
-            Afficher **du code** avec accent grave : `` un entier `n` ``
-            ```
+            !!! done "Rendu"
+                Afficher **du code** avec accent grave : `` un entier `n` ``
 
-        !!! done "Rendu"
-            Afficher **du code** avec accent grave : `` un entier `n` ``
+        === "Exemple élaboré"
+            !!! note "Entrée"
+                ```markdown
+                - Afficher 1`` ` `` : `` ` ``
+                - Afficher  2`` ` `` : ``` `` ```
+                - Afficher le code précédent : ```` - Afficher  2`` ` `` : ``` `` ``` ````
+                ```
+
+            !!! done "Rendu"
+                - Afficher 1`` ` `` : `` ` ``
+                - Afficher  2`` ` `` : ``` `` ```
+                - Afficher le code précédent : ```` - Afficher  2`` ` `` : ``` `` ``` ````
 
 ### Images
 
@@ -831,7 +876,7 @@ Auteur : Franck CHAMBON
 !!! tip "Liste Python vers Markdown"
     Donner une fonction Python qui renvoie un texte en Markdown : le tableau de valeur pour une suite donnée en paramètre avec une liste.
 
-    ```py3
+    ```python
     def tableau_markdown(liste: list) -> str:
         lignes = []
         ajout = lignes.append
@@ -856,7 +901,7 @@ Auteur : Franck CHAMBON
 
     Ainsi on aimerait avoir
 
-    ```py3
+    ```python
     >>> tableau_markdown([0, 1, 1, 2, 3, 5, 8, 13])
     '|n|0|1|2|3|4|5|6|7|\n|-|-|-|-|-|-|-|-|-|\n|u_n|0|1|1|2|3|5|8|13|\n'
     ```
@@ -891,7 +936,7 @@ Auteur : Franck CHAMBON
 
 ??? done "Solution"
 
-    ```py3
+    ```python
     def tableau_markdown(liste: list) -> str:
         lignes = []
         ajout = lignes.append
@@ -923,47 +968,74 @@ Auteur : Franck CHAMBON
 
 ### Coloration syntaxique du code
 
-!!! example "Quelques exemples"
-    === "Markdown"
-        ````markdown
-        Voici quelques exemples de programmes
+!!! tip "Quelques exemples de programmes"
+    === "Correct"
+        !!! note "Entrée"
+            ````markdown
+            ```python
+            for i in range(10):
+                print("Salut à tous !")
+            ```
 
-        ```python
-        for i in range(10):
-            print("Salut à tous !")
-        ```
-
-        ```c
-        #include<stdio.h>
-        int main(){
-            int i;
-            for(i = 0; i < 10; i++){
-                printf("Salut à tous !\n");
+            ```c
+            #include<stdio.h>
+            int main(){
+                int i;
+                for(i = 0; i < 10; i++){
+                    printf("Salut à tous !\n");
+                }
+                return 0;
             }
-            return 0;
-        }
-        ```
+            ```
+            ````
 
-        ````
-    
-    === "Rendu"
-        Voici quelques exemples de programmes
+        !!! done "Rendu"
+            ```python
+            for i in range(10):
+                print("Salut à tous !")
+            ```
 
-        ```python
-        for i in range(10):
-            print("Salut à tous !")
-        ```
-
-        ```c
-        #include<stdio.h>
-        int main(){
-            int i;
-            for(i = 0; i < 10; i++){
-                printf("Salut à tous !\n");
+            ```c
+            #include<stdio.h>
+            int main(){
+                int i;
+                for(i = 0; i < 10; i++){
+                    printf("Salut à tous !\n");
+                }
+                return 0;
             }
-            return 0;
-        }
-        ```
+            ```
+
+    === "Incorrect"
+        !!! note "Entrée"
+            ````markdown
+            for i in range(10):
+                print("Salut à tous !")
+
+            #include<stdio.h>
+            int main(){
+                int i;
+                for(i = 0; i < 10; i++){
+                    printf("Salut à tous !\n");
+                }
+                return 0;
+            }
+            ````
+
+        !!! fail "Rendu"
+            for i in range(10):
+                print("Salut à tous !")
+
+            \#include<stdio.h>
+            int main(){
+                int i;
+                for(i = 0; i < 10; i++){
+                    printf("Salut à tous !\n");
+                }
+                return 0;
+            }
+
+        :warning: On perd l'indentation et on peut avoir des effets non désirés !
 
 !!! abstract "Méthode"
     Il suffit d'écrire
@@ -981,5 +1053,91 @@ Auteur : Franck CHAMBON
     - `sql`
     - `yaml`
 
+---
 
+À venir ; vérifier si c'est Jupyter compatible... Sinon, Go sur Markdown MkDocs
 
+---
+
+## Notes de bas de page
+
+## Lien sur les en-têtes
+
+## Liste de définition
+
+## Texte barré
+
+!!! tip "On encadre d'un double `~`"
+    === "Correct"
+        !!! note "Entrée"
+            ```markdown
+            La Terre ~~est plate~~ bleue comme une orange.
+            ```
+
+        !!! done "Rendu"
+            La Terre ~~est plate~~ bleue comme une orange.
+
+    === "Incorrect"
+        !!! note "Entrée"
+            ```markdown
+            La Terre ~~ est plate~~ bleue comme une orange.
+
+            La Terre ~~est plate ~~ bleue comme une orange.
+            ```
+
+        !!! fail "Rendu"
+            La Terre ~~ est plate~~ bleue comme une orange.
+
+            La Terre ~~est plate ~~ bleue comme une orange.
+        
+        :warning: Le double `~` doit être collé au morceau à barrer.
+
+!!! warning "Pas valable avec tous les Markdown !"
+    On en dispose avec CodiMD, Jupyter, mais aussi MkDocs avec l'extension `tilde`, et nous utiliserons.
+
+## Case à cocher
+
+!!! tip "On préfixe par `- [ ]` ou `- [x]`"
+    !!! note "Entrée"
+        ```markdown
+        Une liste de tâches
+        
+        - [ ] à faire
+        - [x] fini
+        - [ ] presque
+        - [x] fait depuis longtemps
+        ```
+
+    !!! done "Rendu"
+        Une liste de tâches
+        
+        - [ ] à faire
+        - [x] fini
+        - [ ] presque
+        - [x] fait depuis longtemps
+
+!!! abstract "Méthode"
+    Comme pour une liste, mais on commence par
+    
+    `- [ ]` pour une case non cochée,
+
+    `- [x]` pour une case cochée.
+
+!!! info "Cliquable ?"
+    Avec certains logiciels, les cases à cocher sont cliquables, ce qui permet de modifier leur état.
+
+    - ❌ Avec Jupyter, les cases à cocher ne sont pas cliquables.
+    - ✅ Avec CodiMD, elles le sont, et le fichier source est modifié à la volée.
+    - ❓ Avec MkDocs, on peut choisir globalement sa préférence.
+
+## Émojis
+
+!!! tip "🤪👩‍🎨🚦🚂⚔️"
+    Il suffit de coller vos émojis préférés depuis un site.
+    
+    - [Emojipedia](https://emojipedia.org/)
+    - [GetEmoji](https://getemoji.com/)
+    - [Copy and Paste Emoji](https://www.copyandpasteemoji.com/)
+    - [wpRock](https://wprock.fr/t/emoji/) ; avec recherche en français.
+    - [emoji copy](https://www.emojicopy.com/) ; permet d'en copier plusieurs à la fois.
+    - ...
