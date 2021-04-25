@@ -293,7 +293,9 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 !!! example "Exemple simple"
     !!! note "Entrée"
+
         ```` markdown
+
         === "C"
 
             ``` c
@@ -315,8 +317,11 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
               return 0;
             }
             ```
+
         ````
+
     !!! done "Rendu"
+
         === "C"
 
             ``` c
@@ -341,7 +346,9 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ??? danger "Exemple élaboré"
     !!! note "Entrée"
+
         ```` markdown
+
         === "Liste non numérotée"
 
             _Exemple_ :
@@ -373,8 +380,11 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             1. Sed sagittis eleifend rutrum
             2. Donec vitae suscipit est
             3. Nulla tempor lobortis orci
+
         ````
+
     !!! done "Rendu"
+
         === "Liste non numérotée"
 
             _Exemple_ :
