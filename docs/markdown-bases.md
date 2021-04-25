@@ -53,6 +53,8 @@ Auteur : Franck CHAMBON
 
     Le titre d'une partie (ou en-têtes) est précédé d'un ou plusieurs croisillons : `#`
 
+    Sur un clavier azerty, Le croisillon s'obtient avec ++altgr+3++.
+
     On ajoute une espace après le dernier croisillon.
 
     On saute une ligne avant et après l'en-tête.
@@ -175,13 +177,15 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            ligne1  
+            ligne1␣␣  
             ligne2
             ```
 
         !!! done "Rendu"
             ligne1  
             ligne2
+        
+        🤞 : On a symbolisé les deux espaces avec `␣␣`, mais **il faut utiliser l'espace classique**. `␣␣` ne sert que d'illustration.
 
     === "Incorrect"
         !!! note "Entrée"
@@ -197,10 +201,12 @@ Auteur : Franck CHAMBON
 
         :warning: Échec uniquement si on voulait forcer un saut de ligne.
     
-    !!! info "Vérifier l'exemple"
-        En sélectionnant le texte, vous verrez deux espaces à la fin de `ligne 1` dans l'entrée correcte.
+    !!! info "Deux espaces ou plus"
+        En sélectionnant le texte, vous verrez deux **véritables** espaces à la fin de `ligne 1` dans l'entrée correcte.
 
         Sans les deux espaces, le saut de ligne est considéré comme une unique espace entre les deux lignes, donc une seule ligne pour le navigateur.
+
+        On peut mettre plus de deux espaces.
 
     !!! tip "Bonne pratique"
         Il est pratique d'avoir son code sans longue ligne,
@@ -218,7 +224,7 @@ Auteur : Franck CHAMBON
 ### Ligne horizontale
 
 !!! tip "Séparer deux paragraphes"
-    On utilise `---` entre les deux paragraphes, avec des lignes vides.
+    On utilise `---` entre les deux paragraphes, avec des lignes vides de part et d'autre.
 
     === "Correct"
         !!! note "Entrée"
@@ -257,13 +263,15 @@ Auteur : Franck CHAMBON
 ### Listes
 
 !!! tip "Une ligne vide puis..."
-    Une liste, comme un nouveau paragraphe, doit être précédée d'une ligne vide.
-
-    Ensuite, on place chaque item sur une ligne en commençant par `-`
-
-    On peut faire des listes numérotées en commençant par `1.`
+    Une liste, comme un nouveau paragraphe, **doit être précédée d'une ligne vide**.
+    Certains moteurs Markdown acceptent qu'il n'y ait pas de saut de ligne, comme avec Jupyter,
+     mais pas tous.
     
-    On place aussi une espace juste avant son item.
+    !!! info "Les règles"
+        - Sauter une ligne avant la première puce.
+        - Ensuite, on place chaque item sur une ligne en commençant par `-`
+        - On peut faire des listes numérotées en commençant par `1.`
+        - On place aussi une espace juste avant son item.
 
 
     !!! abstract "Liste à puce"
@@ -785,7 +793,7 @@ Auteur : Franck CHAMBON
     - Si la cible n'est plus disponible, cela arrive, le texte alternatif remplace l'image.
 
 !!! warning "absolu ou relatif"
-    Il faut faire attention bien écrire son url.
+    Il faut faire attention à bien écrire son url.
 
     - Si c'est en local, vérifier le chemin d'accès.
     - Si c'est sur le web, bien préfixer avec le protocole `http`
@@ -793,7 +801,7 @@ Auteur : Franck CHAMBON
 ### Tableaux
 
 !!! tip "Avec le tube"
-    La touche [barre verticale](https://fr.wikipedia.org/wiki/Barre_verticale) (ou tube) s'obtient avec ++altgr+6++.
+    Le caractère ++pipe++ ([barre verticale](https://fr.wikipedia.org/wiki/Barre_verticale) ou tube) s'obtient avec ++altgr+6++.
 
     On construit un tableau suivant le modèle suivant.
 
@@ -1045,13 +1053,73 @@ Auteur : Franck CHAMBON
     
     La [liste des langages supportés](https://support.codebasehq.com/articles/tips-tricks/syntax-highlighting-in-markdown) contient entre autres aussi :
 
-    - `bash`, et `console`
+    - `bash`, `diff` et `console`
     - `markdown`
-    - `latex` et `tex`
+    - `latex`, `tex` et `asy`
     - `html` et `css`
     - `ocaml`
     - `sql`
     - `yaml`
+
+??? warning "Utilisation avancée"
+    Suivant le même principe que pour le code en ligne, pour donner une coloration syntaxique à un bloc qui contient lui-même un bloc, on peut utiliser un accent grave `` ` `` supplémentaire dans les délimiteurs. Exemple :
+
+    === "Correct"
+        !!! note "Entrée"
+            `````markdown
+            ````markdown
+            ```python
+            print("Salut")
+            ```
+
+            ```c
+            puts("Salut");
+            ```
+            ````
+            `````
+        !!! done "Rendu"
+            ````markdown
+            ```python
+            print("Salut")
+            ```
+
+            ```c
+            puts("Salut");
+            ```
+            ````
+        Le code source de ce document comportait
+        
+        ``````markdown
+        `````markdown
+        ...
+        `````
+        ``````
+        
+        Ceci pour afficher l'entrée correcte, et deux blocs de 6 `` ` ``, pour afficher cette remarque.
+    === "Incorrect"
+        !!! note "Entrée"
+            `````markdown
+            ```markdown
+            ```python
+            print("Salut")
+            ```
+
+            ```c
+            puts("Salut");
+            ```
+            ```
+            `````
+        !!! fail "Rendu"
+            ```markdown
+            ```python
+            print("Salut")
+            ```
+
+            ```c
+            puts("Salut");
+            ```
+            ```
+        :warning: Rien ne peut être structuré...
 
 ### Texte barré
 
@@ -1111,12 +1179,12 @@ Auteur : Franck CHAMBON
 
     `- [x]` pour une case cochée.
 
-!!! info "Cliquable ?"
+!!! info "Cliquables ?"
     Avec certains logiciels, les cases à cocher sont cliquables, ce qui permet de modifier leur état.
 
     - ❌ Avec Jupyter, les cases à cocher ne sont pas cliquables.
     - ✅ Avec CodiMD, elles le sont, et le fichier source est modifié à la volée.
-    - ❓ Avec MkDocs, on peut choisir globalement sa préférence.
+    - ❓ Avec MkDocs, on peut choisir globalement sa préférence, dans ce document, elles sont cliquables.
 
 ### Émojis
 

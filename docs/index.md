@@ -11,9 +11,9 @@ Auteur : Franck CHAMBON
 
     À l'instar de cette page, il y a quelques éléments dynamiques et la construction est assez élémentaire pour être proposée
     
-    - aux élèves en SNT, pour le début
+    - aux élèves en SNT, pour un travail en local,
     - aux élèves en NSI, pour la documentation de projet,
-    - aux collègues enseignants pour du travail collaboratif simplifié.
+    - aux collègues enseignants pour du travail collaboratif.
 
 ## Prérequis
 
@@ -158,7 +158,7 @@ Auteur : Franck CHAMBON
         $ pip3 install mkdocs-material
         ```
 
-    Cela installe plusieurs paquets utiles automatiquement.
+    Cela installe automatiquement plusieurs paquets utiles.
 
 ## Créer un nouveau MkDocs
 
@@ -187,7 +187,7 @@ Auteur : Franck CHAMBON
 !!! abstract "Au programme"
     Nous allons construire un site web, d'abord en local sur votre machine.
 
-    On pourra le consulter depuis votre navigateur Internet.
+    On pourra le consulter depuis le navigateur Internet.
 
     À chaque modification d'un fichier, le site sera mis à jour.
 
@@ -253,6 +253,8 @@ Auteur : Franck CHAMBON
     À chaque fois qu'un fichier sera modifié et **enregistré**, le site sera mis à jour dans le navigateur.
 
     **Faîtes vos premières expériences !**
+
+    **Vous pourrez bientôt créer votre comme celui-ci !!!**
 
 !!! info "Votre site n'est pas encore construit physiquement"
     Il est possible de construire physiquement (en local) votre site avec

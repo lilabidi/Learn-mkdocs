@@ -143,9 +143,11 @@
             - ❌ `les_points_de_vie`
     ```
 
-## Coloration syntaxique des sections mathématiques
+## Exemples de coloration syntaxique
 
 > Par Franck CHAMBON
+
+### Les mathématiques
 
 !!! abstract "Colorer les maths"
     On peut colorer Python en ligne avec `` `#!python for i in range(10): print(i)` ``
@@ -167,3 +169,115 @@
 
     De même pour les maths en mode équation.
 
+### Les sessions de Terminal
+
+!!! abstract "Colorer une session"
+    Il existe le mot clé `console` qui fonctionne différemment de `bash`
+
+!!! example "Exemple"
+    === "Correct"
+        !!! note "Entrée"
+            ````markdown
+            ```console
+            $ python --version
+            Python 3.8.5
+            $ pip --version
+            pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+            ```
+            ````
+        !!! done "Rendu"
+            ```console
+            $ python --version
+            Python 3.8.5
+            $ pip --version
+            pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+            ```
+    === "Incorrect"
+        !!! note "Entrée"
+            ````markdown
+            ```bash
+            $ python --version
+            Python 3.8.5
+            $ pip --version
+            pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+            ```
+            ````
+        !!! fail "Rendu"
+            ```bash
+            $ python --version
+            Python 3.8.5
+            $ pip --version
+            pip 21.0.1 from .../lib/python3.8/site-packages/pip (python 3.8)
+            ```
+        :warning: La commande et le résultat ne se détachent pas.
+
+### Des modifications à apporter
+
+!!! abstract "Typos, ajouts, retrait"
+    On souhaite indiquer une liste de modifications mineures.
+
+!!! example "Exemple"
+    === "Correct"
+        !!! note "Entrée"
+            ````markdown
+            ```diff
+            -vous attend!
+            +vous attend !
+
+            -par un espace
+            +par une espace
+
+            -la fonction retourne
+            +la fonction renvoie
+
+            -Netiquette
+            +Nétiquette
+            ```
+            ````
+        !!! done "Rendu"
+            ```diff
+            -vous attend!
+            +vous attend !
+
+            -par un espace
+            +par une espace
+
+            -la fonction retourne
+            +la fonction renvoie
+
+            -Netiquette
+            +Nétiquette
+            ```
+
+    === "Passable"
+        !!! note "Entrée"
+            ````markdown
+            ```
+            -vous attend!
+            +vous attend !
+
+            -par un espace
+            +par une espace
+
+            -la fonction retourne
+            +la fonction renvoie
+
+            -Netiquette
+            +Nétiquette
+            ```
+            ````
+        !!! fail "Rendu"
+            ```
+            -vous attend!
+            +vous attend !
+
+            -par un espace
+            +par une espace
+
+            -la fonction retourne
+            +la fonction renvoie
+
+            -Netiquette
+            +Nétiquette
+            ```
+            :warning: Il manque la coloration syntaxique.
