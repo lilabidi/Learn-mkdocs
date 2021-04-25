@@ -861,7 +861,7 @@ Auteur : Franck CHAMBON
             - `|---:|` pour un alignement à droite
             - `|:--:|` pour une colonne centrée
 
-## Exercices
+## Exercices simples
 
 ### Facile 1
 
@@ -1053,19 +1053,7 @@ Auteur : Franck CHAMBON
     - `sql`
     - `yaml`
 
----
-
-À venir ; vérifier si c'est Jupyter compatible... Sinon, Go sur Markdown MkDocs
-
----
-
-## Notes de bas de page
-
-## Lien sur les en-têtes
-
-## Liste de définition
-
-## Texte barré
+### Texte barré
 
 !!! tip "On encadre d'un double `~`"
     === "Correct"
@@ -1095,7 +1083,7 @@ Auteur : Franck CHAMBON
 !!! warning "Pas valable avec tous les Markdown !"
     On en dispose avec CodiMD, Jupyter, mais aussi MkDocs avec l'extension `tilde`, et nous utiliserons.
 
-## Case à cocher
+### Case à cocher
 
 !!! tip "On préfixe par `- [ ]` ou `- [x]`"
     !!! note "Entrée"
@@ -1130,7 +1118,7 @@ Auteur : Franck CHAMBON
     - ✅ Avec CodiMD, elles le sont, et le fichier source est modifié à la volée.
     - ❓ Avec MkDocs, on peut choisir globalement sa préférence.
 
-## Émojis
+### Émojis
 
 !!! tip "🤪👩‍🎨🚦🚂⚔️"
     Il suffit de coller vos émojis préférés depuis un site.
@@ -1141,3 +1129,13 @@ Auteur : Franck CHAMBON
     - [wpRock](https://wprock.fr/t/emoji/) ; avec recherche en français.
     - [emoji copy](https://www.emojicopy.com/) ; permet d'en copier plusieurs à la fois.
     - ...
+
+## Exercices élaborés
+
+### Exercice 1
+
+???
+
+### Exercice 2
+
+???
