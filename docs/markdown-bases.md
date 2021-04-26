@@ -801,7 +801,7 @@ Auteur : Franck CHAMBON
 ### Tableaux
 
 !!! tip "Avec le tube"
-    Le caractère ++pipe++ ([barre verticale](https://fr.wikipedia.org/wiki/Barre_verticale) ou tube) s'obtient avec ++altgr+6++.
+    Le caractère `|` ([barre verticale](https://fr.wikipedia.org/wiki/Barre_verticale) ou tube) s'obtient avec ++altgr+6++.
 
     On construit un tableau suivant le modèle suivant.
 
@@ -825,7 +825,7 @@ Auteur : Franck CHAMBON
         | Du code en ligne | ``Une boucle `for` `` | Une boucle `for`   |
 
     ??? bug "HTML"
-        Un code équivalent est bien plus délicat à écrire à la main...
+        Un code équivalent est bien plus délicat à écrire à la main, à lire et à maintenir...
 
         ```html
         <table>
@@ -865,8 +865,8 @@ Auteur : Franck CHAMBON
         - Il n'est **pas nécessaire** que les tubes soient bien alignés.
         - On peut inclure du Markdown dans les cellules.
         - La seconde ligne propose des options pour chaque colonne.
-            - `|:---|` pour un alignement à gauche
-            - `|---:|` pour un alignement à droite
+            - `|:---|` pour un alignement de la colonne à gauche
+            - `|---:|` pour un alignement de la colonne à droite
             - `|:--:|` pour une colonne centrée
 
 ## Exercices simples
