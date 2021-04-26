@@ -39,7 +39,6 @@
         - ✅ `Sète`
         - ✅ `carte_six`
         - ✅ `_5`
-        - ✅ `_`
         - ❌ `%4` ; interdit d'utiliser `%`
         - ❌ `quatre-moins-un` ; interdit d'utiliser `-`
         - ❌ `2!` ; interdit d'utiliser `!`
