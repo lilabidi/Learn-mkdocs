@@ -27,6 +27,7 @@ Pour ces expériences, on va utiliser...
         - pymdownx.highlight:           # Coloration syntaxique du code
             linenums: true              #   avec numérotation,
         - pymdownx.inlinehilite         #   et aussi pour le code en ligne.
+        - pymdownx.snippets             # Inclusion de fichiers externe.
         - pymdownx.tasklist:            # Cases à cocher
             custom_checkbox:    false   #   avec cases d'origine
             clickable_checkbox: true    #   et cliquables.
