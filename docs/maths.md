@@ -244,7 +244,7 @@ Auteur : Franck CHAMBON
     ??? done "Solution"
         1. Dans une console Python
         ```python
-        >>> 
+        >>> 3 + 1 / (7 + 1/16)
         3.1415929203539825
         ```
         2. Markdown
@@ -257,9 +257,9 @@ Auteur : Franck CHAMBON
         
         3. On a les étapes
         
-        $$A = 3 + 1 ÷ (7 + \frac{1}{16})$$
+        $$A = 3 + 1 ÷ \left(7 + \frac{1}{16} \right)$$
 
-        $$A = 3 + 1 ÷ (\frac{7×16}{16} + \frac{1}{16})$$
+        $$A = 3 + 1 ÷ \left( \frac{7×16}{16} + \frac{1}{16} \right)$$
 
         $$A = 3 + 1 ÷ \frac{112+1}{16}$$
 
@@ -371,7 +371,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     \dfrac{3 \times 113}{113} + \dfrac{16}{113} =
     \dfrac{355}{113} \approx \pi$
 
-    !!! done "Solution"
+    ??? done "Solution"
         ```latex
         $3 + \dfrac{1}{7 + \dfrac{1}{16}} = 
         3 + \dfrac{1}{ \dfrac{7 \times 16 + 1}{16} } =
@@ -379,19 +379,21 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
         \dfrac{355}{113} \approx \pi$
         ```
 
+
 ??? danger "Pour aller plus loin"
-    - Si le contenu d'un paramètre entre accolades n'est qu'un seul caractère, les accolades ne sont pas nécessaires, on peut les remplacer par de l'espace.
-    - Si ce caractère est un chiffre, on peut même le coller à `\dfrac`, mais on ne le conseille pas, pour des raisons de lisibilité.
 
-    Exemples valides mais non conseillés :
+    !!! info inline end
+        Si le contenu d'un paramètre entre accolades n'est qu'un seul caractère, les accolades ne sont pas nécessaires, on peut les remplacer par de l'espace.
+        
+        Si ce caractère est un chiffre, on peut même le coller à `\dfrac`, mais on ne le conseille pas, pour des raisons de lisibilité.
 
-    >|Code|Résultat|
-    >|----|--------:|
-    >|`$\dfrac12$` | $\dfrac12$ |
-    >|`$\dfrac1x$` | $\dfrac1x$ |
-    >|`$\dfrac1{x+y}$` | $\dfrac1{x+y}$ |
-    >|`$\dfrac{1+x}y$` | $\dfrac{1+x}y$ |
-    >|`$\dfrac ab$` | $\dfrac ab$ |
+    |Code|Résultat|
+    |----|--------:|
+    |`$\dfrac12$` | $\dfrac12$ |
+    |`$\dfrac1x$` | $\dfrac1x$ |
+    |`$\dfrac1{x+y}$` | $\dfrac1{x+y}$ |
+    |`$\dfrac{1+x}y$` | $\dfrac{1+x}y$ |
+    |`$\dfrac ab$` | $\dfrac ab$ |
 
 ## Les parenthèses à la bonne taille
 
@@ -447,7 +449,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
 ??? danger "Pour aller encore plus loin"
     - On utilisera `#!latex $\right.$` pour finir à droite une sélection commencée par un délimiteur gauche.
-    - On utilisera `#!latex $\left.$` pour commencer à gauche, qui se finira par un délimiteur droit.
+    - On utilisera `#!latex $\left.$` pour commencer à gauche une sélection qui se finira par un délimiteur droit.
     - On a le droit de commencer à **gauche** par une parenthèse (ou crochet ou accolade) qui **ouvre**.
     - On a le droit de finir à **droite** par une parenthèse (ou crochet ou accolade) qui **ferme**.
 
@@ -508,6 +510,23 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     $a^{-n} = $
     ```
 
+    ??? done "Solution"
+        ```latex
+        Pour tous nombres $a$, $b$, $c$ non nuls, et tous entiers $n$, $m$, on a :
+
+        $a^n \times a^m = a^{n + m}$
+
+        $a^n \times b^n = (a \times b)^n$
+
+        $\dfrac{a^n}{a^m} = a^{n - m}$
+
+        $\dfrac{a^n}{b^n} = \left( \dfrac{a}{b} \right)^n$
+
+        $\left( a^n \right)^m = a^{n \times m}$
+
+        $a^{-n} = \dfrac 1 {a^n}$
+        ```
+
 ## La Racine carrée
 
 !!! faq "Pourquoi `sqrt` ?"
@@ -541,7 +560,8 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
     En vous inspirant du modèle ci-dessus, rédiger une solution au problème suivant :
 
-    > $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
+    !!! danger "Problème"
+        $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
 
 
     À vous de modifier, compléter (et réutiliser) le code suivant :
@@ -555,6 +575,25 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     
     $BC^2 = $
     ```
+
+    ??? done "Solution"
+        ```latex
+        $RST$ est un triangle rectangle en $R$, avec $RT = 21$, $RS=28$. Calculer $ST$.
+
+        Réponse :
+        
+        $RST$ est un triangle rectangle en $R$, d'après le théorème de Pythagore, on a :
+        
+        $ST^2 = RS^2 + RT^2$
+
+        $ST^2 = 28^2 + 21^2$
+
+        $ST^2 = 1225$, avec $ST$ positif, donc
+
+        $ST = \sqrt{1225}$
+
+        $ST = 35$ ; la longueur de $ST$ est $35$.
+        ```
 
 ## Les indices `a_n`
 
