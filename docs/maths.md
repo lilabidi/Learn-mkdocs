@@ -8,21 +8,19 @@ Auteur : Franck CHAMBON
 ![](assets/material.png){width=200}
 
 !!! abstract "Objectif"
-    Écrire des mathématiques dans du code Markdown.
+    Écrire des mathématiques dans du code Markdown (ou LaTeX).
 
-    C'est utile pour Jupyter, CodiMD et MkDocs entre autres...
+    C'est utile pour GeoGebra, Jupyter, CodiMD et MkDocs entre autres...
 
-
-
-
-!!! done "Un tour d'horizon"
     !!! example "Exemple"
+
         === "Rendu"
             En 1735, Leonhard Euler résout le **problème de Bâle** en établissant la formule suivante :
 
             $$\sum\limits_{k\in\mathbb N^*} \frac 1 {k^2} = \frac {\pi^2}6$$
         
             Cependant, il ne démontrera rigoureusement son résultat qu’en 1741.
+
         === "Markdown"
             ```markdown
             En 1735, Leonhard Euler résout le **problème de Bâle** en établissant la formule suivante :
@@ -32,19 +30,27 @@ Auteur : Franck CHAMBON
             Cependant, il ne démontrera rigoureusement son résultat qu’en 1741.
             ```
 
+
+
+!!! done "Un tour d'horizon"
+
     !!! tip "KaTeX vs MathJax"
         Commençons par un tour d'horizon des possibilités en comparant les deux moteurs de rendu les plus répandus.
         
         [Lancer le tour d'horizon](https://www.intmath.com/cg5/katex-mathjax-comparison.php "KaTeX vs MathJax"){.md-button }
 
-!!! faq "Que retenir ?"
-    [KaTeX](https://katex.org/) permet un rendu performant et plus rapide que [MathJax](https://www.mathjax.org/). La syntaxe est la même, héritée de l'écriture des mathématiques avec [LaTeX](https://fr.wikipedia.org/wiki/LaTeX).
+    !!! faq "Que retenir ?"
+        [KaTeX](https://katex.org/) permet un rendu performant et plus rapide que [MathJax](https://www.mathjax.org/). La syntaxe est la même, héritée de l'écriture des mathématiques avec [LaTeX](https://fr.wikipedia.org/wiki/LaTeX).
 
-    Si vous ne savez pas l'utiliser, nous allons voir comment écrire des maths, **en commençant par les choses les plus simples**. Chaque partie contient des exercices à réaliser.
+        Si vous ne savez pas l'utiliser, nous allons voir comment écrire des maths, **en commençant par les choses les plus simples**. Chaque partie contient des exercices à réaliser.
 
 ## La balise math `$`
 
-!!! faq "Dans la ligne ou un paragraphe dédié"
+!!! tip "Dans la ligne ou un paragraphe dédié"
+
+    !!! warning inline end "Espacement"
+        Pas d'espaces après la balise ouvrante, ni avant la balise fermante.
+
     Il y a deux façons de placer des maths dans un document Markdown :
 
     1. Au milieu du texte qu'on écrit ; en ligne. **Le signe `$` de chaque côté.**
@@ -58,9 +64,6 @@ Auteur : Franck CHAMBON
 
         Paragraphe suivant.
         ```
-
-!!! warning "Espacement"
-    Pas d'espaces après la balise ouvrante, ni avant la balise fermante.
 
 ??? info "Autres balises"
     Le mode mathématique de MathJax (ou autre moteur de rendu) est largement employé ailleurs aussi ; avec GeoGebra, avec LaTeX et dans de nombreuses utilisations avec Markdown. Il y a des variations dans l'emploi des balises.  
@@ -102,7 +105,7 @@ Auteur : Franck CHAMBON
         + Conseil : écrire de manière à aérer le code, qu'il soit lisible.
         + Le moteur de rendu choisira les bonnes tailles d'espaces à afficher. C'est un principe de fonctionnement.
 
-!!! note "Motivation"
+!!! cite "Motivation"
     L'inspiration du HTML vient de TeX, inventé par [Donald Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth "Article Wikipedia").
 
     Écrire un document en utilisant LaTeX est une nécessité pour beaucoup d'étudiants en thèse et nombre de professionnels. Ce n'est pas [un apprentissage rapide](https://fr.wikibooks.org/wiki/LaTeX), mais cela permet d'obtenir une très grande qualité. **Ce n'est pas l'objectif de ce cours !** Cela peut néanmoins constituer une introduction. Une [suite de l'apprentissage](http://www.learnlatex.org/fr/) possible.
@@ -179,7 +182,7 @@ Auteur : Franck CHAMBON
     : $[5 + 3\times 8 - (1 + 35 \div 5)](18  -  5 \times 2)$
 
 !!! note "Exercice 1 : expression numérique"
-    !!! example "Un palindrome"
+    !!! info "Un palindrome"
         $3 \times 3 \times 13 \times 6353 \times 8969 \times (1 + 1480 \times 1001001)$
 
     1. Calculer avec une cellule Python l'expression numérique précédente, c'est un palindrome.
@@ -233,7 +236,7 @@ Auteur : Franck CHAMBON
             9\,876\,543\,210\,123\,456\,789$
 
 !!! note "Exercice 2 : une approximation de $\pi$"
-    !!! example "Milü"
+    !!! info "Milü"
         $3 + 1 \div (7 + 1 \div 16)$
 
     1. Calculer avec une cellule Python l'expression numérique précédente.
@@ -331,7 +334,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     |`#!latex $5 + \dfrac{x+7}{x-1}$` | $5+\dfrac{x+7}{x-1}$|
 
 !!! note "Exercice 3 : règles et fractions"
-    !!! example "Règles de calcul fractionnaire"
+    !!! info "Règles de calcul fractionnaire"
         Pour $a$, $b$, $c$ et $d$ des nombres, avec $b$ et $d$ non nuls, on a :
 
         $\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a + c}{b}$
@@ -453,7 +456,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     - On a le droit de commencer à **gauche** par une parenthèse (ou crochet ou accolade) qui **ouvre**.
     - On a le droit de finir à **droite** par une parenthèse (ou crochet ou accolade) qui **ferme**.
 
-    === "Example"
+    === "Exemple"
         Markdown
         : `#!latex $\left] \dfrac{a}{b} \right.$`
     
@@ -462,7 +465,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
 ## Les puissances `a^n`
 
-!!! tip "L'accent circonflexe"
+!!! tip inline "L'accent circonflexe"
     Markdown
     : `#!latex $a^{n}$`
     
@@ -475,6 +478,27 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     L'intérieur des accolades est un contenu mathématique, pas du texte.
 
     Pour écrire deuxième en abrégé, on écrit `2^e^` pour 2^e^, sans entrer dans le mode mathématique.
+
+    :warning: Bien penser aux accolades.
+
+!!! example "Exemples"
+    === "Correct"
+        Markdown
+        : `#!latex $a^{42}$`
+        
+        Rendu
+        :  $a^{42}$
+
+        👍 $42$ est bien mis en exposant en entier.
+
+    === "Incorrect"
+        Markdown
+        : `#!latex $a^42$`
+        
+        Rendu
+        :  $a^42$
+
+        :warning: Seul le $4$ est mis en exposant...
 
 !!! note "Exercice 5 : règles et puissances"
     !!! abstract "Les règles"
@@ -529,15 +553,19 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
 ## La Racine carrée
 
-!!! faq "Pourquoi `sqrt` ?"
-    En anglais _**sq**uare-**r**oo**t**_ ; `sqrt` est très souvent utilisé.
-
-!!! done "Méthode"
+!!! done  inline "Méthode"
     Markdown
     : `#!latex $\sqrt{x}$`
     
     Rendu
     : $\sqrt{x}$
+
+!!! info "Remarques"
+    - Pourquoi `sqrt` ?
+        - En anglais _**sq**uare-**r**oo**t**_
+        - `sqrt` est donc très souvent utilisé.
+    - :warning: Bien penser aux accolades.
+        - Sinon tout n'est pas inclus dans la racine.
 
 
 !!! note "Exercice 6 : Théorème de Pythagore"
@@ -573,7 +601,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
     
     $ABC$ est un triangle rectangle en $A$, d'après le théorème de Pythagore, on a :
     
-    $BC^2 = $
+    $BC^2 =$
     ```
 
     ??? done "Solution"
@@ -597,7 +625,7 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
 ## Les indices `a_n`
 
-!!! tip "Le tiret-bas"
+!!! tip inline "Le tiret-bas"
     Markdown
     : `#!latex $a_{n}$`
     
@@ -609,14 +637,36 @@ On peut bien sûr utiliser des variables mathématiques, elles seront écrites e
 
     L'intérieur des accolades est un contenu mathématique, pas du texte.
 
-    Pour écrire du texte en indice, à l'intérieur du mode mathématique, on utilise `\text`.
+    Pour écrire du texte en indice, à l'intérieur du mode mathématique,
+     on utilise `\text`, comme dans $p_{\text{carré}}$ avec `#!latex $p_{\text{carré}}$`
     
-    !!! example "Volume d'un cylindre"
-        Par exemple, pour $V_\text{cylindre}$, on écrit `#!latex $V_\text{cylindre}$`.
+    :warning: Bien penser aux accolades.
 
-        Nous verrons à la section suivante comment utiliser une écriture cursive pour un plus joli
+!!! example "Exemples"
+    === "Correct"
+        Markdown
+        : `#!latex $a_{42}$`
+        
+        Rendu
+        :  $a_{42}$
 
-        $$\mathscr V_\text{cylindre}$$
+        👍 $42$ est bien mis en indice en entier.
+
+    === "Incorrect"
+        Markdown
+        : `#!latex $a_42$`
+        
+        Rendu
+        :  $a_42$
+
+        :warning: Seul le $4$ est mis en indice...
+
+!!! example "Volume d'un cylindre"
+    Par exemple, pour $V_\text{cylindre}$, on écrit `#!latex $V_\text{cylindre}$`.
+
+    Nous verrons à la section suivante comment utiliser une écriture cursive pour un plus joli
+
+    $$\mathscr V_\text{cylindre}$$
 
 ## Écriture scripte, pour aires, volumes, cercles
 
