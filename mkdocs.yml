@@ -53,6 +53,7 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.snippets
+  - pymdownx.progressbar
   - pymdownx.details
   - pymdownx.highlight:
       linenums: false
@@ -91,3 +92,5 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/progress_bar.css
+

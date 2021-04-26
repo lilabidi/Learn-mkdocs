@@ -50,7 +50,7 @@
     - On utilise les [SuperFences](https://facelessuser.github.io/pymdown-extensions/extensions/superfences/)
 
     Dans `mkdocs.yml`
-    ```yml
+    ```yaml
     markdown_extensions:
       - pymdownx.tabbed
       - pymdownx.superfences
@@ -118,7 +118,7 @@
         - Avec la possibilité `details`
 
     Dans `mkdocs.yml`
-    ```yml
+    ```yaml
     markdown_extensions:
       - admonition
       - pymdownx.details

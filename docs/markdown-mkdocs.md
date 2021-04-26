@@ -3,84 +3,39 @@
 Pour ces expériences, on va utiliser...
 
 ??? example "... le fichier `mkdocs.yml` suivant"
-    ```yml
-    site_name: "Premières expériences avec MkDocs"
+    ```yaml
+    site_name: Expériences
 
     nav:
-      - "Accueil": index.md
-      - "Page 1": page_1.md
-      - "Page 2": page_2.md
+        - Accueil: index.md
 
+                                        # JUSTIFICATIONS
     theme:
-      name: material
-      font: false
-      language: fr
-      features:
-        - navigation.instant
-        - navigation.tabs
-        - navigation.expand
-        - navigation.top
-        - toc.integrate
-        - header.autohide
-
-      palette:
-        # Light mode
-        - media: "(prefers-color-scheme: light)"
-          scheme: default
-          primary: indigo
-          accent: indigo
-          toggle:
-            icon: material/toggle-switch-off-outline
-            name: Mode sombre
-
-        # Dark mode
-        - media: "(prefers-color-scheme: dark)"
-          scheme: slate
-          primary: blue
-          accent: blue
-          toggle:
-            icon: material/toggle-switch
-            name: Mode clair
-
+        name: material
+        font: false                     # RGPD
+        language: fr                    # français
 
     markdown_extensions:
-      - meta
-      - abbr
-      - admonition
-      - def_list
-      - attr_list
-      - footnotes
-      - pymdownx.caret
-      - pymdownx.mark
-      - pymdownx.tilde
-      - pymdownx.snippets
-      - pymdownx.details
-      - pymdownx.highlight:
-          linenums: false
-      - pymdownx.tasklist:
-          custom_checkbox: false
-          clickable_checkbox: true
-      - pymdownx.inlinehilite
-      - pymdownx.superfences
-      - pymdownx.keys
-      - pymdownx.tabbed
-      - pymdownx.emoji:
-          emoji_index: !!python/name:materialx.emoji.twemoji
-          emoji_generator: !!python/name:materialx.emoji.to_svg
-      - toc:
-          permalink: ⚓︎
-          toc_depth: 3
-
-
-    plugins:
-      - search
-
-    extra:
-      social:
-        - icon: fontawesome/solid/paper-plane
-          link: mailto:quelqun@ailleurs.grd
-          name: Écrire à l'auteur
-
+        - def_list                      # Les listes de définition.
+        - attr_list                     # Un peu de CSS et des attributs HTML.
+        - footnotes                     # Notes de bas de page.
+        - admonition                    # Blocs colorés
+        - pymdownx.details              #   qui peuvent se plier/déplier.
+        - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
+        - pymdownx.mark                 # Passage ==surligné==.
+        - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
+        - pymdownx.highlight:           # Coloration syntaxique du code
+            linenums: true              #   avec numérotation,
+        - pymdownx.inlinehilite         #   et aussi pour le code en ligne.
+        - pymdownx.tasklist:            # Cases à cocher
+            custom_checkbox:    false   #   avec cases d'origine
+            clickable_checkbox: true    #   et cliquables.
+        - pymdownx.tabbed               # Volets glissants.
+        - pymdownx.superfences          # Imbrication de blocs.
+        - pymdownx.keys                 # Touches du clavier.
+        - pymdownx.emoji:               # Émojis
+            emoji_index:     !!python/name:materialx.emoji.twemoji
+            emoji_generator: !!python/name:materialx.emoji.to_svg
     ```
 
 ## Les admonitions

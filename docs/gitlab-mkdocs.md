@@ -290,7 +290,7 @@ Voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3
 5. Enfin ouvrir un terminal dans un dossier comme `/Documents`, vous pourrez le **coller après** `git clone` en collant votre sélection.
 
     ```console
-    git clone git@gitlab.com:<votre super projet>
+    $ git clone git@gitlab.com:<votre super projet>
     ```
 
 ## Création de son site
@@ -309,7 +309,7 @@ C'est là que la magie opère, nous allons ajouter un fichier pour automatiser l
 
 Dans le même dossier que le fichier `mkdocs.yml`, ajouter un fichier `.gitlab-ci.yml` contenant
 
-```yml
+```yaml
 image: python:latest
 pages:
   stage: deploy

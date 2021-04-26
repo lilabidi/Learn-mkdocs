@@ -14,7 +14,7 @@
 
 ??? tip "Méthode"
     Dans `docs/mkdocs.yml`
-    ```yml
+    ```yaml
     markdown_extensions:
       - abbr
       - pymdownx.snippets
