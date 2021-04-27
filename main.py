@@ -6,7 +6,6 @@ def define_env(env):
     @env.macro
     def basthon(exo: str, hauteur: int) -> str:
         "Renvoie du HTML pour embarquer un fichier `exo` dans Basthon"
-        return f"""https://console.basthon.fr/?from={env.variables.io_url}{env.variables.page.url}../{exo}"""
         return f"""<iframe src="https://console.basthon.fr/?from={env.variables.io_url}{env.variables.page.url}../{exo}" width=100% height={hauteur}></iframe>
 
 [Lien dans une autre page](https://console.basthon.fr/?from={env.variables.io_url}{env.variables.page.url}../{exo})
