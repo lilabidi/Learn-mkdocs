@@ -144,6 +144,8 @@ Auteur : Franck CHAMBON
 
     Un message peut alors être transmis par une communication électronique.
 
+    :boom: **Défi** : Sauriez-vous faire un script `binaire_vers_ascii` ? :boom:
+
 !!! done "UTF-8"
     Aujourd'hui on utilise souvent un codage
      [UTF-8](https://fr.wikipedia.org/wiki/UTF-8)
