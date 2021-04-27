@@ -9,7 +9,7 @@ nav:
   - "Recettes simples": recettes_1.md
   - "Hébergement du site": gitlab-mkdocs.md
   - "Recettes élaborées": recettes_2.md
-
+  - "Bonus": 1-binaire/1-binaire.md
 theme:
   name: material
   font: false
