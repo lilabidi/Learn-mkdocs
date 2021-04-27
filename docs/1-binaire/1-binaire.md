@@ -115,7 +115,7 @@ Auteur : Franck CHAMBON
     
     Le problème était pour la communication entre utilisateurs de différents pays ; c'était parfois compliqué... En France on utilisait l'[encodage](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1) `latin-1` nommé aussi `ISO 8859-1`.
 
-{{ basthon('convertisseur.py', 600) }}
+{{ basthon('scripts/convertisseur.py', 600) }}
 
 !!! done "UTF-8"
     Aujourd'hui on utilise souvent un codage [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) avec un nombre variable d'octets pour pouvoir échanger du texte dans n’importe quelle langue, avec *smiley*...
@@ -132,19 +132,22 @@ Auteur : Franck CHAMBON
     Exemple
     : Un livre simple en anglais d'un million de caractères pèse un méga-octet ($1~\text{Mo}$).
 
-### Niveaux de gris
+!!! tip "Niveaux de gris"
 
-Une autre utilisation de l'octet est de proposer 256 symboles différents, comme 256 nombres différents. Un octet peut représenter un niveau de gris parmi 256.
+    Une autre utilisation de l'octet est de proposer 256 symboles différents, comme 256 nombres différents. **Un octet peut représenter un niveau de gris parmi 256.**
 
-> Une image simple (en 256 niveaux de gris) est une liste de lignes, où chaque ligne est une liste de pixels codés sur **un** octet. Dans ce cas une image de 600 pixels de large, par 400 pixels de haut pèse $600×400×1 = 240~\text{ko}$ (hors compression).
+    Une image simple (en 256 niveaux de gris) est une liste de lignes, où chaque ligne est une liste de pixels codés sur **un** octet.
+    
+    !!! example "Exemple"
+        Dans ce cas une image de 600 pixels de large, par 400 pixels de haut pèse, hors compression, $600×400×1 = 240~\text{ko}$.
 
----
-
-Pour coder d'autres nombres, pour des images plus précises, ou pour d'autres usages, on pourra utiliser plus que 8 bits.
+!!! faq "Et la suite ?"
+    Pour coder d'autres nombres, pour des images plus précises, ou pour d'autres usages, on pourra utiliser plus que 8 bits.
 
 ## II - Codage des entiers
 
-###  Les entiers non signés sur 4 bits
+### Les entiers non signés sur 4 bits
+
 On a $2^4 = 16$ nombres de $0$ à $15$.
 
 | $n$ | binaire | hexadécimal |
