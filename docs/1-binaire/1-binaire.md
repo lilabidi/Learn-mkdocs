@@ -28,7 +28,7 @@ Auteur : Franck CHAMBON
     Le fonctionnement d'un ordinateur repose sur des
      [circuits de calcul logique et bit à bit]
      (https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_circuits_de_calcul_logique_et_bit_%C3%A0_bit?uselang=fr).
-    ![mex](1-binaire/mex.png)
+    ![mex](mex.png)
 
 !!! tip "Le stockage d'information"
     L'unité élémentaire de stockage informatique
