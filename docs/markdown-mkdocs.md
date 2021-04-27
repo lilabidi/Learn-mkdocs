@@ -421,6 +421,7 @@ En introduction, pour donner le contenu du fichier `mkdocs.yml` qui est situé d
 ## Utilisation de MathJax
 
 Suivant les indications de la documentation :
+
     - [MkDocs Matertial - MathJax](https://squidfunk.github.io/mkdocs-material/reference/mathjax/)
     - [arithmatex](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
     - [faceless `mkdocs.yml`](https://github.com/facelessuser/pymdown-extensions/blob/main/mkdocs.yml)
@@ -466,7 +467,7 @@ extra_css:
 
 3. On crée un dossier `docs/xtra/stylesheets` dans lequel
 
-    - on place le fichier `ajustements.css`
+    - on place le fichier `ajustements.css` ; merci @sebhoa
 
     ```js
     .md-typeset div.arithmatex  {
