@@ -25,15 +25,22 @@ Auteur : Franck CHAMBON
 
     ---
 
-    Le fonctionnement d'un ordinateur repose sur des [circuits de calcul logique et bit à bit](https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_circuits_de_calcul_logique_et_bit_%C3%A0_bit?uselang=fr).
+    Le fonctionnement d'un ordinateur repose sur des
+     [circuits de calcul logique et bit à bit]
+     (https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_circuits_de_calcul_logique_et_bit_%C3%A0_bit?uselang=fr).
     ![mex](1-binaire/mex.png)
 
 !!! tip "Le stockage d'information"
-    L'unité élémentaire de stockage informatique au niveau le plus bas est le *bit* (_**Bi**nary digi**t**_).
+    L'unité élémentaire de stockage informatique
+     au niveau le plus bas est le *bit* (_**Bi**nary digi**t**_).
 
     - Un disque dur contient des milliers de milliards de bits,
     - la mémoire vive contient des milliards de bits,
-    - un processeur moderne d'architecture [`ARMv8`](https://fr.wikipedia.org/wiki/ARMv8) ou [`AMD64`](https://fr.wikipedia.org/wiki/AMD64), contient de la mémoire cache avec des millions de bits et des registres de 64 bits.
+    - un processeur moderne d'architecture
+     [`ARMv8`](https://fr.wikipedia.org/wiki/ARMv8) ou
+     [`AMD64`](https://fr.wikipedia.org/wiki/AMD64),
+     contient de la mémoire cache avec des millions de bits et
+     des registres de 64 bits.
 
     Bref, l'information est constituée de cases remplies soit de `0`, soit de `1`.
 
@@ -58,9 +65,12 @@ Auteur : Franck CHAMBON
         Pour un lot de 8 bits, on parle d'**octet** (*byte*).
 
 !!! info "Remarques"
-    - *bit* est abrégé en $\text{b}$, comme dans un débit Internet à $24~\text{Mbps}$ (24 mégabits par seconde).
-    - *byte* (prononcé « baïte ») est abrégé en $\text{B}$, le débit précédent correspond à $3~\text{MBps}$ (*3 megabytes per second*).
-    - octet est abrégé en $\text{o}$, comme dans $3~\text{Mo}/\text{s}$, (3 mégaoctets par seconde).
+    - *bit* est abrégé en $\text{b}$, comme dans un débit Internet
+     à $24~\text{Mbps}$ (24 mégabits par seconde).
+    - *byte* (prononcé « baïte ») est abrégé en $\text{B}$,
+     le débit précédent correspond à $3~\text{MBps}$ (*3 megabytes per second*).
+    - octet est abrégé en $\text{o}$,
+     comme dans $3~\text{Mo}/\text{s}$, (3 mégaoctets par seconde).
 
 ??? example "Le débit de transmission - échelle logarithmique"
     [=25% "ADSL : $1$ à $15~\text{Mbps}$"]
@@ -73,9 +83,11 @@ Auteur : Franck CHAMBON
 ### Octet
 
 !!! info inline end "Transport de texte"
-    En pratique les données informatiques transitent très souvent par paquets de 8 bits, donc par octets.
+    En pratique les données informatiques transitent
+     très souvent par paquets de 8 bits, donc par octets.
 
-    La première raison à cela a été l'utilisation de l'ASCII pour transporter l'information du texte écrit.
+    La première raison à cela a été l'utilisation de l'ASCII
+     pour transporter l'information du texte écrit.
 
     | Caractère | Code ASCII |
     |:---------:|:----------:|
@@ -90,7 +102,8 @@ Auteur : Franck CHAMBON
     | `z` | `01111010` |
 
 !!! cite "ASCII"
-    Le [codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange) utilise un octet :
+    Le [codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
+     utilise un octet :
 
     - Le premier bit est à 0 ;
     - les 7 autres sont variables, donc $2^7 = 128$ symboles différents.
@@ -107,15 +120,22 @@ Auteur : Franck CHAMBON
     !!! warning "Limitations"
         ASCII ne peut pas coder tous les caractères.
 
-        - Il existe trop de langues et donc énormément de lettres, un choix a été fait, des lettres latines.
+        - Il existe trop de langues et donc énormément de lettres,
+         un choix a été fait, des lettres latines.
         - Pour la ponctuation, un choix a aussi été fait.
         
-        Pour un texte en anglais, avec une ponctuation classique, l'ASCII est parfaitement adapté.
+        Pour un texte en anglais, avec une ponctuation classique,
+         l'ASCII est parfaitement adapté.
 
 ??? danger "ASCII étendu"
-    À une époque, dans certains pays, on utilisait une variante de l'ASCII étendu (un pour chaque pays), avec 128 symboles supplémentaires (ceux avec le bit de poids fort égal à 1).
+    À une époque, dans certains pays, on utilisait
+     une variante de l'ASCII étendu (un pour chaque pays),
+     avec 128 symboles supplémentaires (ceux avec le bit de poids fort égal à 1).
     
-    Le problème était pour la communication entre utilisateurs de différents pays ; c'était parfois compliqué... En France on utilisait l'[encodage](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1) `latin-1` nommé aussi `ISO 8859-1`.
+    Le problème était pour la communication entre utilisateurs
+     de différents pays ; c'était parfois compliqué...
+     En France on utilisait l'[encodage](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1)
+     `latin-1` nommé aussi `ISO 8859-1`.
 
 {{ basthon('scripts/convertisseur.py', 700) }}
 
@@ -125,32 +145,47 @@ Auteur : Franck CHAMBON
     Un message peut alors être transmis par une communication électronique.
 
 !!! done "UTF-8"
-    Aujourd'hui on utilise souvent un codage [UTF-8](https://fr.wikipedia.org/wiki/UTF-8) avec un nombre variable d'octets pour pouvoir échanger du texte dans n’importe quelle langue, avec *smiley*...
+    Aujourd'hui on utilise souvent un codage
+     [UTF-8](https://fr.wikipedia.org/wiki/UTF-8)
+     avec un nombre variable d'octets pour pouvoir
+     échanger du texte dans n’importe quelle langue, avec *smiley*...
 
-    - Si le bit de poids fort est à `0`, alors le caractère est codé en ASCII ; le cas le plus fréquent.
-    - Sinon, et c'est rare, il est codé sur plusieurs octets, et on peut utiliser au choix, tous les caractères que l'humanité est capable d'inventer : lettre de toute langue, hiéroglyphe, smiley, symbole technique, ...
+    - Si le bit de poids fort est à `0`, alors le caractère est codé en ASCII ;
+     le cas le plus fréquent.
+    - Sinon, et c'est rare, il est codé sur plusieurs octets,
+     et on peut utiliser au choix, tous les caractères
+     que l'humanité est capable d'inventer :
+     lettre de toute langue, hiéroglyphe, smiley, symbole technique, ...
 
 !!! note "À retenir"
     Le poids d'un fichier texte est donné par la règle simplifiée :
 
     - Pour un texte très simple, un caractère pèse un octet.
-    - Pour un texte plus technique, seuls les caractères hors ASCII sont codés sur plusieurs octets, et le poids en octets est supérieur au nombre de caractères. **Souvent juste un peu plus.**
+    - Pour un texte plus technique, seuls les caractères hors ASCII sont
+     codés sur plusieurs octets, et le poids en octets est supérieur
+      au nombre de caractères. **Souvent juste un peu plus.**
 
     Exemple
-    : Un livre simple en anglais d'un million de caractères pèse un méga-octet ($1~\text{Mo}$).
+    : Un livre simple en anglais d'un million de
+     caractères pèse un méga-octet ($1~\text{Mo}$).
 
 !!! tip "Niveaux de gris"
     [![image en niveau de gris](640px-Nine_steps_stair_in_Lysekil_-_bw.jpg){align=right width=400}](https://commons.wikimedia.org/wiki/File:Nine_steps_stair_in_Lysekil_-_bw.jpg#/media/File:Nine_steps_stair_in_Lysekil_-_bw.jpg)
 
-    Une autre utilisation de l'octet est de proposer 256 symboles différents, comme 256 nombres différents. **Un octet peut représenter un niveau de gris parmi 256.**
+    Une autre utilisation de l'octet est de proposer 256 symboles différents,
+     comme 256 nombres différents.
+     **Un octet peut représenter un niveau de gris parmi 256.**
 
-    Une image simple (en 256 niveaux de gris) est une liste de lignes, où chaque ligne est une liste de pixels codés sur **un** octet.
+    Une image simple (en 256 niveaux de gris) est une liste de lignes,
+     où chaque ligne est une liste de pixels codés sur **un** octet.
     
     !!! example "Exemple"
-        Dans le cas d'une image de 640 pixels de large, par 426 pixels de haut, hors compression, le poids est de $640×426×1 \approx 270~\text{ko}$.
+        Dans le cas d'une image de 640 pixels de large, par 426 pixels de haut,
+         hors compression, le poids est de $640×426×1 \approx 270~\text{ko}$.
 
 !!! faq "Et la suite ?"
-    Pour coder d'autres nombres, pour des images plus précises, ou pour d'autres usages, on pourra utiliser plus que 8 bits.
+    Pour coder d'autres nombres, pour des images plus précises,
+     ou pour d'autres usages, on pourra utiliser plus que 8 bits.
 
 ## II - Codage des entiers
 
@@ -267,7 +302,8 @@ Il y a $2^{32} = 4\,294\,967\,296$ nombres de $0$ jusqu'à $4\,294\,967\,295$.
 #### Deuxième technique
 
 1. On cherche à écrire le nombre comme une somme de puissance de deux, la plus grande possible.
-2. Les puissances obtenues donnent des `1` à l'écriture binaire, les puissances absentes donnent des `0` à l'écriture.
+2. Les puissances obtenues donnent des `1` à l'écriture binaire,
+ les puissances absentes donnent des `0` à l'écriture.
 
 !!! example "Exemple : avec $53$"
     - $53 = 32 + 21$
@@ -319,7 +355,8 @@ Chaque chiffre binaire correspond à une puissance de deux.
 - `1` : la puissance est présente, elle compte $1$ fois.
 - `0` : la puissance est absente, elle compte $0$ fois.
 
-On lit les chiffres de la droite vers la gauche, cela donne les puissances de $2$ : $2^0 = 1$, puis $2^1 = 2$, puis $2^2 = 4$, etc.
+On lit les chiffres de la droite vers la gauche,
+ cela donne les puissances de $2$ : $2^0 = 1$, puis $2^1 = 2$, puis $2^2 = 4$, etc.
 
 !!! example "Exemple"
     On lit bien les chiffres de la **droite vers la gauche** !
@@ -388,7 +425,9 @@ On a $2^8=256$ possibilités.
 - Entiers non signés : de $0$ à $255$.
 - Entiers signés : de $-128$ à $+127$.
 
-> Pour les entiers signés on partage l'intervalle en deux, zéro étant à la fois positif et négatif, il reste une place, on choisit d'avoir un négatif de plus. Nous y reviendrons.
+> Pour les entiers signés on partage l'intervalle en deux,
+ zéro étant à la fois positif et négatif, il reste une place,
+ on choisit d'avoir un négatif de plus. Nous y reviendrons.
 
 ### Sur 32 bits (4 octets)
 
@@ -416,13 +455,15 @@ Il y a deux problèmes :
 Cette méthode résout les deux problèmes précédents :
 
 - Il n'y a qu'une représentation pour $0$.
-- Les circuits intégrés pour faire les opérations entre nombres signés et non signés **sont exactement les mêmes**.
+- Les circuits intégrés pour faire les opérations
+ entre nombres signés et non signés **sont exactement les mêmes**.
 
 ##### Aperçu de la méthode
 
 On voudrait $(+1) + (-1) = 0$
 
-Sur un conteneur 8-bit, on prépare l'addition à trou, et on déduit que $(-1)$ se code avec `1111 1111`.
+Sur un conteneur 8-bit, on prépare l'addition à trou,
+ et on déduit que $(-1)$ se code avec `1111 1111`.
 
 ```
     0 0 0 0   0 0 0 1
@@ -431,7 +472,9 @@ Sur un conteneur 8-bit, on prépare l'addition à trou, et on déduit que $(-1)$
   1 0 0 0 0   0 0 0 0 
 ```
 
-On remarque qu'il reste un bit de poids fort, mais il n'est plus dans le conteneur 8-bit ; il est perdu, et on obtient bien 0 !
+On remarque qu'il reste un bit de poids fort,
+ mais il n'est plus dans le conteneur 8-bit ;
+ il est perdu, et on obtient bien 0 !
 
 On voudrait aussi $(+6) + (-6) = 0$
 
@@ -474,10 +517,12 @@ Comment obtenir plus rapidement l'opposé d'un entier ?
             - Le nombre de départ était $-55$.
 
         3. On teste d'abord si le nombre est positif ou négatif.
-            - Le bit de poids fort est à `0`, donc ce nombre est positif ; il suffit de lire sa partie numérique.
+            - Le bit de poids fort est à `0`, donc ce nombre est positif ;
+             il suffit de lire sa partie numérique.
             - La partie numérique est $1+4+8 = 13$
             - Le nombre de départ était $+13$.
 
 ---
 
-> Nous reviendrons sur ce chapitre pour travailler sur les conversions de bases entre binaire, octal et hexadécimal.
+> Nous reviendrons sur ce chapitre pour travailler sur les conversions
+ de bases entre binaire, octal et hexadécimal.
