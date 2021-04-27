@@ -63,11 +63,9 @@ Pour ces expériences, on va utiliser...
             emoji_generator: !!python/name:materialx.emoji.to_svg
     ```
 
-Pour une utilisation de MathJax ou KaTeX, se référer à la [dernière partie](#utilisation-de-mathjax).
+Pour une utilisation de MathJax, se référer à la [dernière partie](#utilisation-de-mathjax).
 
-$x+y = x + y$
-
-$$\pi$$
+En attendant, plus simple.
 
 ## Les admonitions
 
@@ -482,4 +480,4 @@ extra_css:
     .md-typeset details {
         font-size: 0.8rem;
     }
-```
+    ```
