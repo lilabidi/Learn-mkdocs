@@ -332,7 +332,7 @@ Il y a $2^{32} = 4\,294\,967\,296$ nombres de $0$ jusqu'à $4\,294\,967\,295$.
     2. Vérifier que $204 = (1100\,1100)_2$
     3. Comment peut-on déduire l'écriture de $205$, de $206$ ?
 
-### Ajouter un à une écriture binaire
+### Ajouter 1, à une écriture binaire
 
 !!! tip "Un algorithme"
     - On va faire une boucle sur les chiffres lus,
