@@ -244,8 +244,8 @@ Il y a $2^{32} = 4\,294\,967\,296$ nombres de $0$ jusqu'à $4\,294\,967\,295$.
     Donner la représentation binaire de $42$.
 
     ??? done "Solution"
-    !!! info inline end "Lecture du résultat"
-        Penser à lire du bas vers le haut.
+        !!! info inline end "Lecture du résultat"
+            Penser à lire du bas vers le haut.
 
         $$
         \begin{array}{rcl}
