@@ -5,6 +5,13 @@ Pour ces expériences, on va utiliser...
 ??? example "... le fichier `mkdocs.yml` suivant"
     ```yaml
     site_name: Expériences
+    site_url: https://ens-fr.gitlab.io/experience
+    repo_url: https://gitlab.com/ens-fr/experience
+    edit_uri: tree/master/docs/
+    site_description: Base commune de travail avec MkDocs
+    copyright: |
+    Copyright &copy; 2021 <a href="https://gitlab.com/ens-fr"  target="_blank" rel="noopener">Franck CHAMBON</a>
+    docs_dir: docs
 
     nav:
         - Accueil: index.md
@@ -14,6 +21,23 @@ Pour ces expériences, on va utiliser...
         name: material
         font: false                     # RGPD
         language: fr                    # français
+        palette:                        # Palettes de couleurs jour/nuit
+        - scheme: default
+            toggle:
+                icon: material/weather-sunny
+                name: Passer au mode nuit
+        - scheme: slate
+            toggle:
+                icon: material/weather-night
+                name: Passer au mode jour
+    features:
+        - navigation.instant
+        - navigation.tabs
+        - navigation.expand
+        - navigation.top
+        - toc.integrate
+        - header.autohide
+
 
     markdown_extensions:
         - def_list                      # Les listes de définition.
@@ -26,7 +50,7 @@ Pour ces expériences, on va utiliser...
         - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
         - pymdownx.highlight:           # Coloration syntaxique du code
             linenums: true              #   avec numérotation,
-        - pymdownx.inlinehilite         #   et aussi pour le code en ligne.
+        - pymdownx.inlinehilite         # pour `#!math  <math en ligne>`
         - pymdownx.snippets             # Inclusion de fichiers externe.
         - pymdownx.tasklist:            # Cases à cocher
             custom_checkbox:    false   #   avec cases d'origine
@@ -38,6 +62,12 @@ Pour ces expériences, on va utiliser...
             emoji_index:     !!python/name:materialx.emoji.twemoji
             emoji_generator: !!python/name:materialx.emoji.to_svg
     ```
+
+Pour une utilisation de MathJax ou KaTeX, se référer à la [dernière partie](#utilisation-de-mathjax).
+
+$x+y = x + y$
+
+$$\pi$$
 
 ## Les admonitions
 
@@ -239,13 +269,18 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Intégration de fichiers externes
 
+En introduction, pour donner le contenu du fichier `mkdocs.yml` qui est situé dans `docs/`, on a entré :
+
 ````markdown
-```python
---8<--​ "docs/fichier.py"
+```yaml
+--8<---​ "mkdocs.yml"
 ```
 ````
 
-## Les palissades (*SuperFences*)
+??? danger "Pour aller plus loin"
+    [La documentation (_en_)](https://facelessuser.github.io/pymdown-extensions/extensions/snippets/)
+
+## Les panneaux coulissant (*SuperFences*)
 
 !!! example "Exemple simple"
     !!! note "Entrée"
@@ -373,7 +408,6 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             2. Donec vitae suscipit est
             3. Nulla tempor lobortis orci
 
-
 ## Notes de bas de page
 
 ## Liste de définitions
@@ -385,3 +419,67 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 ## Images
 
 ## Meta tags
+
+## Utilisation de MathJax
+
+Suivant les indications de la documentation :
+    - [MkDocs Matertial - MathJax](https://squidfunk.github.io/mkdocs-material/reference/mathjax/)
+    - [arithmatex](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
+    - [faceless `mkdocs.yml`](https://github.com/facelessuser/pymdown-extensions/blob/main/mkdocs.yml)
+
+1. On modifie le fichier `mkdocs.yml` :
+
+```yaml
+markdown_extensions:
+    - pymdownx.arithmatex:          # les maths
+        generic: true               #    avec $ et $$
+
+extra_javascript:
+    - xtra/javascripts/mathjax-config.js                    # MathJax
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+    - xtra/stylesheets/ajustements.css                      # ajustements
+```
+
+2. On crée un dossier `docs/xtra/javascripts` dans lequel
+
+    - on place le fichier `mathjax-config.js`
+
+    ```js
+        window.MathJax = {
+        tex: {
+            inlineMath: [["\\(", "\\)"]],
+            displayMath: [["\\[", "\\]"]],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        options: {
+            ignoreHtmlClass: ".*|",
+            processHtmlClass: "arithmatex"
+        }
+        };
+
+        document$.subscribe(() => {
+        MathJax.typesetPromise()
+        })
+    ```
+
+3. On crée un dossier `docs/xtra/stylesheets` dans lequel
+
+    - on place le fichier `ajustements.css`
+
+    ```js
+    .md-typeset div.arithmatex  {
+        overflow: initial;
+    }
+
+    .md-typeset .admonition {
+        font-size: 0.8rem;
+    }
+
+    .md-typeset details {
+        font-size: 0.8rem;
+    }
+```
