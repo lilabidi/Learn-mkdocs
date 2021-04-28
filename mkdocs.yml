@@ -85,9 +85,21 @@ markdown_extensions:
 
 extra:
     social:
-        - icon: fontawesome/brands/gitlab # ou autre
+        - icon: fontawesome/brands/gitlab
           link: https://gitlab.com/ens-fr
           name: Enseignement en français
+
+        - icon: fontawesome/brands/discourse
+          link: https://mooc-forums.inria.fr/moocnsi/
+          name: Le forum des enseignants de NSI
+
+        - icon: fontawesome/brands/linux
+          link: https://linuxfr.org/
+          name: Promouvoir les Logiciels libres
+
+        - icon: fontawesome/brands/wikipedia-w
+          link: https://fr.wikipedia.org
+          name: L'encyclopédie libre que chacun peut améliorer
 
         - icon: fontawesome/solid/paper-plane
           link: mailto:franck.chambon@ac-aix-marseille.fr
