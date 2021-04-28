@@ -72,7 +72,7 @@ Auteur : Franck CHAMBON
         !!! example "Mises à jour de `pip`"
             Dans un terminal entrer
             ```console
-            $ pip install --upgrade pip
+            $ sudo -H pip install --upgrade pip
             ```
     
     === "Mac"
@@ -163,7 +163,7 @@ Auteur : Franck CHAMBON
 ## Créer un nouveau MkDocs
 
 !!! tip "Votre expérience"
-    Créer un dossier que vous pouvez nommer `expérience`, par exemple.
+    Créer un dossier que vous pouvez nommer `experience1`, par exemple.
 
     Ouvrir un terminal dans ce dossier **vide**.
 
@@ -178,8 +178,8 @@ Auteur : Franck CHAMBON
 
     <pre>
     INFO    -  Creating project directory: expérience
-    INFO    -  Writing config file: expérience/mkdocs.ym
-    INFO    -  Writing initial docs: expérience/docs/index.md
+    INFO    -  Writing config file: experience1/mkdocs.ym
+    INFO    -  Writing initial docs: experience1/docs/index.md
     </pre>
 
 ## Suivi en direct
@@ -216,7 +216,7 @@ Auteur : Franck CHAMBON
         <pre>
         INFO    -  Building documentation... 
 
-        Config file '...expérience/docs/mkdocs.yml' does not exist.
+        Config file '...experience1/docs/mkdocs.yml' does not exist.
         </pre>
         C'est que vous avez lancé la commande dans le mauvais dossier.
 
@@ -254,7 +254,7 @@ Auteur : Franck CHAMBON
 
     **Faîtes vos premières expériences !**
 
-    **Vous pourrez bientôt créer votre comme celui-ci !!!**
+    **Vous pourrez bientôt créer votre site comme celui-ci !!!**
 
 !!! info "Votre site n'est pas encore construit physiquement"
     Il est possible de construire physiquement (en local) votre site avec

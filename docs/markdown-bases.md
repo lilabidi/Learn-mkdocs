@@ -41,7 +41,7 @@ Auteur : Franck CHAMBON
 !!! tip "Quelques exemples"
     |Objectif|Markdown|Rendu|
     |:-----|:------|:----|
-    |Créer un lien|`[texte cliquable](mon_lien.fr)`|[texte cliquable](mon_lien.fr)|
+    |Créer un lien|`[texte cliquable](https://mon_lien.fr)`|[texte cliquable](https://mon_lien.fr)|
     |Emphase faible|`Un _mot_ discret` | Un _mot_ discret |
     |Emphase forte|`Un **mot** visible` | Un **mot** visible |
     |Du code en ligne|``Une boucle `for` `` |Une boucle `for`|
@@ -810,7 +810,7 @@ Auteur : Franck CHAMBON
         ```markdown
         | Objectif | Markdown | Rendu |
         |---------|-------------|---|
-        | Créer un lien    | `[texte cliquable](mon_lien.fr)` | [texte cliquable](mon_lien.fr) |
+        | Créer un lien    | `[texte cliquable](https://mon_lien.fr)` | [texte cliquable](https://mon_lien.fr) |
         | Emphase faible   | `Un _mot_ discret`    | Un _mot_ discret   |
         | Emphase forte    | `Un **mot** visible`  | Un **mot** visible |
         | Du code en ligne | ``Une boucle `for` `` | Une boucle `for`   |
@@ -819,7 +819,7 @@ Auteur : Franck CHAMBON
     !!! done "Rendu"
         | Objectif | Markdown | Rendu |
         |----------|----------|-------|
-        | Créer un lien    | `[texte cliquable](mon_lien.fr)` | [texte cliquable](mon_lien.fr) |
+        | Créer un lien    | `[texte cliquable](https://mon_lien.fr)` | [texte cliquable](https://mon_lien.fr) |
         | Emphase faible   | `Un _mot_ discret`    | Un _mot_ discret   |
         | Emphase forte    | `Un **mot** visible`  | Un **mot** visible |
         | Du code en ligne | ``Une boucle `for` `` | Une boucle `for`   |
@@ -839,8 +839,8 @@ Auteur : Franck CHAMBON
         <tbody>
         <tr>
         <td>Créer un lien</td>
-        <td><code>[texte cliquable](mon_lien.fr)</code></td>
-        <td><a href="mon_lien.fr">texte cliquable</a></td>
+        <td><code>[texte cliquable](https://mon_lien.fr)</code></td>
+        <td><a href="https://mon_lien.fr">texte cliquable</a></td>
         </tr>
         <tr>
         <td>Emphase faible</td>

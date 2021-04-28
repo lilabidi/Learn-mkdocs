@@ -2,10 +2,10 @@
 
 Auteur : Franck CHAMBON
 
-![](assets/MathJax.png)
-![](assets/Jupyter.png)
-![](assets/katex.png){width=200}
-![](assets/material.png){width=200}
+![](maths/assets/MathJax.png)
+![](maths/assets/Jupyter.png)
+![](maths/assets/katex.png){width=200}
+![](maths/assets/material.png){width=200}
 
 !!! abstract "Objectif"
     Écrire des mathématiques dans du code Markdown (ou LaTeX).

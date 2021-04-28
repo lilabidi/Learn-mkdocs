@@ -47,15 +47,15 @@
 
     1. Noter le cercle vert coché, qui témoigne que le dernier déploiement s'est bien déroulé.
 
-        ![avant le push](avant-push.png)
+        ![avant le push](gitlab-mkdocs/avant-push.png)
 
     2. On modifie le site.
 
-        ![vidéo en gif](vidéo.gif)
+        ![vidéo en gif](gitlab-mkdocs/vidéo.gif)
 
     3. Si on réactualise la page du projet sur GitLab, le témoin passe à `pipeline: en cours`
 
-        ![juste après le push](après-push.png)
+        ![juste après le push](gitlab-mkdocs/après-push.png)
 
     4. Après quelques secondes, (ou minutes) 
         - Si un problème survient (mauvaise configuration),
