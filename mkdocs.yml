@@ -10,8 +10,8 @@ docs_dir: docs
 nav:
   - "Installation de MkDocs": index.md
   - "Bases de Markdown": markdown-bases.md
-  - "Écrire des maths": maths.md
   - "Markdown pour MkDocs": markdown-mkdocs.md
+  - "Écrire des maths": maths.md
   - "Élaboration du site": setup-mkdocs.md
   - "Recettes simples": recettes_1.md
   - "Hébergement du site": gitlab-mkdocs.md
