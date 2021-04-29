@@ -499,16 +499,16 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             _Exemple_ :
 
             ``` markdown
-            * Sed sagittis eleifend rutrum
-            * Donec vitae suscipit est
-            * Nulla tempor lobortis orci
+            - Sed sagittis eleifend rutrum
+            - Donec vitae suscipit est
+            - Nulla tempor lobortis orci
             ```
 
             _Résultat_ :
 
-            * Sed sagittis eleifend rutrum
-            * Donec vitae suscipit est
-            * Nulla tempor lobortis orci
+            - Sed sagittis eleifend rutrum
+            - Donec vitae suscipit est
+            - Nulla tempor lobortis orci
 
         === "Liste numérotée"
 
