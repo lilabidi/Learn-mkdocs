@@ -39,7 +39,7 @@
 ## Relayer `mkdocs serve` sur le réseau local
 
 !!! tip "Vous n'avez pas de double écran, mais un téléphone (ou tablette) !"
-    1. Déterminer votre adresse ip locale avec `#!console $ ifconfig`, elle ressemble probablement à `192.168.1.40` par exemple. (`#!console $ ipconfig` pour Windows.)
+    1. Déterminer votre adresse ip locale avec `#!console $ ip a`, elle ressemble probablement à `192.168.1.40` par exemple. (`#!console $ ipconfig` pour Windows.)
     2. Lancer depuis ce poste `#!console $ mkdocs serve --dev-addr=0.0.0.0:8000`
     3. Ouvrir depuis votre tablette un navigateur à l'adresse `192.168.1.40:8000`
     4. Avec un écran de plus, c'est toujours mieux !
