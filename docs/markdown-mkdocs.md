@@ -552,6 +552,45 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Notes de bas de page
 
+!!! tip "Avec `[^id]` et `[^id]: description`"
+    On place une indication de note en bas de page avec `[^id]` où `id` est un identifiant.
+
+!!! example "Exemple"
+    !!! note "Entrée"
+        ```markdown
+        Lorem ipsum[^ip] dolor sit amet, consectetur adipiscing[^ad] elit.[^el]
+
+        [^ip]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        [^ad]:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+            nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+            massa, nec semper lorem quam in massa.
+
+        [^el]:
+            Ce texte [Lorem ipsum ...](https://fr.wikipedia.org/wiki/Lorem_ipsum)
+            est un faux-texte destiné à remplir la vide.
+        ```
+
+    !!! done "Rendu"
+        Lorem ipsum[^ip] dolor sit amet, consectetur adipiscing[^ad] elit.[^el]
+
+        [^ip]: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        [^ad]:
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+            nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+            massa, nec semper lorem quam in massa.
+
+        [^el]:
+            Ce texte [Lorem ipsum ...](https://fr.wikipedia.org/wiki/Lorem_ipsum)
+            est un faux-texte destiné à remplir la vide.
+    
+    :warning: Les identifiants sont numérotés automatiquement par ordre d'arrivée.
+    
+    - Ici, la première note (`ip`) est accessible avec un lien local `#fn:ip`, comme [ici](#fn:ip).
+    - Le retour ici se fait avec `#fnref:ip` comme [ceci](#fnref:ip).
+
 ## Liste de définitions
 
 ## Lien sur les en-têtes
@@ -566,9 +605,9 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 Suivant les indications de la documentation :
 
-    - [MkDocs Matertial - MathJax](https://squidfunk.github.io/mkdocs-material/reference/mathjax/)
-    - [arithmatex](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
-    - [faceless `mkdocs.yml`](https://github.com/facelessuser/pymdown-extensions/blob/main/mkdocs.yml)
+- [MkDocs Matertial - MathJax](https://squidfunk.github.io/mkdocs-material/reference/mathjax/)
+- [arithmatex](https://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/)
+- [faceless `mkdocs.yml`](https://github.com/facelessuser/pymdown-extensions/blob/main/mkdocs.yml)
 
 1. On modifie le fichier `mkdocs.yml` :
 
