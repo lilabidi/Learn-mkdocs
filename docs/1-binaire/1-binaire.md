@@ -694,6 +694,26 @@ On lit les chiffres de la droite vers la gauche,
         In [6]: bin(int('A12C4', 16))                                                   
         Out[6]: '0b10100001001011000100'
         ```
+    
+    - On constate que Python écrit
+        - les nombres binaires en commençant par `0b...`
+        - les nombres en octal en commençant par `0o...`
+        - les nombres en hexadécimal en commençant par `0x...`
+
+    - On peut lire une chaîne de caractère `texte`
+        - en binaire avec `int(texte, 2)`
+        - en octal avec `int(texte, 8)`
+        - en hexadécimal avec `int(texte, 16)`
+    
+    - On peut écrire un nombre `nombre`
+        - en binaire avec `bin(nombre)`
+        - en octal avec `oct(nombre)`
+        - en hexadécimal avec `hex(nombre)`
+
+??? warning "Enlever le préfixe"
+    Si on souhaite enlever le préfixe de deux caractères, on peut utiliser `bin(nombre)[2:]`.
+
+    La partie `[2:]` signifie : prendre tout sauf les deux premiers caractères ; c'est une tranche, et cette technique n'est pas au programme de NSI.
 
 ## Quelques utilisations pratiques
 
