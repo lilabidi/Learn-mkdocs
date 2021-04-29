@@ -1272,13 +1272,16 @@ Auteur : Franck CHAMBON
                             items[j], items[j + 1] = items[j + 1], items[j]
             ```
 
-!!! bug "Bug ?"
-    J'ai constaté des ratés de coloration syntaxique avec ```` ``` c++ ````.
+??? bug "Bug ???"
+    1. J'ai constaté des ratés de coloration syntaxique avec ```` ``` c++ ````.
 
-    Recommendations :
+        - Recommendations :
+            - Pas d'espace entre ```` ``` ```` et le nom du langage.
+            - Utiliser `cpp` à la place de `c++`
 
-    - Pas d'espace entre ```` ``` ```` et le nom du langage.
-    - Utiliser `cpp` à la place de `c++`
+    2. Ne pas choisir l'option globale `linenums: false` dans `mkdocs.yml`
+        - On ne peut plus la réactiver ensuite
+        - On peut toutefois choisir `linenums: true`, (mais sans la mettre en pause ???)
 
 ### Texte barré
 
