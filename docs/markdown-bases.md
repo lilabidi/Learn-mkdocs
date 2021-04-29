@@ -147,26 +147,56 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+            Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Proin at cursus nibh,
+             et lobortis mauris. Sed tempus turpis
+             quis turpis pulvinar, ac vehicula dui
+             convallis. Phasellus tempus massa quam,
+             ac mollis libero cursus eget.
+            Donec convallis a nisl vitae scelerisque.
+            Ut vel nisl id augue ullamcorper lobortis
+             at id dolor.
             ```
 
         !!! done "Rendu"
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+            Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Proin at cursus nibh,
+             et lobortis mauris. Sed tempus turpis
+             quis turpis pulvinar, ac vehicula dui
+             convallis. Phasellus tempus massa quam,
+             ac mollis libero cursus eget.
+            Donec convallis a nisl vitae scelerisque.
+            Ut vel nisl id augue ullamcorper lobortis
+             at id dolor.
 
     === "Incorrect"
         !!! note "Entrée"
 
             ```markdown
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+                Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin at cursus nibh,
+            et lobortis mauris. Sed tempus turpis
+            quis turpis pulvinar, ac vehicula dui
+            convallis. Phasellus tempus massa quam,
+            ac mollis libero cursus eget.
+                Donec convallis a nisl vitae scelerisque.
+                Ut vel nisl id augue ullamcorper lobortis
+            at id dolor.
             ```
         
         !!! fail "Rendu"
 
-            <pre>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
-            </pre>
+                Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin at cursus nibh,
+            et lobortis mauris. Sed tempus turpis
+            quis turpis pulvinar, ac vehicula dui
+            convallis. Phasellus tempus massa quam,
+            ac mollis libero cursus eget.
+                Donec convallis a nisl vitae scelerisque.
+                Ut vel nisl id augue ullamcorper lobortis
+            at id dolor.
 
-        :warning: Le texte devient du code en bloc, avec une police à chasse fixe.
+        :warning: Une partie du texte devient du code en bloc, avec une police à chasse fixe.
 
 ### Aller à la ligne
 
