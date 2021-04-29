@@ -215,7 +215,9 @@ Auteur : Franck CHAMBON
             ligne1  
             ligne2
         
-        🤞 : On a symbolisé les deux espaces avec `␣␣`, mais **il faut utiliser l'espace classique**. `␣␣` ne sert que d'illustration.
+        🤞 : On a symbolisé les deux espaces avec `␣␣`, mais **il faut utiliser l'espace classique**.
+        
+        Ici, `␣␣` ne sert que d'illustration.
 
     === "Incorrect"
         !!! note "Entrée"
@@ -254,7 +256,8 @@ Auteur : Franck CHAMBON
 ### Ligne horizontale
 
 !!! tip "Séparer deux paragraphes"
-    On utilise `---` entre les deux paragraphes, avec des lignes vides de part et d'autre.
+    Si on souhaite une **ligne horizontale**, on utilise `---`
+     entre les deux paragraphes, avec des lignes vides de part et d'autre.
 
     === "Correct"
         !!! note "Entrée"
@@ -403,6 +406,8 @@ Auteur : Franck CHAMBON
     !!! note "Entrée"
 
         ```markdown
+        On va faire une liste
+
         1. un
         1. deux
             - machin
@@ -413,6 +418,8 @@ Auteur : Franck CHAMBON
         ```
 
     !!! done "Rendu"
+        On va faire une liste
+        
         1. un
         1. deux
             - machin
@@ -945,7 +952,7 @@ Auteur : Franck CHAMBON
     ```
 
 [Résoudre en ligne](https://console.basthon.fr/?script=eJx9UdtqAjEQfV_YfxjigwprcHe1imAfWvraH1Ap6e5YYmOyzaW1kI_pq9_hjzVpqhSEzgRCZs6cc5K0uAXLngUy97Rn-rVVH3IguLG4gLgNYXQLxupFnkEIwV8kGljCapMKbKecDefUoKzrULap1QNKKZy-oFH7TpyOFnVqaLROSyBrSehO8agXh4d5FpMQkmc9eDigbniDsXR_IYh0HdOWa2gRBEu6MC-gc9wAHk7HxkWcwCDbIo3jjxhmDOxVy7c89BqEN9fnAj6BAcrAZIxyJjI2aC0mUnoxE-1YNBbKPGPGoLbXT7YaF1D-rKqAuoBpEU2V9WYIyyWs08VD9L30Y1_6ytd-4qf-xs_8WvrRVYaie0rYhJ76uS_rUO__cVT942hSRQP1LFk4C1_EfgUmlY-gM2-nubQDcqfZuyLhR74B39mmdg){.md-button}
-
+**Conseil** : Ouvrir un nouvel onglet.
 ??? faq "Indice 1"
     Pour construire la ligne 2, on pourrait faire
 
