@@ -441,7 +441,7 @@ On lit les chiffres de la droite vers la gauche,
     - Entiers non signés : de $0$ à $2^{64} -1$.
     - Entiers signés : de $-2^{63}$ à $+2^{63}-1$.
 
-## Codage des entiers signés
+## V - Codage des entiers signés
 
 !!! fail "La mauvaise méthode : un bit de signe"
     1. On garde le bit de poids fort pour indiquer le signe.
@@ -512,7 +512,7 @@ On lit les chiffres de la droite vers la gauche,
         1 0 0 0 0   0 0 0 0
         ```
 
-!!! faq "Comment obtenir plus rapidement l'opposé d'un entier ?"
+!!! tip "Obtenir plus rapidement l'opposé d'un entier"
     On utilise le **complément à deux**.
 
     1. On part de l'écriture binaire de la partie numérique.
@@ -550,5 +550,151 @@ On lit les chiffres de la droite vers la gauche,
 
 ---
 
-> Nous reviendrons sur ce chapitre pour travailler sur les conversions
- de bases entre binaire, octal et hexadécimal.
+## VI - Conversions entre binaire, octal et hexadécimal
+
+!!! savoir inline end "un parallèle entre base $10$ et base $1000$"
+    Pour bien comprendre le mécanisme, prenons d'abord l'exemple de la base $10$ et la base $1000$.
+
+    Ensuite, on fera le même parallèle entre la base $2$ et la base $8$ (ou $16$).
+
+    $1000 = 10^3$ et $8 = 2^3$, ce qui explique que l'on va prendre des paquets de 3 chiffres.
+
+
+!!! info "La base $10$"
+    La base $10$, c'est celle qu'on utilise régulièrement depuis l'école.
+
+    En base $10$, il y a $10$ chiffres, de `0` à `9`.
+
+!!! warning "La base $1000$"
+    La base $1000$, c'est l'idée de décider d'utiliser $1000$ symboles au lieu de $10$.
+
+    En base $1000$, il y a $1000$ chiffres, de `000` à `999`.
+
+    `147 852` est un nombre à deux chiffres en base $1000$,
+
+    - Le chiffre des unités est `852`
+    - Le chiffre des milliers est `147`
+
+!!! tip "Passer de la base $10$ à la base $1000$"
+    Il suffit de faire des paquets de 3 chiffres en partant des unités.
+
+    - $(123\,456)_{10}$ s'écrit avec 2 chiffres en base $1000$ : `123 456`
+
+!!! tip "Passer de la base $1000$ à la base $10$"
+    Il suffit de faire des paquets de 3 chiffres en partant des unités.
+
+    - Le nombre `052 654` en base $1000$ s'écrit $(52\,654)_{10}$ en base $10$.
+
+!!! info inline end "Les symboles de l'octal"
+    | binaire | octal |
+    |:-------:|:-----:|
+    | `000` | $0$ |
+    | `001` | $1$ |
+    | `010` | $2$ |
+    | `011` | $3$ |
+    | `100` | $4$ |
+    | `101` | $5$ |
+    | `110` | $6$ |
+    | `111` | $7$ |
+
+!!! savoir "Convertir du binaire vers l'octal"
+    On fait la même chose avec des paquets de 3 chiffres.
+
+    On convertit ensuite le chiffre octal avec un seul symbole.
+
+!!! example "Exemples"
+    Avec une écriture mathématique
+
+    - $(101\,011)_2$ possède deux chiffres en octal, c'est le nombre $(53)_8$.
+    - $(110\,001\,101\,010\,011)_2$ s'écrit aussi $(61523)_8$.
+    - $(357)_8$ s'écrit aussi $(011\,101\,111)_2$.
+
+!!! note "Exercice"
+    1. Convertir $(747\,452)_8$ en binaire.
+    1. Convertir $(10\,001\,100\,000\,110)_2$ en octal.
+    
+    ??? done "Solution"
+        1. $(747\,452)_8$ s'écrit aussi $(111\,100\,111\,100\,101\,010)_2$.
+        2. $(10\,001\,100\,000\,110)_2$ s'écrit aussi $(21\,406)_8$.
+
+!!! info inline "Hexadécimal (1/2)"
+    | binaire | hexadécimal |
+    |:-------:|:-----------:|
+    | `0000` | $0$ |
+    | `0001` | $1$ |
+    | `0010` | $2$ |
+    | `0011` | $3$ |
+    | `0100` | $4$ |
+    | `0101` | $5$ |
+    | `0110` | $6$ |
+    | `0111` | $7$ |
+
+!!! info inline "Hexadécimal (2/2)"
+    | binaire | hexadécimal |
+    |:-------:|:-----------:|
+    | `1000` | $8$ |
+    | `1001` | $9$ |
+    | `1010` | $A$ |
+    | `1011` | $B$ |
+    | `1100` | $C$ |
+    | `1101` | $D$ |
+    | `1110` | $E$ |
+    | `1111` | $F$ |
+
+!!! savoir "Convertir du binaire vers l'hexadécimal"
+    On fait la même chose avec des paquets de 4 chiffres.
+    
+    $$16 = 2^4$$
+
+    On convertit ensuite le chiffre hexadécimal avec un seul symbole.
+
+!!! example "Exemples"
+    Avec une écriture mathématique
+
+    - $(1001\,1011)_2$ possède deux chiffres en hexadécimal, c'est le nombre $(9B)_{16}$.
+    - $(1010\,1001\,1101\,0010\,1011)_2$ s'écrit aussi $(A9D2B)_{16}$.
+    - $(A12C4)_{16}$ s'écrit aussi $(11\,101\,111)_2$ en binaire, on enlève le zéro de tête..
+
+!!! note "Exercice"
+    1. Convertir $(GAFA)_{16}$ en binaire.
+    2. Convertir $(1101\,0110\,1011)_2$ en hexadécimal.
+    3. Convertir $(A12C4)_{16}$ en binaire.
+
+    ??? done "Solution"
+        1. C'est impossible, `G` n'est pas un chiffre hexadécimal.
+        2. $(1101\,0110\,1011)_2$ s'écrit aussi $(D6B)_{16}$
+        3. $(A12C4)_{16}$ s'écrit aussi $(1010\,0001\,0010\,1100\,0100)_2$
+
+!!! info "Écriture avec Python"
+    === "Exercice 1"
+        ```python
+        In [1]: oct(int('101011', 2))
+        Out[1]: '0o53'
+
+        In [2]: oct(int('110001101010011', 2))
+        Out[2]: '0o61523'
+
+        In [3]: bin(int('357', 8))
+        Out[3]: '0b11101111'
+        ```
+
+    === "Exercice 2"
+        ```python
+        In [4]: bin(int('GAFA', 16))                                                    
+        ---------------------------------------------------------------------------
+        ValueError                                Traceback (most recent call last)
+        <ipython-input-4-d7fcbb447e95> in <module>
+        ----> 1 bin(int('GAFA', 16))
+
+        ValueError: invalid literal for int() with base 16: 'GAFA'
+
+        In [5]: hex(int('110101101011', 2))                                             
+        Out[5]: '0xd6b'
+
+        In [6]: bin(int('A12C4', 16))                                                   
+        Out[6]: '0b10100001001011000100'
+        ```
+
+## Quelques utilisations pratiques
+
+todo

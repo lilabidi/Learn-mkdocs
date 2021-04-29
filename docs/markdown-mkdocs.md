@@ -274,7 +274,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             ````
         
         !!! done "Rendu"
-            ```python linenums="1"
+            ```python
             --8<--- "docs/scripts/exemple.py"
             ```
 
@@ -382,13 +382,27 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Affichage des touches
 
-!!! example "Exemple"
+!!! example "Exemple 1"
         !!! note "Markdown"
             ```markdown
             ++ctrl+alt+del++
             ```
         !!! done "Rendu"
             ++ctrl+alt+del++
+
+!!! example "Exemple 2"
+        !!! note "Markdown"
+            ```markdown
+            ++"⇑ Maj."+"Entrée ↵"++
+            ```
+        !!! done "Rendu"
+            ++"⇑ Maj."+"Entrée ↵"++
+        
+        On peut définir ses propres touches avec `"ma touche"`
+
+
+La liste des touches disponibles est dans la [documentation](
+    https://facelessuser.github.io/pymdown-extensions/extensions/keys/#key-map-index).
 
 ## Intégration de fichiers externes
 
@@ -413,7 +427,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
         Affichage de `docs/scripts/exemple.py`
 
         ```python
-        --8<--- "docs/scripts/exemple.py"   <"rien d'autre ici">
+        --8<--- "docs/scripts/exemple.py"   <"ne RIEN écrire ici">
         ```
 
         Une fonction de tri.
@@ -428,7 +442,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         Une fonction de tri.
     
-    :warning: Il ne faut rien écrire après le nom de fichier, pas même d'espace !
+    :warning: Il ne faut **rien** écrire après le nom de fichier, **pas même d'espace** !
 
 
 ??? danger "Pour aller plus loin"
@@ -441,7 +455,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         ```` markdown
 
-        === "C"
+        === "`C`"
 
             ```c
             #include <stdio.h>
@@ -452,7 +466,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             }
             ```
 
-        === "C++"
+        === "`C++`"
 
             ```cpp
             #include <iostream>
@@ -643,6 +657,11 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 ## Lien sur les en-têtes
 
 ## Icônes et émojis
+
+:octicons-heart-fill-24:{ .heart }
+
+??? savoir "Cœur"
+    Alors ? ok
 
 ## Images
 
