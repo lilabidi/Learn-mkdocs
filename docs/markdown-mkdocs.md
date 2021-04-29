@@ -8,9 +8,9 @@ Pour ces expériences, on va utiliser...
     site_url: https://ens-fr.gitlab.io/experience
     repo_url: https://gitlab.com/ens-fr/experience
     edit_uri: tree/master/docs/
-    site_description: Base commune de travail avec MkDocs
+    site_description: Base expérimentale de travail avec MkDocs
     copyright: |
-    Copyright &copy; 2021 <a href="https://gitlab.com/ens-fr"  target="_blank" rel="noopener">Franck CHAMBON</a>
+    Copyright &copy; 2021 <a href="https://gitlab.com/ens-fr" target="_blank" rel="noopener">Votre prénom et NOM</a>
     docs_dir: docs
 
     nav:
@@ -19,7 +19,7 @@ Pour ces expériences, on va utiliser...
                                         # JUSTIFICATIONS
     theme:
         name: material
-        font: false                     # RGPD
+        font: false                     # RGPD ; pas de fonte Google
         language: fr                    # français
         palette:                        # Palettes de couleurs jour/nuit
         - scheme: default
@@ -30,42 +30,51 @@ Pour ces expériences, on va utiliser...
             toggle:
                 icon: material/weather-night
                 name: Passer au mode jour
-    features:
-        - navigation.instant
-        - navigation.tabs
-        - navigation.expand
-        - navigation.top
-        - toc.integrate
-        - header.autohide
+        features:
+            - navigation.instant
+            - navigation.tabs
+            - navigation.expand
+            - navigation.top
+            - toc.integrate
+            - header.autohide
 
 
     markdown_extensions:
         - def_list                      # Les listes de définition.
         - attr_list                     # Un peu de CSS et des attributs HTML.
-        - footnotes                     # Notes de bas de page.
-        - admonition                    # Blocs colorés
+        - footnotes                     # Notes[^1] de bas de page.  [^1]: ma note.
+        - admonition                    # Blocs colorés  !!! info "ma remarque"
         - pymdownx.details              #   qui peuvent se plier/déplier.
         - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
         - pymdownx.mark                 # Passage ==surligné==.
         - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
-        - pymdownx.highlight:           # Coloration syntaxique du code
-            linenums: true              #   avec numérotation,
-        - pymdownx.inlinehilite         # pour `#!math  <math en ligne>`
+        - pymdownx.highlight            # Coloration syntaxique du code
+        - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
         - pymdownx.snippets             # Inclusion de fichiers externe.
-        - pymdownx.tasklist:            # Cases à cocher
+        - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
             custom_checkbox:    false   #   avec cases d'origine
             clickable_checkbox: true    #   et cliquables.
-        - pymdownx.tabbed               # Volets glissants.
+        - pymdownx.tabbed               # Volets glissants.  === "Mon volet"
         - pymdownx.superfences          # Imbrication de blocs.
-        - pymdownx.keys                 # Touches du clavier.
-        - pymdownx.emoji:               # Émojis
+        - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
+            separator: "\uff0b"
+        - pymdownx.emoji:               # Émojis  :boom:
             emoji_index:     !!python/name:materialx.emoji.twemoji
             emoji_generator: !!python/name:materialx.emoji.to_svg
+
+    extra:
+        social:
+            - icon: fontawesome/brands/github # ou autre
+            link: https://github.com/votreid
+            - icon: fontawesome/brands/gitlab # ou autre
+            link: https://gitlab.com/votreid
+            - icon: fontawesome/brands/discord #ou autre
+            link: https://discord.gg/votrecode
     ```
 
 Pour une utilisation de MathJax, se référer à la [dernière partie](#utilisation-de-mathjax).
 
-En attendant, plus simple.
+En attendant, plus simple, les possibilités de Markdown avec MkDocs.
 
 ## Les admonitions
 
@@ -226,13 +235,15 @@ En attendant, plus simple.
         ```
         ````
 
+On verra dans les recettes élaborées comment fabriquer ses propres boîtes, couleur et icône.
+
 ## Les boutons
 
 Un lien cliquable peut être transformé en bouton en lui adjoignant un élément de CSS `{ .md-button }`
 
 !!! example "Exemples"
     === "Rectangle creux"
-        !!! note "Markdown"
+        !!! note "Entrée"
             ```markdown
             [Une console Basthon](https://console.basthon.fr/){ .md-button }
             ```
@@ -240,7 +251,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             [Une console Basthon](https://console.basthon.fr/){ .md-button }
 
     === "Rectangle plein"
-        !!! note "Markdown"
+        !!! note "Entrée"
             ```markdown
             [Une console Basthon](https://console.basthon.fr/){ .md-button .md-button--primary }
             ```
@@ -249,14 +260,116 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Options sur les blocs de code
 
-- Numérotation des lignes
-- mise en lumière d'un choix de lignes
-- coloration de code en ligne
+!!! tip "Numérotation des lignes et marquage"
+    - Il suffit d'ajouter `linenums="1"` (ou un autre nombre) pour faire débuter la numérotation.
+    - Pour marquer des lignes en particulier, on utilise `hl_lines="<tranches et numéros>"`
 
-À suivre
 
+!!! example "Exemples"
+    === "Numérotation classique"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Numérotation décalée"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="42"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="42"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Marquage d'une ligne"
+        !!! note "Entrée"
+            ````markdown
+            ```python hl_lines="2"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python hl_lines="2"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Marquage d'une ligne, avec numérotation"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1" hl_lines="2"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1" hl_lines="2"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Marquage de lignes éparses"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1" hl_lines="2 5"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1" hl_lines="2 5"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Marquage d'une tranche"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1" hl_lines="2-4"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1" hl_lines="2-4"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+    === "Marquage lignes et tranches"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1" hl_lines="1 2 3-3 5-5"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1" hl_lines="1 2 3-3 5-5"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
+??? bug "Bug ???"
+    1. J'ai constaté des ratés de coloration syntaxique avec ```` ``` c++ ````.
+
+        - Recommendations :
+            - Pas d'espace entre ```` ``` ```` et le nom du langage.
+            - Utiliser `cpp` à la place de `c++`
+
+    2. Ne pas choisir l'option globale `linenums: false` dans `mkdocs.yml`
+        - On ne peut plus la réactiver ensuite
+        - On peut toutefois choisir `linenums: true`, (mais sans la mettre en pause ???)
 
 ## Affichage des touches
+
 !!! example "Exemple"
         !!! note "Markdown"
             ```markdown
@@ -267,13 +380,44 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 ## Intégration de fichiers externes
 
-En introduction, pour donner le contenu du fichier `mkdocs.yml` qui est situé dans `docs/`, on a entré :
+!!! info "Le cas simple"
+    En introduction, pour donner le contenu du fichier `mkdocs.yml` qui est situé dans `docs/`, on a entré :
 
-````markdown
-```yaml
---8<---​ "mkdocs.yml"
-```
-````
+    ````markdown
+    ```yaml
+    --8<---​ "mkdocs.yml"
+    ```
+    ````
+
+!!! warning "Points techniques"
+    - :warning: Il faut donner le chemin en partant de la racine du projet.
+    - Le contenu du fichier est remplacé dans le code source Markdown avant interprétation et son indentation est respectée, même si l'intégration se fait dans un bloc. :warning: Ce n'est pas le cas si `--8<--- <exemple>` est inclus dans une macro, l'indentation n'est plus respectée. On l'utilisera donc en dehors de macros.
+
+!!! tip "Inclure un affichage de script"
+    On prendra l'exemple de l'affichage de `docs/scripts/exemple.py`
+
+    !!! note "Entrée"
+        ````markdown
+        Affichage de `docs/scripts/exemple.py`
+
+        ```python
+        --8<--- "docs/scripts/exemple.py"   <"rien d'autre ici">
+        ```
+
+        Une fonction de tri.
+        ````
+    
+    !!! done "Rendu"
+        Affichage de `docs/scripts/exemple.py`
+
+        ```python
+        --8<--- "docs/scripts/exemple.py"
+        ```
+
+        Une fonction de tri.
+    
+    :warning: Il ne faut rien écrire après le nom de fichier, pas même d'espace !
+
 
 ??? danger "Pour aller plus loin"
     [La documentation (_en_)](https://facelessuser.github.io/pymdown-extensions/extensions/snippets/)
