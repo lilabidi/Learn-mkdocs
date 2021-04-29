@@ -431,7 +431,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         === "C"
 
-            ``` c
+            ```c
             #include <stdio.h>
 
             int main(void) {
@@ -442,7 +442,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         === "C++"
 
-            ``` c++
+            ```cpp
             #include <iostream>
 
             int main(void) {
@@ -457,7 +457,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         === "C"
 
-            ``` c
+            ```c
             #include <stdio.h>
 
             int main(void) {
@@ -468,7 +468,7 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
         === "C++"
 
-            ``` c++
+            ```cpp
             #include <iostream>
 
             int main(void) {
@@ -523,16 +523,16 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
             _Exemple_ :
 
             ``` markdown
-            * Sed sagittis eleifend rutrum
-            * Donec vitae suscipit est
-            * Nulla tempor lobortis orci
+            - Sed sagittis eleifend rutrum
+            - Donec vitae suscipit est
+            - Nulla tempor lobortis orci
             ```
 
             _Résultat_ :
 
-            * Sed sagittis eleifend rutrum
-            * Donec vitae suscipit est
-            * Nulla tempor lobortis orci
+            - Sed sagittis eleifend rutrum
+            - Donec vitae suscipit est
+            - Nulla tempor lobortis orci
 
         === "Liste numérotée"
 
@@ -592,6 +592,41 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
     - Le retour ici se fait avec `#fnref:ip` comme [ceci](#fnref:ip).
 
 ## Liste de définitions
+
+!!! tip "Pour une paire (clé, valeurs)"
+    Les listes de définition sont idéales, par exemple pour une liste de paramètres à une fonction...
+
+!!! example "Example"
+    !!! note "Entrée"
+        ```markdown
+        `Lorem ipsum dolor sit amet`
+        :   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
+            tellus non sem sollicitudin, quis rutrum leo facilisis.
+
+        `Cras arcu libero`
+        :   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
+            ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
+
+            Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
+            Nam vulputate tincidunt fringilla.
+            Nullam dignissim ultrices urna non auctor.
+        ```
+
+    !!! done "Rendu"
+        `Lorem ipsum dolor sit amet`
+        :   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
+            tellus non sem sollicitudin, quis rutrum leo facilisis.
+
+        `Cras arcu libero`
+        :   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
+            ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
+
+            Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
+            Nam vulputate tincidunt fringilla.
+            Nullam dignissim ultrices urna non auctor.
+    
+    :warning: En suivant la bonne indentation, on peut avoir plusieurs paragraphes dans une définition.
+
 
 ## Lien sur les en-têtes
 
