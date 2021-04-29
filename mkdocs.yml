@@ -50,8 +50,6 @@ theme:
 markdown_extensions:
     - meta
     - abbr
-    - pymdownx.progressbar
-
 
     - def_list                      # Les listes de définition.
     - attr_list                     # Un peu de CSS et des attributs HTML.
@@ -119,5 +117,5 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/progress_bar.css
+
 
