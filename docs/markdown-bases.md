@@ -1121,6 +1121,39 @@ Auteur : Franck CHAMBON
             ```
         :warning: Rien ne peut être structuré...
 
+!!! info "Numérotation des lignes, et marquage"
+    - Il suffit d'ajouter `linenums="1"` (ou un autre nombre) pour faire débuter la numérotation.
+    - Pour marquer des lignes en particulier, on utilise `hlines="<tranches et numéros>"`
+
+    === "numérotation classique"
+        !!! note "Entrée"
+            ````markdown
+            ```python linenums="1"
+            def bubble_sort(items):
+                for i in range(len(items)):
+                    for j in range(len(items) - 1 - i):
+                        if items[j] > items[j + 1]:
+                            items[j], items[j + 1] = items[j + 1], items[j]
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1"
+            def bubble_sort(items):
+                for i in range(len(items)):
+                    for j in range(len(items) - 1 - i):
+                        if items[j] > items[j + 1]:
+                            items[j], items[j + 1] = items[j + 1], items[j]
+            ```
+
+!!! bug "Bug ?"
+    J'ai constaté des ratés de coloration syntaxique avec ```` ``` c++ ````.
+
+    Recommendations :
+
+    - Pas d'espace entre ```` ``` ```` et le nom du langage.
+    - Utiliser `cpp` à la place de `c++`
+
 ### Texte barré
 
 !!! tip "On encadre d'un double `~`"

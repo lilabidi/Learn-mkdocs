@@ -61,8 +61,7 @@ markdown_extensions:
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
     - pymdownx.mark                 # Passage ==surligné==.
     - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
-    - pymdownx.highlight:           # Coloration syntaxique du code
-        linenums: true              #   avec numérotation,
+    - pymdownx.highlight            # Coloration syntaxique du code
     - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
     - pymdownx.snippets             # Inclusion de fichiers externe.
     - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
