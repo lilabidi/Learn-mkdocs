@@ -1123,7 +1123,7 @@ Auteur : Franck CHAMBON
 
 !!! danger "Numérotation des lignes et marquage"
     :warning: Uniquement valable avec MkDocs.
-    
+
     - Il suffit d'ajouter `linenums="1"` (ou un autre nombre) pour faire débuter la numérotation.
     - Pour marquer des lignes en particulier, on utilise `hl_lines="<tranches et numéros>"`
 
@@ -1131,147 +1131,91 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
             ````markdown
             ```python linenums="1"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="1"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Numérotation décalée"
         !!! note "Entrée"
             ````markdown
             ```python linenums="42"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="42"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Marquage d'une ligne"
         !!! note "Entrée"
             ````markdown
             ```python hl_lines="2"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python hl_lines="2"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Marquage d'une ligne, avec numérotation"
         !!! note "Entrée"
             ````markdown
             ```python linenums="1" hl_lines="2"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="1" hl_lines="2"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Marquage de lignes éparses"
         !!! note "Entrée"
             ````markdown
             ```python linenums="1" hl_lines="2 5"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="1" hl_lines="2 5"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Marquage d'une tranche"
         !!! note "Entrée"
             ````markdown
             ```python linenums="1" hl_lines="2-4"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="1" hl_lines="2-4"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
     === "Marquage lignes et tranches"
         !!! note "Entrée"
             ````markdown
             ```python linenums="1" hl_lines="1 2 3-3 5-5"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
             ````
         
         !!! done "Rendu"
             ```python linenums="1" hl_lines="1 2 3-3 5-5"
-            def bubble_sort(items):
-                for i in range(len(items)):
-                    for j in range(len(items) - 1 - i):
-                        if items[j] > items[j + 1]:
-                            items[j], items[j + 1] = items[j + 1], items[j]
+            --8<--- "docs/scripts/exemple.py"
             ```
 
 ??? bug "Bug ???"
