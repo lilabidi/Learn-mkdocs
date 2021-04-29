@@ -85,7 +85,7 @@ En attendant, plus simple, les possibilités de Markdown avec MkDocs.
     
     Elles structurent donc sans alourdir les onglets de navigation.
 
-!!! example "Exemples"
+!!! example "Exemple"
     !!! note "Entrée"
         ```markdown
         !!! info "Pourquoi ?"
@@ -113,129 +113,128 @@ En attendant, plus simple, les possibilités de Markdown avec MkDocs.
     `???+` permet de l'avoir déroulée à l'ouverture de la page, et qu'elle
     puisse être ensuite enroulée.
 
-### Les types de boites
-
-=== "`note`"
-    !!! note "Pour une note"
-        `note` ou `seealso`
-        ````markdown
-        ```markdown
+!!! example "Les types de boites"
+    === "`note`"
         !!! note "Pour une note"
             `note` ou `seealso`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! note "Pour une note"
+                `note` ou `seealso`
+            ```
+            ````
 
-=== "`tldr`"
-    !!! tldr "Pour un résumé"
-        `tldr`, `summary` ou `abstract`
-        ````markdown
-        ```markdown
+    === "`tldr`"
         !!! tldr "Pour un résumé"
             `tldr`, `summary` ou `abstract`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! tldr "Pour un résumé"
+                `tldr`, `summary` ou `abstract`
+            ```
+            ````
 
-=== "`info`"
-    !!! info "Pour une information"
-        `info` ou `todo`
-        ````markdown
-        ```markdown
+    === "`info`"
         !!! info "Pour une information"
             `info` ou `todo`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! info "Pour une information"
+                `info` ou `todo`
+            ```
+            ````
 
-=== "`tip`"
-    !!! tip "Pour une astuce"
-        `tip`, `hint` ou `important`
-        ````markdown
-        ```markdown
+    === "`tip`"
         !!! tip "Pour une astuce"
             `tip`, `hint` ou `important`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! tip "Pour une astuce"
+                `tip`, `hint` ou `important`
+            ```
+            ````
 
-=== "`done`"
-    !!! done "Pour une réussite"
-        `done`, `check` ou `success`
-        ````markdown
-        ```markdown
+    === "`done`"
         !!! done "Pour une réussite"
             `done`, `check` ou `success`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! done "Pour une réussite"
+                `done`, `check` ou `success`
+            ```
+            ````
 
-=== "`faq`"
-    !!! faq "Pour une question"
-        `faq`, `help` ou `question`
-        ````markdown
-        ```markdown
+    === "`faq`"
         !!! faq "Pour une question"
             `faq`, `help` ou `question`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! faq "Pour une question"
+                `faq`, `help` ou `question`
+            ```
+            ````
 
-=== "`warning`"
-    !!! warning "Pour une difficulté"
-        `warning`, `caution` ou `attention`
-        ````markdown
-        ```markdown
+    === "`warning`"
         !!! warning "Pour une difficulté"
             `warning`, `caution` ou `attention`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! warning "Pour une difficulté"
+                `warning`, `caution` ou `attention`
+            ```
+            ````
 
-=== "`fail`"
-    !!! fail "Pour un échec"
-        `fail`, `failure` ou `missing`
-        ````markdown
-        ```markdown
+    === "`fail`"
         !!! fail "Pour un échec"
             `fail`, `failure` ou `missing`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! fail "Pour un échec"
+                `fail`, `failure` ou `missing`
+            ```
+            ````
 
-=== "`danger`"
-    !!! danger "Pour un danger"
-        `danger` ou `error`
-        ````markdown
-        ```markdown
+    === "`danger`"
         !!! danger "Pour un danger"
             `danger` ou `error`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! danger "Pour un danger"
+                `danger` ou `error`
+            ```
+            ````
 
-=== "`bug`"
-    !!! bug "Pour un bogue"
-        `bug`
-        ````markdown
-        ```markdown
+    === "`bug`"
         !!! bug "Pour un bogue"
             `bug`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! bug "Pour un bogue"
+                `bug`
+            ```
+            ````
 
-=== "`example`"
-    !!! example "Pour des exemples"
-        `example`
-        ````markdown
-        ```markdown
+    === "`example`"
         !!! example "Pour des exemples"
             `example`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! example "Pour des exemples"
+                `example`
+            ```
+            ````
 
-=== "`cite`"
-    !!! cite "Pour une citation"
-        `cite`
-        ````markdown
-        ```markdown
+    === "`cite`"
         !!! cite "Pour une citation"
             `cite`
-        ```
-        ````
+            ````markdown
+            ```markdown
+            !!! cite "Pour une citation"
+                `cite`
+            ```
+            ````
 
-On verra dans les recettes élaborées comment fabriquer ses propres boîtes, couleur et icône.
+    On verra dans les recettes élaborées comment fabriquer ses propres boîtes, couleur et icône.
 
 ## Les boutons
 
@@ -266,6 +265,19 @@ Un lien cliquable peut être transformé en bouton en lui adjoignant un élémen
 
 
 !!! example "Exemples"
+    === "Sans numérotation"
+        !!! note "Entrée"
+            ````markdown
+            ```python
+            --8<--- "docs/scripts/exemple.py"
+            ```
+            ````
+        
+        !!! done "Rendu"
+            ```python linenums="1"
+            --8<--- "docs/scripts/exemple.py"
+            ```
+
     === "Numérotation classique"
         !!! note "Entrée"
             ````markdown
