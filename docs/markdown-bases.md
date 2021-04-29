@@ -1121,7 +1121,9 @@ Auteur : Franck CHAMBON
             ```
         :warning: Rien ne peut être structuré...
 
-!!! info "Numérotation des lignes, et marquage"
+!!! danger "Numérotation des lignes et marquage"
+    :warning: Uniquement valable avec MkDocs.
+    
     - Il suffit d'ajouter `linenums="1"` (ou un autre nombre) pour faire débuter la numérotation.
     - Pour marquer des lignes en particulier, on utilise `hl_lines="<tranches et numéros>"`
 
