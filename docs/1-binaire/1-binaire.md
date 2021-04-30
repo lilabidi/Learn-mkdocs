@@ -26,23 +26,27 @@ Auteur : Franck CHAMBON
     ---
 
     Le fonctionnement d'un ordinateur repose sur des
-     [circuits de calcul logique et bit à bit](
-     https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_circuits_de_calcul_logique_et_bit_%C3%A0_bit?uselang=fr).
+     circuits de calcul logique et bit à bit.[^1]
     ![mex](mex.png)
 
-!!! tip "Le stockage d'information"
-    L'unité élémentaire de stockage informatique
-     au niveau le plus bas est le *bit* (_**Bi**nary digi**t**_).
+    [^1]: [Le fonctionnement d'un ordinateur repose sur des
+     circuits de calcul logique et bit à bit](https://fr.wikibooks.org/wiki/Fonctionnement_d%27un_ordinateur/Les_circuits_de_calcul_logique_et_bit_%C3%A0_bit?uselang=fr)
 
-    - Un disque dur contient des milliers de milliards de bits,
-    - la mémoire vive contient des milliards de bits,
-    - un processeur moderne d'architecture
-     [`ARMv8`](https://fr.wikipedia.org/wiki/ARMv8) ou
-     [`AMD64`](https://fr.wikipedia.org/wiki/AMD64),
-     contient de la mémoire cache avec des millions de bits et
-     des registres de 64 bits.
+L'unité élémentaire de stockage informatique
+    au niveau le plus bas est le *bit* (_**Bi**nary digi**t**_).
 
-    Bref, l'information est constituée de cases remplies soit de `0`, soit de `1`.
+- Un disque dur contient des milliers de milliards de bits,
+- la mémoire vive contient des milliards de bits,
+- un processeur moderne d'architecture[^2] `ARMv8` ou `AMD64`,
+    contient de la mémoire cache avec des millions de bits et
+    des registres de 64 bits.
+
+[^2]: Quelques types d'architecture modernes :
+
+    - L'architecture de processeur [ARMv8](https://fr.wikipedia.org/wiki/ARMv8)
+    - L'architecture de processeur [AMD64](https://fr.wikipedia.org/wiki/AMD64)
+
+Bref, l'information est constituée de cases remplies soit de `0`, soit de `1`.
 
 !!! danger "Propriété mathématique"
     Avec un paquet de $n$ cases binaires, on peut coder $2^n$ symboles différents.
@@ -74,13 +78,7 @@ Auteur : Franck CHAMBON
 
 ### Octet
 
-!!! info inline end "Transport de texte"
-    En pratique les données informatiques transitent
-     très souvent par paquets de 8 bits, donc par octets.
-
-    La première raison à cela a été l'utilisation de l'ASCII
-     pour transporter l'information du texte écrit.
-
+!!! info inline end "Codage ASCII"
     | Caractère | Code ASCII |
     |:---------:|:----------:|
     | `0` | `00110000` |
@@ -92,32 +90,42 @@ Auteur : Franck CHAMBON
     | `a` | `01100001` |
     | `b` | `01100010` |
     | `z` | `01111010` |
+    | `.` | `00101110` |
+    | `^` | `01011110` |
+    | `(` | `00101000` |
 
-!!! cite "ASCII"
-    Le [codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
-     utilise un octet :
+En pratique les données informatiques transitent
+ très souvent par paquets de 8 bits, donc par octets.
 
-    - Le premier bit est à 0 ;
-    - les 7 autres sont variables, donc $2^7 = 128$ symboles différents.
+La première raison à cela a été l'utilisation de l'ASCII
+ pour transporter l'information du texte écrit.
 
-    Il est utilisé pour coder :
+Le codage ASCII[^3]
+    utilise un octet :
 
-    - le caractère espace,
-    - les chiffres arabes,
-    - les lettres latines majuscules et minuscules sans accent,
-    - des symboles de ponctuation,
-    - des opérateurs mathématiques
-    - et quelques autres symboles techniques.
+- Le premier bit est à 0 ;
+- les 7 autres sont variables, donc $2^7 = 128$ symboles différents.
 
-    !!! warning "Limitations"
-        ASCII ne peut pas coder tous les caractères.
+[^3]: [Le codage ASCII](https://fr.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
 
-        - Il existe trop de langues et donc énormément de lettres,
-         un choix a été fait ; certaines lettres latines, les plus utilisées.
-        - Pour la ponctuation, un choix a aussi été fait.
-        
-        Pour un texte en anglais, avec une ponctuation classique,
-         l'ASCII est parfaitement adapté.
+Il est utilisé pour coder :
+
+- le caractère espace,
+- les chiffres arabes,
+- les lettres latines majuscules et minuscules sans accent,
+- des symboles de ponctuation,
+- des opérateurs mathématiques
+- et quelques autres symboles techniques.
+
+!!! warning "Limitations"
+    ASCII ne peut pas coder tous les caractères.
+
+    - Il existe trop de langues et donc énormément de lettres,
+        un choix a été fait ; certaines lettres latines, les plus utilisées.
+    - Pour la ponctuation, un choix a aussi été fait.
+    
+    Pour un texte en anglais, avec une ponctuation classique,
+        l'ASCII est parfaitement adapté.
 
 ??? danger "ASCII étendu"
     À une époque, dans certains pays, on utilisait
@@ -126,21 +134,21 @@ Auteur : Franck CHAMBON
     
     Le problème était pour la communication entre utilisateurs
      de différents pays ; c'était parfois compliqué...
-     En France on utilisait l'[encodage](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1)
-     `latin-1` nommé aussi `ISO 8859-1`.
+     En France on utilisait l'encodage
+     `latin-1` nommé aussi `ISO 8859-1`[^4].
+
+[^4]: [L'encodage `latin-1`, ou `ISO 8859-1`](https://fr.wikipedia.org/wiki/ISO/CEI_8859-1)
 
 {{ basthon('scripts/convertisseur.py', 700) }}
 
-!!! tip "Conversion de message"
-    Avec le script ci-dessus, vous pouvez convertir un message texte ASCII vers du binaire.
+Avec le script ci-dessus, vous pouvez convertir un message texte ASCII vers du binaire.
 
-    Un message peut alors être transmis par une communication électronique.
+Un message peut alors être transmis par une communication électronique.
 
-    :boom: **Défi** : Sauriez-vous faire un script `binaire_vers_ascii` ? :boom:
+:boom: **Défi** : Sauriez-vous faire un script `binaire_vers_ascii` ? :boom:
 
 !!! done "UTF-8"
-    Aujourd'hui on utilise souvent un codage
-     [UTF-8](https://fr.wikipedia.org/wiki/UTF-8)
+    Aujourd'hui on utilise souvent un codage UTF-8 [^5]
      avec un nombre variable d'octets pour pouvoir
      échanger du texte dans n’importe quelle langue, avec *smiley*...
 
@@ -151,7 +159,9 @@ Auteur : Franck CHAMBON
      que l'humanité est capable d'inventer :
      lettre de toute langue, hiéroglyphe, smiley, symbole technique, ...
 
-!!! note "À retenir"
+[^5]: [Le codage UTF8](https://fr.wikipedia.org/wiki/UTF-8)
+
+!!! cite "Pour simplifier, un caractère pèse un octet"
     Le poids d'un fichier texte est donné par la règle simplifiée :
 
     - Pour un texte très simple, un caractère pèse un octet.
@@ -173,13 +183,12 @@ Auteur : Franck CHAMBON
     Une image simple (en 256 niveaux de gris) est une liste de lignes,
      où chaque ligne est une liste de pixels codés sur **un** octet.
     
-    !!! example "Exemple"
-        Dans le cas d'une image de 640 pixels de large, par 426 pixels de haut,
+    Par exemple
+    :   Dans le cas d'une image de 640 pixels de large, par 426 pixels de haut,
          hors compression, le poids est de $640×426×1 \approx 270~\text{ko}$.
 
-!!! faq "Et la suite ?"
-    Pour coder d'autres nombres, pour des images plus précises,
-     ou pour d'autres usages, on pourra utiliser plus que 8 bits.
+Pour coder d'autres nombres, pour des images plus précises,
+ ou pour d'autres usages, on pourra utiliser plus que 8 bits.
 
 ## II - Codage des entiers non signés
 
@@ -390,9 +399,6 @@ On lit les chiffres de la droite vers la gauche,
     1. Vérifier en binaire que $179+75=254$.
     2. Vérifier en binaire que $13+13+13+13 = 13×4 = 52$.
 
-!!! faq "La suite"
-    Et si on essayait de poser aussi les multiplications en binaire ?
-
 ### Multiplication d’entiers non signés
 
 !!! tip "Méthode"
@@ -548,42 +554,39 @@ On lit les chiffres de la droite vers la gauche,
             - La partie numérique est $1+4+8 = 13$
             - Le nombre de départ était $+13$.
 
----
-
 ## VI - Conversions entre binaire, octal et hexadécimal
-
-!!! savoir inline end "un parallèle entre base $10$ et base $1000$"
-    Pour bien comprendre le mécanisme, prenons d'abord l'exemple de la base $10$ et la base $1000$.
-
-    Ensuite, on fera le même parallèle entre la base $2$ et la base $8$ (ou $16$).
-
-    $1000 = 10^3$ et $8 = 2^3$, ce qui explique que l'on va prendre des paquets de 3 chiffres.
-
 
 !!! info "La base $10$"
     La base $10$, c'est celle qu'on utilise régulièrement depuis l'école.
 
     En base $10$, il y a $10$ chiffres, de `0` à `9`.
 
-!!! warning "La base $1000$"
+!!! tip "un parallèle entre base $10$ et base $1000$"
+    Pour bien comprendre le mécanisme, prenons d'abord l'exemple de la base $10$ et la base $1000$.
+
+    Ensuite, on fera le même parallèle entre la base $2$ et la base $8$ (ou $16$).
+
+    $1000 = 10^3$ et $8 = 2^3$, ce qui explique que l'on va prendre des paquets de 3 chiffres.
+
+!!! warning "La base $1000$ ; pour essayer une approche"
     La base $1000$, c'est l'idée de décider d'utiliser $1000$ symboles au lieu de $10$.
 
-    En base $1000$, il y a $1000$ chiffres, de `000` à `999`.
+    En base $1000$, il y a $1000$ chiffres, de ++"000"++ à ++"999"++.
 
-    `147 852` est un nombre à deux chiffres en base $1000$,
+    ++"147"++ ++"852"++ est un nombre à deux chiffres en base $1000$,
 
-    - Le chiffre des unités est `852`
-    - Le chiffre des milliers est `147`
+    - Le chiffre des unités est ++"852"++
+    - Le chiffre des milliers est ++"147"++
 
-!!! tip "Passer de la base $10$ à la base $1000$"
-    Il suffit de faire des paquets de 3 chiffres en partant des unités.
+    !!! tip "Passer de la base $10$ à la base $1000$"
+        Il suffit de faire des paquets de 3 chiffres en partant des unités.
 
-    - $(123\,456)_{10}$ s'écrit avec 2 chiffres en base $1000$ : `123 456`
+        - $(123\,456)_{10}$ s'écrit avec 2 chiffres en base $1000$ : ++"123"++ ++"456"++
 
-!!! tip "Passer de la base $1000$ à la base $10$"
-    Il suffit de faire des paquets de 3 chiffres en partant des unités.
+    !!! tip "Passer de la base $1000$ à la base $10$"
+        Il suffit de décomposer chaque paquet en 3 chiffres décimaux.
 
-    - Le nombre `052 654` en base $1000$ s'écrit $(52\,654)_{10}$ en base $10$.
+        - Le nombre ++"052"++ ++"654"++ en base $1000$ s'écrit $(52\,654)_{10}$ en base $10$.
 
 !!! info inline end "Les symboles de l'octal"
     | binaire | octal |
@@ -653,7 +656,7 @@ On lit les chiffres de la droite vers la gauche,
 
     - $(1001\,1011)_2$ possède deux chiffres en hexadécimal, c'est le nombre $(9B)_{16}$.
     - $(1010\,1001\,1101\,0010\,1011)_2$ s'écrit aussi $(A9D2B)_{16}$.
-    - $(A12C4)_{16}$ s'écrit aussi $(11\,101\,111)_2$ en binaire, on enlève le zéro de tête..
+    - $(A12C4)_{16}$ s'écrit aussi $(1010\,0001\,0010\,1100\,0100)_2$ en binaire.
 
 !!! note "Exercice"
     1. Convertir $(GAFA)_{16}$ en binaire.
@@ -717,4 +720,112 @@ On lit les chiffres de la droite vers la gauche,
 
 ## Quelques utilisations pratiques
 
-todo
+### L'octal est utilisé pour les droits d'accès sous Linux
+
+> Les permissions UNIX constituent un système simple de définition des droits d'accès aux ressources, représentées par des fichiers disponibles sur un système informatique. Elles restent le moyen le plus utilisé pour définir les droits des utilisateurs sur les systèmes de type UNIX.[^6]
+
+[^6]: [Les permissions UNIX](https://fr.wikipedia.org/wiki/Permissions_UNIX)
+
+Pour voir quels droits sont attribués à un fichier, il suffit de taper la commande `ls -l nom_du_fichier` :
+
+```console
+$ ls -l nom_fichier
+-rwxr-xr--    1 user     group     12345 Nov 15 09:19 nom_fichier
+```
+
+!!! info "La signification de `drwxrwxrwx`"
+    - `d` marque un dossier, son absence marque un fichier.
+    - Ensuite il y a 3 groupes de `rwx`
+        - le `r` pour lecture (_**r**ead_)
+        - le `w` pour écriture (_**W**rite_)
+        - le `x` pour exécution (_e**x**ecute_)
+    - Les groupes correspondent aux droits
+        - du propriétaire du fichier ou dossier
+        - des membres de son groupe
+        - des autres utilisateurs
+    - La lettre est présente quand le droit accordé.
+    - `-` note l'absence de droit.
+
+    En interne, chacun des 9 droits d'accès est stocké sur 1 bit :
+
+    - Si le bit vaut 1, le droit correspondant est accordé.
+    - Si le bit vaut 0, le droit correspondant est refusé.
+
+!!! example "Un exemple"
+    ```console
+    francky@DUST:~/Modèles/mkdocs$ touch nouveau
+    francky@DUST:~/Modèles/mkdocs$ ls nouveau -l
+    -rw-rw-r-- 1 francky francky 0 avril 30 18:08 nouveau
+    ```
+
+    - Ici, le fichier `nouveau` n'est pas un dossier.
+    - Le propriétaire a les droits `rw-` ; il peut lire, y écrire, mais pas exécuter son fichier.
+    - Les membres du groupe ont ici les mêmes droits `rw-`.
+    - Les autres utilisateurs ont les droits `r--` ; ils **ne peuvent que** lire ce fichier.
+
+
+    - Les deux blocs `rw-` correspondent à $(110)_2$, soit $(6)_8$ en octal.
+    - Le bloc `r--` correspond à $(100)_2$, soit $(4)_8$ en octal.
+
+    Le fichier `nouveau` a des droits symbolisés par le nombre $(664)_8$.
+
+    Supposons que l'utilisateur souhaite
+        - pouvoir lire, écrire et exécuter son fichier,
+        - que son groupe puisse lire et exécuter son fichier,
+        - que les autres ne puissent que lire son fichier.
+    
+    Il souhaite donc des droits `rwxr-xr--` d'écriture en binaire $(111\,101\,100)_2$.
+
+    En octal cela donne $(754)_8$.
+
+    Il peut changer les droits en faisant
+
+    ```console
+    $ chmod 754 nouveau
+    ```
+
+!!! note "Exercice"
+    1. Que signifie `chmod 605 nouveau` ?
+    2. Comment rendre un fichier accessible uniquement en lecture et écriture par tout le monde ?
+
+### L'hexadécimal est utilisé pour l'écriture d'un ou plusieurs octets
+
+Un octet sur 8 bits peut s'écrire avec deux chiffres hexadécimaux.
+
+- $0$ s'écrit `0x00`
+- $15$ s'écrit `0x0F`
+- $16$ s'écrit `0x10`
+- $255$ s'écrit `0xFF`
+
+On utilise l'hexadécimal pour écrire des nombres qui soient
+
+- assez lisibles pour l'humain, donc pas trop long comme le binaire,
+- très faciles à convertir vers le binaire, pas comme le décimal.
+
+#### Le codage des couleurs
+
+En informatique, une couleur est souvent représentée par 3 valeurs de 8 bits,
+ les composantes **r**ouge, **v**erte et **b**leue, d'où le **RVB**, et en anglais _**RGB** (Red, Green, Blue_.
+
+- Ainsi, le blanc est défini par les valeurs $(255, 255, 255)$,
+- le noir par $(0, 0, 0)$.
+- le jaune $(255, 255, 0)$
+- le mauve $(255, 0, 255)$
+- le turquoise $(0, 255, 255)$
+- et d'autres nuances de couleurs visibles.
+
+En langage CSS, les couleurs peuvent être exprimées de plusieurs façons :
+
+- par leur nom anglais : `black`, `yellow`, ...
+- par leurs composantes RVB en base 10 : `rgb(255, 123, 34)`
+- par leurs composantes RVB en base 16 : `#FF7B22`
+
+#### Le codage des adresses MAC
+
+Une adresse MAC (_Media Access Control_), parfois nommée adresse physique, est un identifiant physique stocké dans une carte réseau ou une interface réseau similaire. À moins qu'elle n'ait été modifiée par l'utilisateur, elle est unique au monde.[^7]
+[^7]: [L'adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC)
+
+Une adresse MAC-48 est constituée de 48 bits (6 octets) et est généralement représentée sous la forme hexadécimale en séparant les octets par un double point. Par exemple `5E:FF:56:A2:AF:15`.
+
+La répartition des 48 bits impose de travailler avec un format proche du binaire.
+L'hexadécimal se prête particulièrement bien à la demande, tout en restant bien lisible pour l'humain.

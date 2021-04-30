@@ -714,7 +714,7 @@ Auteur : Franck CHAMBON
 ### Code en ligne
 
 !!! tip "Avec l'accent grave"
-    Avec un clavier azerty, ++altgr+8++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
+    Avec un clavier azerty, ++altgr+7++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
 
     On utilise la syntaxe : ``Du texte avec un `identifiant` de code``.
 
@@ -779,7 +779,7 @@ Auteur : Franck CHAMBON
     !!! warning "Technique avancée"
         Si on souhaite écrire du code en ligne qui contient des `` ` ``,
          il suffit d'encadrer le morceau avec plus de `` ` `` qu'il n'y en a consécutivement dans le morceau.
-        === "Exemple simple"
+        === "Exemple simple correct"
             !!! note "Entrée"
                 ```markdown
                 Afficher **du code** avec accent grave : `` un entier `n` ``
@@ -787,6 +787,17 @@ Auteur : Franck CHAMBON
 
             !!! done "Rendu"
                 Afficher **du code** avec accent grave : `` un entier `n` ``
+
+        === "Exemple simple incorrect"
+            !!! note "Entrée"
+                ```markdown
+                Afficher **du code** avec accent grave : `un entier `n``
+                ```
+
+            !!! done "Rendu"
+                Afficher **du code** avec accent grave : `un entier `n``
+            
+            :warning: Comment savoir où est la fin et le début ?
 
         === "Exemple élaboré"
             !!! note "Entrée"
