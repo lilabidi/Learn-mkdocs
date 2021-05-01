@@ -1,80 +1,8 @@
 # Markdown pour MkDocs
 
-Pour ces expériences, on va utiliser...
-
-??? example "... le fichier `mkdocs.yml` suivant"
-    ```yaml
-    site_name: Expériences
-    site_url: https://ens-fr.gitlab.io/experience
-    repo_url: https://gitlab.com/ens-fr/experience
-    edit_uri: tree/master/docs/
-    site_description: Base expérimentale de travail avec MkDocs
-    copyright: |
-    Copyright &copy; 2021 <a href="https://gitlab.com/ens-fr" target="_blank" rel="noopener">Votre prénom et NOM</a>
-    docs_dir: docs
-
-    nav:
-        - Accueil: index.md
-
-                                        # JUSTIFICATIONS
-    theme:
-        name: material
-        font: false                     # RGPD ; pas de fonte Google
-        language: fr                    # français
-        palette:                        # Palettes de couleurs jour/nuit
-        - scheme: default
-            toggle:
-                icon: material/weather-sunny
-                name: Passer au mode nuit
-        - scheme: slate
-            toggle:
-                icon: material/weather-night
-                name: Passer au mode jour
-        features:
-            - navigation.instant
-            - navigation.tabs
-            - navigation.expand
-            - navigation.top
-            - toc.integrate
-            - header.autohide
-
-
-    markdown_extensions:
-        - def_list                      # Les listes de définition.
-        - attr_list                     # Un peu de CSS et des attributs HTML.
-        - footnotes                     # Notes[^1] de bas de page.  [^1]: ma note.
-        - admonition                    # Blocs colorés  !!! info "ma remarque"
-        - pymdownx.details              #   qui peuvent se plier/déplier.
-        - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
-        - pymdownx.mark                 # Passage ==surligné==.
-        - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
-        - pymdownx.highlight            # Coloration syntaxique du code
-        - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
-        - pymdownx.snippets             # Inclusion de fichiers externe.
-        - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
-            custom_checkbox:    false   #   avec cases d'origine
-            clickable_checkbox: true    #   et cliquables.
-        - pymdownx.tabbed               # Volets glissants.  === "Mon volet"
-        - pymdownx.superfences          # Imbrication de blocs.
-        - pymdownx.keys:                # Touches du clavier.  ++ctrl+d++
-            separator: "\uff0b"
-        - pymdownx.emoji:               # Émojis  :boom:
-            emoji_index:     !!python/name:materialx.emoji.twemoji
-            emoji_generator: !!python/name:materialx.emoji.to_svg
-
-    extra:
-        social:
-            - icon: fontawesome/brands/github # ou autre
-            link: https://github.com/votreid
-            - icon: fontawesome/brands/gitlab # ou autre
-            link: https://gitlab.com/votreid
-            - icon: fontawesome/brands/discord #ou autre
-            link: https://discord.gg/votrecode
-    ```
-
-Pour une utilisation de MathJax, se référer à la [dernière partie](#utilisation-de-mathjax).
-
-En attendant, plus simple, les possibilités de Markdown avec MkDocs.
+!!! tip "Expérimenter"
+    Pour expérimenter les possibilités décrites ici, vous pouvez
+     faire vous-même [votre expérience](https://ens-fr.gitlab.io/experience/).
 
 ## Les admonitions
 
@@ -407,7 +335,7 @@ La liste des touches disponibles est dans la [documentation](
 ## Intégration de fichiers externes
 
 !!! info "Le cas simple"
-    En introduction, pour donner le contenu du fichier `mkdocs.yml` qui est situé dans `docs/`, on a entré :
+    Pour donner le contenu du fichier `mkdocs.yml` qui est situé dans `docs/`, on entre :
 
     ````markdown
     ```yaml
@@ -656,16 +584,35 @@ La liste des touches disponibles est dans la [documentation](
 
 ## Lien sur les en-têtes
 
-## Icônes et émojis
+## Icônes, émojis
+
+On peut utiliser un émoji de plusieurs façons.
+
+1. En trouvant son caractère Unicode, voir [Émojis](https://ens-fr.gitlab.io/mkdocs/markdown-bases/#emojis-et-unicode).
+2. En utilisant son `shortcode` que l'on peut trouver sur [emojipedia](https://emojipedia.org/)
+
+!!! note "Markdown"
+    ```markdown
+    Je pars :surfer:
+    ```
+!!! note "Markdown"
+    Je pars :surfer:
+
+Il existe aussi des icônes qui sont dans le dossier d'installation de _Material for MkDocs_.
+
+Ce dossier est probablement TODO
 
 :octicons-heart-fill-24:{ .heart }
 
-??? savoir "Cœur"
-    Alors ? ok
+
 
 ## Images
 
+TODO
+
 ## Meta tags
+
+TODO
 
 ## Utilisation de MathJax
 

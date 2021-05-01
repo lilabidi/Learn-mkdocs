@@ -1300,7 +1300,7 @@ Pour voir les options de numérotation et de marquage de lignes, avec MkDocs, on
     - ✅ Avec CodiMD, elles le sont, et le fichier source est modifié à la volée.
     - ❓ Avec MkDocs, on peut choisir globalement sa préférence, dans ce document, elles sont cliquables.
 
-### Émojis
+### Émojis et Unicode
 
 !!! tip "🤪👩‍🎨🚦🚂⚔️"
     Il suffit de coller vos émojis préférés depuis un site.
@@ -1311,6 +1311,33 @@ Pour voir les options de numérotation et de marquage de lignes, avec MkDocs, on
     - [wpRock](https://wprock.fr/t/emoji/) ; avec recherche en français.
     - [emoji copy](https://www.emojicopy.com/) ; permet d'en copier plusieurs à la fois.
     - ...
+
+De manière encore plus générale, il est possible d'insérer tout caractère Unicode dans le fichier source en Markdown.
+
+!!! note "Entrée"
+    ```markdown
+    Le [copyleft](https://fr.wikipedia.org/wiki/Copyleft) (🄯), est l'autorisation donnée par l'auteur d'un travail soumis au droit d'auteur d'utiliser, d'étudier, de modifier et de diffuser son œuvre, dans la mesure où cette même autorisation reste préservée.
+
+    Le caractère copyleft (🄯) a été ajouté au standard Unicode le 5 juin 2018 au titre de la version 11.0. Il a pour code U+1F12F.
+    ```
+
+!!! done "Rendu"
+    Le [copyleft](https://fr.wikipedia.org/wiki/Copyleft) (🄯), est l'autorisation donnée par l'auteur d'un travail soumis au droit d'auteur d'utiliser, d'étudier, de modifier et de diffuser son œuvre, dans la mesure où cette même autorisation reste préservée.
+
+    Le caractère copyleft (🄯) a été ajouté au standard Unicode le 5 juin 2018 au titre de la version 11.0. Il a pour code U+1F12F.
+
+Remarque, c'est aussi valable en Python, avec par exemple, (merci @sebhoa)
+
+```python
+JEU_IMAGES = ('🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮🂡',
+              '🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞🃑',
+              '🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎🃁',
+              '🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾🂱', )
+```
+
+On peut trouver de nombreux caractères sur [CharacterCodes](https://www.charactercodes.net/)
+
+On peut dessiner un caractère et voir s'il existe sur [shapecatcher](https://shapecatcher.com/)
 
 ## Exercices élaborés
 
