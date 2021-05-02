@@ -1329,15 +1329,21 @@ De manière encore plus générale, il est possible d'insérer tout caractère U
 Remarque, c'est aussi valable en Python, avec par exemple, (merci @sebhoa)
 
 ```python
-JEU_IMAGES = ('🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮🂡',
-              '🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞🃑',
-              '🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎🃁',
-              '🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾🂱', )
+JEU_52 = (
+    '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮',
+    '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾',
+    '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎',
+    '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞',
+    '🂠🂬🂼🃌🃜🃏🃟'
+    )
 ```
 
-On peut trouver de nombreux caractères sur [CharacterCodes](https://www.charactercodes.net/)
-
-On peut dessiner un caractère et voir s'il existe sur [shapecatcher](https://shapecatcher.com/)
+!!! faq "Où trouver les caractères Unicode ?"
+    - On peut rechercher par catégorie sur [Charbase](https://charbase.com/block)
+    - On peut aussi trouver de nombreux caractères sur
+     [CharacterCodes](https://www.charactercodes.net/)
+    - On peut dessiner un caractère et voir s'il existe sur
+     [shapecatcher](https://shapecatcher.com/)
 
 ## Exercices élaborés
 
