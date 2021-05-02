@@ -1338,6 +1338,9 @@ JEU_52 = (
     )
 ```
 
+:warning: Le rendu sur certains systèmes d'exploitation peut être incorrect.
+ If faudra attendre une mise à jour proposée.
+
 !!! faq "Où trouver les caractères Unicode ?"
     - On peut rechercher par catégorie sur [Charbase](https://charbase.com/block)
     - On peut aussi trouver de nombreux caractères sur
