@@ -1346,7 +1346,7 @@ JEU_52 = (
     - On peut aussi trouver de nombreux caractères sur
      [CharacterCodes](https://www.charactercodes.net/)
     - On peut dessiner un caractère et voir s'il existe sur
-     [shapecatcher](https://shapecatcher.com/)
+     [Shapecatcher](https://shapecatcher.com/)
 
 ## Exercices élaborés
 
