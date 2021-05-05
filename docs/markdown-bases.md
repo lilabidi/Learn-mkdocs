@@ -5,36 +5,52 @@ Auteur : Franck CHAMBON
 ## Vocabulaire et objectifs
 
 !!! info "Markdown"
-    [Markdown](https://fr.wikipedia.org/wiki/Markdown) est un langage de balisage léger qui est traduit en HTML, langage que le navigateur est capable de lire pour produire une page web.
+    [Markdown](https://fr.wikipedia.org/wiki/Markdown) est
+     un langage de balisage léger qui est traduit en HTML,
+     langage que le navigateur est capable de lire pour produire une page web.
 
-    On peut aussi, à partir d'un fichier Markdown `.md`, produire un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc). Nous ne nous en servirons pas ici.
+    On peut aussi, à partir d'un fichier Markdown `.md`, produire
+     un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant
+     l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc).
+     Nous ne nous en servirons pas ici.
 
     Il ne faut que **5 minutes pour avoir les bases** suffisantes.
 
 !!! tip "Utilisation répandue"
-    On peut utiliser la syntaxe Markdown dans de nombreuses situations de travail collaboratif.
+    On peut utiliser la syntaxe Markdown dans de nombreuses
+     situations de travail collaboratif.
 
-    - Dans des forums, comme Discourse, **GitLab**, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
-    - Dans des logiciels, comme **CodiMD**, **Jupyter**, ou **MkDocs** parmi d'autres.
+    - Dans des forums, comme Discourse, **GitLab**, Reddit,
+      Qt, Stack Overflow et Stack Exchange parmi d'autres.
+    - Dans des logiciels, comme **CodiMD**, **Jupyter**,
+      ou **MkDocs** parmi d'autres.
 
 !!! warning "Défaut"
     Soyons honnêtes, il y a un défaut, Markdown n'est pas unifié.
 
     - Il existe plusieurs variantes légèrement différentes de Markdown.
-    - Pour chaque variante, il peut exister des moteurs de rendus légèrement différents.
+    - Pour chaque variante, il peut exister des
+      moteurs de rendus légèrement différents.
 
-    Nous utiliserons ici la partie commune à toutes les versions, avec le style le plus commun possible, ce sera en particulier utile pour travailler avec **Jupyter**.
+    Nous utiliserons ici la **partie commune à toutes les versions**,
+     avec le style le plus commun possible, ce sera en particulier utile
+     pour travailler avec **Jupyter**.
     
-    Dans la partie suivante nous travaillerons avec certaines facilités offertes par **MkDocs**.
+    Dans la partie suivante nous travaillerons avec certaines
+     facilités offertes par **MkDocs**.
 
 !!! example "D'autres tutoriels"
     === "En anglais"
         - [Markdown Guide](https://www.markdownguide.org/) ; assez complet.
-        - [Markdown Tutorial](https://www.markdowntutorial.com/) ; avec exercices, (multilingue, mais ...)
-        - [Tutorial.md](http://agea.github.io/tutorial.md/) ; interactif, mérite une traduction !
+        - [Markdown Tutorial](https://www.markdowntutorial.com/) ;
+          avec exercices, (multilingue, mais ...)
+        - [Tutorial.md](http://agea.github.io/tutorial.md/) ;
+          interactif, mérite une traduction !
 
     === "En français"
-        - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
+        - [Élaboration et conversion de documents avec Markdown et Pandoc](
+            https://enacit1.epfl.ch/markdown-pandoc/) ;
+            pour les utilisateurs avancés.
 
 ## Les bases de Markdown
 
@@ -147,26 +163,56 @@ Auteur : Franck CHAMBON
         !!! note "Entrée"
 
             ```markdown
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+            Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Proin at cursus nibh,
+             et lobortis mauris. Sed tempus turpis
+             quis turpis pulvinar, ac vehicula dui
+             convallis. Phasellus tempus massa quam,
+             ac mollis libero cursus eget.
+            Donec convallis a nisl vitae scelerisque.
+            Ut vel nisl id augue ullamcorper lobortis
+             at id dolor.
             ```
 
         !!! done "Rendu"
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+            Lorem ipsum dolor sit amet, consectetur
+             adipiscing elit. Proin at cursus nibh,
+             et lobortis mauris. Sed tempus turpis
+             quis turpis pulvinar, ac vehicula dui
+             convallis. Phasellus tempus massa quam,
+             ac mollis libero cursus eget.
+            Donec convallis a nisl vitae scelerisque.
+            Ut vel nisl id augue ullamcorper lobortis
+             at id dolor.
 
     === "Incorrect"
         !!! note "Entrée"
 
             ```markdown
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
+                Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin at cursus nibh,
+            et lobortis mauris. Sed tempus turpis
+            quis turpis pulvinar, ac vehicula dui
+            convallis. Phasellus tempus massa quam,
+            ac mollis libero cursus eget.
+                Donec convallis a nisl vitae scelerisque.
+                Ut vel nisl id augue ullamcorper lobortis
+            at id dolor.
             ```
         
         !!! fail "Rendu"
 
-            <pre>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at cursus nibh, et lobortis mauris. Sed tempus turpis quis turpis pulvinar, ac vehicula dui convallis. Phasellus tempus massa quam, ac mollis libero cursus eget. Donec convallis a nisl vitae scelerisque. Ut vel nisl id augue ullamcorper lobortis at id dolor.
-            </pre>
+                Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin at cursus nibh,
+            et lobortis mauris. Sed tempus turpis
+            quis turpis pulvinar, ac vehicula dui
+            convallis. Phasellus tempus massa quam,
+            ac mollis libero cursus eget.
+                Donec convallis a nisl vitae scelerisque.
+                Ut vel nisl id augue ullamcorper lobortis
+            at id dolor.
 
-        :warning: Le texte devient du code en bloc, avec une police à chasse fixe.
+        :warning: Une partie du texte devient du code en bloc, avec une police à chasse fixe.
 
 ### Aller à la ligne
 
@@ -185,7 +231,9 @@ Auteur : Franck CHAMBON
             ligne1  
             ligne2
         
-        🤞 : On a symbolisé les deux espaces avec `␣␣`, mais **il faut utiliser l'espace classique**. `␣␣` ne sert que d'illustration.
+        🤞 : On a symbolisé les deux espaces avec `␣␣`, mais **il faut utiliser l'espace classique**.
+        
+        Ici, `␣␣` ne sert que d'illustration.
 
     === "Incorrect"
         !!! note "Entrée"
@@ -224,7 +272,8 @@ Auteur : Franck CHAMBON
 ### Ligne horizontale
 
 !!! tip "Séparer deux paragraphes"
-    On utilise `---` entre les deux paragraphes, avec des lignes vides de part et d'autre.
+    Si on souhaite une **ligne horizontale**, on utilise `---`
+     entre les deux paragraphes, avec des lignes vides de part et d'autre.
 
     === "Correct"
         !!! note "Entrée"
@@ -266,13 +315,12 @@ Auteur : Franck CHAMBON
     Une liste, comme un nouveau paragraphe, **doit être précédée d'une ligne vide**.
     Certains moteurs Markdown acceptent qu'il n'y ait pas de saut de ligne, comme avec Jupyter,
      mais pas tous.
-    
+
     !!! info "Les règles"
         - Sauter une ligne avant la première puce.
         - Ensuite, on place chaque item sur une ligne en commençant par `-`
         - On peut faire des listes numérotées en commençant par `1.`
         - On place aussi une espace juste avant son item.
-
 
     !!! abstract "Liste à puce"
         !!! note "Entrée"
@@ -373,6 +421,8 @@ Auteur : Franck CHAMBON
     !!! note "Entrée"
 
         ```markdown
+        On va faire une liste
+
         1. un
         1. deux
             - machin
@@ -383,6 +433,8 @@ Auteur : Franck CHAMBON
         ```
 
     !!! done "Rendu"
+        On va faire une liste
+        
         1. un
         1. deux
             - machin
@@ -677,7 +729,7 @@ Auteur : Franck CHAMBON
 ### Code en ligne
 
 !!! tip "Avec l'accent grave"
-    Avec un clavier azerty, ++altgr+8++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
+    Avec un clavier azerty, ++altgr+7++ donne l'[accent grave](https://fr.wikipedia.org/wiki/Accent_grave) `` ` ``
 
     On utilise la syntaxe : ``Du texte avec un `identifiant` de code``.
 
@@ -742,7 +794,7 @@ Auteur : Franck CHAMBON
     !!! warning "Technique avancée"
         Si on souhaite écrire du code en ligne qui contient des `` ` ``,
          il suffit d'encadrer le morceau avec plus de `` ` `` qu'il n'y en a consécutivement dans le morceau.
-        === "Exemple simple"
+        === "Exemple simple correct"
             !!! note "Entrée"
                 ```markdown
                 Afficher **du code** avec accent grave : `` un entier `n` ``
@@ -750,6 +802,17 @@ Auteur : Franck CHAMBON
 
             !!! done "Rendu"
                 Afficher **du code** avec accent grave : `` un entier `n` ``
+
+        === "Exemple simple incorrect"
+            !!! note "Entrée"
+                ```markdown
+                Afficher **du code** avec accent grave : `un entier `n``
+                ```
+
+            !!! done "Rendu"
+                Afficher **du code** avec accent grave : `un entier `n``
+            
+            :warning: Comment savoir où est la fin et le début ?
 
         === "Exemple élaboré"
             !!! note "Entrée"
@@ -915,6 +978,7 @@ Auteur : Franck CHAMBON
     ```
 
 [Résoudre en ligne](https://console.basthon.fr/?script=eJx9UdtqAjEQfV_YfxjigwprcHe1imAfWvraH1Ap6e5YYmOyzaW1kI_pq9_hjzVpqhSEzgRCZs6cc5K0uAXLngUy97Rn-rVVH3IguLG4gLgNYXQLxupFnkEIwV8kGljCapMKbKecDefUoKzrULap1QNKKZy-oFH7TpyOFnVqaLROSyBrSehO8agXh4d5FpMQkmc9eDigbniDsXR_IYh0HdOWa2gRBEu6MC-gc9wAHk7HxkWcwCDbIo3jjxhmDOxVy7c89BqEN9fnAj6BAcrAZIxyJjI2aC0mUnoxE-1YNBbKPGPGoLbXT7YaF1D-rKqAuoBpEU2V9WYIyyWs08VD9L30Y1_6ytd-4qf-xs_8WvrRVYaie0rYhJ76uS_rUO__cVT942hSRQP1LFk4C1_EfgUmlY-gM2-nubQDcqfZuyLhR74B39mmdg){.md-button}
+**Conseil** : Ouvrir un nouvel onglet.
 
 ??? faq "Indice 1"
     Pour construire la ligne 2, on pourrait faire
@@ -1096,6 +1160,7 @@ Auteur : Franck CHAMBON
         ``````
         
         Ceci pour afficher l'entrée correcte, et deux blocs de 6 `` ` ``, pour afficher cette remarque.
+
     === "Incorrect"
         !!! note "Entrée"
             `````markdown
@@ -1120,6 +1185,8 @@ Auteur : Franck CHAMBON
             ```
             ```
         :warning: Rien ne peut être structuré...
+
+Pour voir les options de numérotation et de marquage de lignes, avec MkDocs, on consultera cette [section](../markdown-mkdocs/#options-sur-les-blocs-de-code)
 
 ### Texte barré
 
@@ -1250,7 +1317,7 @@ Auteur : Franck CHAMBON
     - ✅ Avec CodiMD, elles le sont, et le fichier source est modifié à la volée.
     - ❓ Avec MkDocs, on peut choisir globalement sa préférence, dans ce document, elles sont cliquables.
 
-### Émojis
+### Émojis et Unicode
 
 !!! tip "🤪👩‍🎨🚦🚂⚔️"
     Il suffit de coller vos émojis préférés depuis un site.
@@ -1261,6 +1328,42 @@ Auteur : Franck CHAMBON
     - [wpRock](https://wprock.fr/t/emoji/) ; avec recherche en français.
     - [emoji copy](https://www.emojicopy.com/) ; permet d'en copier plusieurs à la fois.
     - ...
+
+De manière encore plus générale, il est possible d'insérer tout caractère Unicode dans le fichier source en Markdown.
+
+!!! note "Entrée"
+    ```markdown
+    Le [copyleft](https://fr.wikipedia.org/wiki/Copyleft) (🄯), est l'autorisation donnée par l'auteur d'un travail soumis au droit d'auteur d'utiliser, d'étudier, de modifier et de diffuser son œuvre, dans la mesure où cette même autorisation reste préservée.
+
+    Le caractère copyleft (🄯) a été ajouté au standard Unicode le 5 juin 2018 au titre de la version 11.0. Il a pour code U+1F12F.
+    ```
+
+!!! done "Rendu"
+    Le [copyleft](https://fr.wikipedia.org/wiki/Copyleft) (🄯), est l'autorisation donnée par l'auteur d'un travail soumis au droit d'auteur d'utiliser, d'étudier, de modifier et de diffuser son œuvre, dans la mesure où cette même autorisation reste préservée.
+
+    Le caractère copyleft (🄯) a été ajouté au standard Unicode le 5 juin 2018 au titre de la version 11.0. Il a pour code U+1F12F.
+
+Remarque, c'est aussi valable en Python, avec par exemple, (merci @sebhoa)
+
+```python
+JEU_52 = (
+    '🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂭🂮',
+    '🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾',
+    '🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎',
+    '🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃝🃞',
+    '🂠🂬🂼🃌🃜🃏🃟'
+    )
+```
+
+:warning: Le rendu sur certains systèmes d'exploitation peut être incorrect.
+ If faudra attendre une mise à jour proposée.
+
+!!! faq "Où trouver les caractères Unicode ?"
+    - On peut rechercher par catégorie sur [Charbase](https://charbase.com/block)
+    - On peut aussi trouver de nombreux caractères sur
+     [CharacterCodes](https://www.charactercodes.net/)
+    - On peut dessiner un caractère et voir s'il existe sur
+     [Shapecatcher](https://shapecatcher.com/)
 
 ## Exercices élaborés
 

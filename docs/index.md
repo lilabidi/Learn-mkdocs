@@ -112,7 +112,18 @@ Auteur : Franck CHAMBON
 
     === "Windows"
         ??? tip "Administration"
-            Aucune idée... toute aide bienvenue
+            Suivez les mises à jour indiquées.
+
+
+            Pour l'installation de Python que vous avez réalisée, il faut bien avoir coché la case « Inclure Python dans le PATH »
+
+            ![win-py-install](images/win-py-install.png)
+
+            Pour mettre à jour `pip`, entrer `> python -m pip install --upgrade pip`
+
+            - Si une erreur se produit, c'est que vous n'avez pas `pip` d'installé. Pour l'installer,
+                - télécharger [`get-pip.py`](https://bootstrap.pypa.io/get-pip.py),
+                - entrer `> python get-pip.py` dans le dossier où vous avez le script téléchargé.
         
         !!! example "Mises à jour de `pip`"
             Dans un terminal entrer

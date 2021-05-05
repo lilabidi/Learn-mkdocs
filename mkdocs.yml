@@ -4,7 +4,7 @@ repo_url: https://gitlab.com/ens-fr/mkdocs
 edit_uri: tree/master/docs/
 site_description: Tutoriel pour MkDocs Material
 copyright: |
-  Copyright &copy; 2021 <a href="https://gitlab.com/ens-fr" target="_blank" rel="noopener">Franck CHAMBON</a>
+  Copyleft 🄯 2021 <a href="https://gitlab.com/ens-fr" target="_blank" rel="noopener">Franck CHAMBON</a>
 docs_dir: docs
 
 nav:
@@ -50,8 +50,6 @@ theme:
 markdown_extensions:
     - meta
     - abbr
-    - pymdownx.progressbar
-
 
     - def_list                      # Les listes de définition.
     - attr_list                     # Un peu de CSS et des attributs HTML.
@@ -61,8 +59,7 @@ markdown_extensions:
     - pymdownx.caret                # Passage ^^souligné^^ ou en ^exposant^.
     - pymdownx.mark                 # Passage ==surligné==.
     - pymdownx.tilde                # Passage ~~barré~~ ou en ~indice~.
-    - pymdownx.highlight:           # Coloration syntaxique du code
-        linenums: true              #   avec numérotation,
+    - pymdownx.highlight            # Coloration syntaxique du code
     - pymdownx.inlinehilite         # pour  `#!python  <python en ligne>`
     - pymdownx.snippets             # Inclusion de fichiers externe.
     - pymdownx.tasklist:            # Cases à cocher  - [ ]  et - [x]
@@ -120,5 +117,5 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/progress_bar.css
+
 

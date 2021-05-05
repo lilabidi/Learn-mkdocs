@@ -14,9 +14,9 @@ def ascii_vers_binaire(texte):
 - Exécuter le script
 - Utiliser la console, avec par exemple
 
->>> ascii_vers_binaire("Salut toi !")
+>>> ascii_vers_binaire("1. Salut toi !")
 
->>> ascii_vers_binaire("Bonjour à tous ;-)")
+>>> ascii_vers_binaire("2. Bonjour à tous ;-)")
 
 - Trouve le caractère non ASCII de l'exemple 2
 """
