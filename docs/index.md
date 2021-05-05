@@ -15,6 +15,12 @@ Auteur : Franck CHAMBON
     - aux élèves en NSI, pour la documentation de projet,
     - aux collègues enseignants pour du travail collaboratif.
 
+!!! faq "Pourquoi MkDocs ?"
+    [MkDocs](https://www.mkdocs.org/) permet de générer de la documentation autour de l'écosystème Markdown et Python.
+
+    - C'est un logiciel libre reconnu pour sa qualité et très utilisé.  https://github.com/mkdocs/mkdocs/
+
+
 ## Prérequis
 
 !!! note "Définitions"
