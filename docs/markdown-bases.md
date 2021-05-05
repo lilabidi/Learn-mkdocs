@@ -5,36 +5,52 @@ Auteur : Franck CHAMBON
 ## Vocabulaire et objectifs
 
 !!! info "Markdown"
-    [Markdown](https://fr.wikipedia.org/wiki/Markdown) est un langage de balisage léger qui est traduit en HTML, langage que le navigateur est capable de lire pour produire une page web.
+    [Markdown](https://fr.wikipedia.org/wiki/Markdown) est
+     un langage de balisage léger qui est traduit en HTML,
+     langage que le navigateur est capable de lire pour produire une page web.
 
-    On peut aussi, à partir d'un fichier Markdown `.md`, produire un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc). Nous ne nous en servirons pas ici.
+    On peut aussi, à partir d'un fichier Markdown `.md`, produire
+     un fichier `.pdf`, ou `.odt`, ou `.docx` en utilisant
+     l'utilitaire [Pandoc](https://fr.wikipedia.org/wiki/Pandoc).
+     Nous ne nous en servirons pas ici.
 
     Il ne faut que **5 minutes pour avoir les bases** suffisantes.
 
 !!! tip "Utilisation répandue"
-    On peut utiliser la syntaxe Markdown dans de nombreuses situations de travail collaboratif.
+    On peut utiliser la syntaxe Markdown dans de nombreuses
+     situations de travail collaboratif.
 
-    - Dans des forums, comme Discourse, **GitLab**, Reddit, Qt, Stack Overflow et Stack Exchange parmi d'autres.
-    - Dans des logiciels, comme **CodiMD**, **Jupyter**, ou **MkDocs** parmi d'autres.
+    - Dans des forums, comme Discourse, **GitLab**, Reddit,
+      Qt, Stack Overflow et Stack Exchange parmi d'autres.
+    - Dans des logiciels, comme **CodiMD**, **Jupyter**,
+      ou **MkDocs** parmi d'autres.
 
 !!! warning "Défaut"
     Soyons honnêtes, il y a un défaut, Markdown n'est pas unifié.
 
     - Il existe plusieurs variantes légèrement différentes de Markdown.
-    - Pour chaque variante, il peut exister des moteurs de rendus légèrement différents.
+    - Pour chaque variante, il peut exister des
+      moteurs de rendus légèrement différents.
 
-    Nous utiliserons ici la partie commune à toutes les versions, avec le style le plus commun possible, ce sera en particulier utile pour travailler avec **Jupyter**.
+    Nous utiliserons ici la **partie commune à toutes les versions**,
+     avec le style le plus commun possible, ce sera en particulier utile
+     pour travailler avec **Jupyter**.
     
-    Dans la partie suivante nous travaillerons avec certaines facilités offertes par **MkDocs**.
+    Dans la partie suivante nous travaillerons avec certaines
+     facilités offertes par **MkDocs**.
 
 !!! example "D'autres tutoriels"
     === "En anglais"
         - [Markdown Guide](https://www.markdownguide.org/) ; assez complet.
-        - [Markdown Tutorial](https://www.markdowntutorial.com/) ; avec exercices, (multilingue, mais ...)
-        - [Tutorial.md](http://agea.github.io/tutorial.md/) ; interactif, mérite une traduction !
+        - [Markdown Tutorial](https://www.markdowntutorial.com/) ;
+          avec exercices, (multilingue, mais ...)
+        - [Tutorial.md](http://agea.github.io/tutorial.md/) ;
+          interactif, mérite une traduction !
 
     === "En français"
-        - [Élaboration et conversion de documents avec Markdown et Pandoc](https://enacit1.epfl.ch/markdown-pandoc/) ; pour les utilisateurs avancés.
+        - [Élaboration et conversion de documents avec Markdown et Pandoc](
+            https://enacit1.epfl.ch/markdown-pandoc/) ;
+            pour les utilisateurs avancés.
 
 ## Les bases de Markdown
 
@@ -299,13 +315,12 @@ Auteur : Franck CHAMBON
     Une liste, comme un nouveau paragraphe, **doit être précédée d'une ligne vide**.
     Certains moteurs Markdown acceptent qu'il n'y ait pas de saut de ligne, comme avec Jupyter,
      mais pas tous.
-    
+
     !!! info "Les règles"
         - Sauter une ligne avant la première puce.
         - Ensuite, on place chaque item sur une ligne en commençant par `-`
         - On peut faire des listes numérotées en commençant par `1.`
         - On place aussi une espace juste avant son item.
-
 
     !!! abstract "Liste à puce"
         !!! note "Entrée"
@@ -964,6 +979,7 @@ Auteur : Franck CHAMBON
 
 [Résoudre en ligne](https://console.basthon.fr/?script=eJx9UdtqAjEQfV_YfxjigwprcHe1imAfWvraH1Ap6e5YYmOyzaW1kI_pq9_hjzVpqhSEzgRCZs6cc5K0uAXLngUy97Rn-rVVH3IguLG4gLgNYXQLxupFnkEIwV8kGljCapMKbKecDefUoKzrULap1QNKKZy-oFH7TpyOFnVqaLROSyBrSehO8agXh4d5FpMQkmc9eDigbniDsXR_IYh0HdOWa2gRBEu6MC-gc9wAHk7HxkWcwCDbIo3jjxhmDOxVy7c89BqEN9fnAj6BAcrAZIxyJjI2aC0mUnoxE-1YNBbKPGPGoLbXT7YaF1D-rKqAuoBpEU2V9WYIyyWs08VD9L30Y1_6ytd-4qf-xs_8WvrRVYaie0rYhJ76uS_rUO__cVT942hSRQP1LFk4C1_EfgUmlY-gM2-nubQDcqfZuyLhR74B39mmdg){.md-button}
 **Conseil** : Ouvrir un nouvel onglet.
+
 ??? faq "Indice 1"
     Pour construire la ligne 2, on pourrait faire
 
@@ -1144,6 +1160,7 @@ Auteur : Franck CHAMBON
         ``````
         
         Ceci pour afficher l'entrée correcte, et deux blocs de 6 `` ` ``, pour afficher cette remarque.
+
     === "Incorrect"
         !!! note "Entrée"
             `````markdown
