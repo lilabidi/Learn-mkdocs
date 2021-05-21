@@ -177,6 +177,13 @@ Auteur : Franck CHAMBON
 
     Cela installe automatiquement plusieurs paquets utiles.
 
+!!! danger "_No module named 'materialx'_"
+    :warning: Dans de rares cas, il est utile d'ajouter la dépendance suivante (qui aurait dû s'installer automatiquement)
+
+    ```console
+    $ pip install mkdocs-material-extensions
+    ```
+
 ## Créer un nouveau MkDocs
 
 !!! tip "Votre expérience"
